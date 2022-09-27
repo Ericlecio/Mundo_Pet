@@ -21,7 +21,7 @@ public class UsuarioDao {
 		stmt.setInt(2, usuario.getData_Nasc());
 		stmt.setString(3, usuario.getEmail());
 		stmt.setLong(4, usuario.getCpf());
-		stmt.setString(5, usuario.getSenha(1));
+		stmt.setString(5, usuario.getSenha());
 
 		stmt.execute();
 		stmt.close();
