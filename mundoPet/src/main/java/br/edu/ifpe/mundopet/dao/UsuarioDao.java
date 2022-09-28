@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.edu.ifpe.mundopet.model.Endereco;
 import br.edu.ifpe.mundopet.model.Usuario;
 
 public class UsuarioDao {
@@ -55,6 +56,36 @@ public class UsuarioDao {
 		connection.close();
 
 		return listaTodosUsuarios;
+
+	}
+	public void AtualizarUsuairo (Usuario usuario) throws ClassNotFoundException, SQLException{
+		Connection connection = ConexaoMySQL.getConexaoMySQL();
+		String sql = "UPDATE `usuario` set `nome` = ?, `data_Nasc`= ?, `email` = ?, `Cpf` = ?, `senha` = ? where `idusuario`= ? ";
+
+		PreparedStatement stmt = connection.prepareStatement(sql);
+
+		stmt.setString(1, usuario.getNome());
+		stmt.setInt(2, usuario.getData_Nasc());
+		stmt.setString(3, usuario.getEmail());
+		stmt.setInt(4, usuario.getCpf());
+		stmt.setString(5, usuario.getSenha());
+		stmt.setInt(6, usuario.getIdusuario());
+
+		stmt.executeUpdate();
+		stmt.close();
+		connection.close();
+	}
+
+	public void DeletarUsuario( int idusuario) throws ClassNotFoundException, SQLException {
+		Connection connection = ConexaoMySQL.getConexaoMySQL();
+		String sql = "DELETE FROM `usuario` WHERE `idusuario`=?";
+		PreparedStatement stmt = connection.prepareStatement(sql);
+		stmt.setLong(2, idusuario);	
+
+		stmt.executeUpdate();
+		stmt.close();
+		connection.close();
+
 
 	}
 }
