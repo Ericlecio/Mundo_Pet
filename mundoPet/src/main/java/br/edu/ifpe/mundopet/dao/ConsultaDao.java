@@ -43,7 +43,7 @@ public class ConsultaDao {
 			int idConsulta = resultSet.getInt("idconsulta");
 			consulta.setIdconsulta(idConsulta);;
 			int idusuario = resultSet.getInt("idusuario");
-			consulta.setIdusuario(idusuario);
+			consulta.setIdUsuario(idusuario);
 			int idveterinario = resultSet.getInt("idveterinario");
 			consulta.setIdVeterinario(idveterinario);
 
