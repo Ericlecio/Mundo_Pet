@@ -1,25 +1,36 @@
 package br.edu.ifpe.mundopet.model;
 
 public class Animal {
-	private int idanimal;
+	private int idusuario;
+	private int idAnimal;
 	private String nome;
 	private String raca;
 	private int idade;
 	private String sexo;
-
-	public Animal(int idanimal, String nome, String raca, int idade, String sexo) {
+	
+	public Animal(int idusuario, int idAnimal, String nome, String raca, int idade, String sexo) {
 		super();
-		this.idanimal = idanimal;
+		this.idusuario = idusuario;
+		this.idAnimal = idAnimal;
 		this.nome = nome;
 		this.raca = raca;
 		this.idade = idade;
 		this.sexo = sexo;
 	}
-	public int getIdanimal() {
-		return idanimal;
+	public Animal() {
+		// TODO Auto-generated constructor stub
 	}
-	public void setIdanimal(int idanimal) {
-		this.idanimal = idanimal;
+	public int getIdUsuario() {
+		return idusuario;
+	}
+	public void setIdUsuario(int idUsuario) {
+		this.idusuario = idUsuario;
+	}
+	public int getIdAnimal() {
+		return idAnimal;
+	}
+	public void setIdAnimal(int idAnimal) {
+		this.idAnimal = idAnimal;
 	}
 	public String getNome() {
 		return nome;
@@ -45,7 +56,6 @@ public class Animal {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-
-
+	
 
 }
