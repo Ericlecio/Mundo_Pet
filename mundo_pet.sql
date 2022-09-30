@@ -189,11 +189,13 @@ INSERT INTO `animal` (`idanimal`, `idusuario`, `Nome`, `raça`, `idade`, `sexo`)
 CREATE TABLE `consulta` (
   `idconsulta` int(11) NOT NULL AUTO_INCREMENT,
   `idveterinario` int(11) NOT NULL,
+  `idusuario` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `data_consulta` date NOT NULL,
   `horario` int(4) NOT NULL,
   PRIMARY KEY (`idconsulta`),
-  CONSTRAINT `consulta_ibfk_1` FOREIGN KEY (`idveterinario`) REFERENCES `veterinario` (`idveterinario`)
+  CONSTRAINT `consulta_ibfk_1` FOREIGN KEY (`idveterinario`) REFERENCES `veterinario` (`idveterinario`),
+  CONSTRAINT `consulta_ibfk_2` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`idusuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
