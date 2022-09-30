@@ -18,7 +18,7 @@ public class ConsultaDao {
 		PreparedStatement stmt =  connection.prepareStatement(sql);
 
 		stmt.setInt(1, consulta.getIdUsuario());
-		stmt.setInt(2, consulta.getIdVeterimario());
+		stmt.setInt(2, consulta.getIdVeterinario());
 		stmt.setString(3, consulta.getNome());
 		stmt.setInt(4, consulta.getData_Consulta());
 		stmt.setInt(5, consulta.getHorario());
@@ -43,9 +43,9 @@ public class ConsultaDao {
 			int idConsulta = resultSet.getInt("idconsulta");
 			consulta.setIdconsulta(idConsulta);;
 			int idusuario = resultSet.getInt("idusuario");
-			consulta.setIdUsuario(idusuario);
+			consulta.setIdusuario(idusuario);
 			int idveterinario = resultSet.getInt("idveterinario");
-			consulta.setIdVeterimario(idveterinario);
+			consulta.setIdVeterinario(idveterinario);
 
 			consulta.setNome(resultSet.getString(3));;
 			consulta.setData_Consulta(resultSet.getInt(3));
