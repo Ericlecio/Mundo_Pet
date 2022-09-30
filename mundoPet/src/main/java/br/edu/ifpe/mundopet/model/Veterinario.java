@@ -17,6 +17,9 @@ public class Veterinario {
 		this.cpf = cpf;
 		this.senha = senha;
 	}
+	public Veterinario() {
+		// TODO Auto-generated constructor stub
+	}
 	public int getIdveterinario() {
 		return idveterinario;
 	}
