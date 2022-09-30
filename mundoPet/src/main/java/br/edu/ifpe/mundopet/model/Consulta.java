@@ -2,17 +2,17 @@ package br.edu.ifpe.mundopet.model;
 
 public class Consulta {
 	private int idconsulta;
+	private int idVeterinario;
 	private int idUsuario;
-	private int idVeterimario;
 	private String nome;
 	private int data_Consulta;
 	private int horario;
 	
-	public Consulta(int idconsulta, int idUsuario, int idVeterimario, String nome, int data_Consulta, int horario) {
+	public Consulta(int idconsulta, int idUsuario, int idVeterinario, String nome, int data_Consulta, int horario) {
 		super();
 		this.idconsulta = idconsulta;
 		this.idUsuario = idUsuario;
-		this.idVeterimario = idVeterimario;	
+		this.idVeterinario = idVeterinario;	
 		this.nome = nome;
 		this.data_Consulta = data_Consulta;
 		this.horario = horario;
@@ -32,11 +32,11 @@ public class Consulta {
 	public void setIdUsuario(int idUsuario) {
 		this.idUsuario = idUsuario;
 	}
-	public int getIdVeterimario() {
-		return idVeterimario;
+	public int getIdVeterinario() {
+		return idVeterinario;
 	}
-	public void setIdVeterimario(int idVeterimario) {
-		this.idVeterimario = idVeterimario;
+	public void setIdVeterinario(int idVeterinario) {
+		this.idVeterinario = idVeterinario;
 	}
 	public String getNome() {
 		return nome;
