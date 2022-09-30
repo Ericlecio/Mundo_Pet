@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import br.edu.ifpe.mundopet.model.Endereco;
 import br.edu.ifpe.mundopet.model.Usuario;
 
 public class UsuarioDao {
