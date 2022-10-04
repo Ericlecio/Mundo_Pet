@@ -43,6 +43,7 @@ public class UsuarioController {
 		mv.addObject("usuarios",usuario);
 		return mv;
 	}
+	
 
 	@PostMapping("/clientes")
 	public ModelAndView createCliente(@Validated Usuario usuario, BindingResult bindingResults)
