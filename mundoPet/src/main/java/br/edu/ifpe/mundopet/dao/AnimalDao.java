@@ -28,7 +28,7 @@ public class AnimalDao {
 	}
 	public List<Animal> ConsultarTodosAnimais() throws ClassNotFoundException, SQLException{
 		Connection connection =  ConexaoMySQL.getConexaoMySQL();
-		String sql = "SELECT `idanimal`, `idusuario`, `nome`, `raca`, `idade`, `sexo`, FROM `animal`";
+		String sql = "SELECT `idanimal`, `idusuario`, `nome`, `raca`, `idade`, `sexo`, FROM `animal`;";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
 		ResultSet resultSet = stmt.executeQuery();
