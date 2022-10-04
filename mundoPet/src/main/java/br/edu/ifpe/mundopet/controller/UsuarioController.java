@@ -3,6 +3,7 @@ package br.edu.ifpe.mundopet.controller;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -10,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import br.edu.ifpe.mundopet.dao.UsuarioDao;
 import br.edu.ifpe.mundopet.model.Usuario;
 
-
+@Controller
 public class UsuarioController {
 	@PostMapping("/usuarios")
 	public String createUsuario() {
@@ -18,7 +19,7 @@ public class UsuarioController {
 	}
 	
 	@GetMapping("/usuarios")
-	public ModelAndView index() {
+	public ModelAndView usuario() {
 		
 		UsuarioDao usuarioDao = new UsuarioDao();
 		List<Usuario> usuario=null;
