@@ -5,10 +5,10 @@ public class Usuario {
 	private String nome;
 	private int data_Nasc;
 	private String email;
-	private int cpf;
+	private String cpf;
 	private String senha;
 
-	public Usuario(int idusuario, String nome, int data_Nasc, String email, int cpf, String senha) {
+	public Usuario(int idusuario, String nome, int data_Nasc, String email, String cpf, String senha) {
 		super();
 		this.idusuario = idusuario;
 		this.nome = nome;
@@ -44,10 +44,10 @@ public class Usuario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 	public String getSenha() {

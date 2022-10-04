@@ -12,7 +12,7 @@ public class AppUsuario {
 		usuario.setNome("Vinícius");
 		usuario.setData_Nasc(250403);
 		usuario.setEmail("aaaaa@gmail.com");
-		usuario.setCpf(1234566754);
+//		usuario.setCpf(1234566754);
 		usuario.setSenha("senha123");
 
 		UsuarioDao usuarioDao = new UsuarioDao();

@@ -19,7 +19,7 @@ public class UsuarioDao {
 		stmt.setString(1, usuario.getNome());
 		stmt.setInt(2, usuario.getData_Nasc());
 		stmt.setString(3, usuario.getEmail());
-		stmt.setLong(4, usuario.getCpf());
+		stmt.setString(4, usuario.getCpf());
 		stmt.setString(5, usuario.getSenha());
 
 		stmt.execute();
@@ -45,7 +45,7 @@ public class UsuarioDao {
 			usuario.setNome(nome);
 			usuario.setData_Nasc(resultSet.getInt(3));
 			usuario.setEmail(resultSet.getString(4));
-			usuario.setCpf(resultSet.getInt(5));
+			usuario.setCpf(resultSet.getString(5));
 			usuario.setSenha(resultSet.getString(6));
 
 			listaTodosUsuarios.add(usuario);
@@ -65,7 +65,7 @@ public class UsuarioDao {
 		stmt.setString(1, usuario.getNome());
 		stmt.setInt(2, usuario.getData_Nasc());
 		stmt.setString(3, usuario.getEmail());
-		stmt.setInt(4, usuario.getCpf());
+		stmt.setString(4, usuario.getCpf());
 		stmt.setString(5, usuario.getSenha());
 		stmt.setInt(6, usuario.getIdusuario());
 
