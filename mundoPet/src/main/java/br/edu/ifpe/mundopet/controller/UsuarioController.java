@@ -12,25 +12,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.edu.ifpe.mundopet.dao.UsuarioDao;
-import br.edu.ifpe.mundopet.dao.UsuarioDao;
 import br.edu.ifpe.mundopet.model.Usuario;
-import br.edu.ifpe.mundopet.model.Usuario;
-
 @Controller
-
 
 public class UsuarioController {
 	@Autowired
-	Usuariodao usuarioDao;
-	
+	UsuarioDao usuariodao;
+
 	@PostMapping("/usuarios")
 	public String createUsuario() {
-		return "redirect/usuarios";
+		return "redirect:/usuarios";
 	}
-	
+
 	@GetMapping("/usuarios")
 	public ModelAndView usuario() {
-		
+
 		UsuarioDao usuarioDao = new UsuarioDao();
 		List<Usuario> usuario=null;
 		try {
@@ -42,28 +38,29 @@ public class UsuarioController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		ModelAndView mv = new ModelAndView("usuario/usuario");
 		mv.addObject("usuarios",usuario);
 		return mv;
 	}
-	
+
 	@PostMapping("/clientes")
 	public ModelAndView createCliente(@Validated Usuario usuario, BindingResult bindingResults)
 	{
-		if(bindingResults.hasErrors()) {
-			ModelAndView mv = new ModelAndView("cliente/novousuario");
-			mv.addObject("novousuario", novousuario.values());
-			return mv;
-		}
 
 		try {
-			Dao.adiciona(cliente);
+			usuariodao.adicionarUsuario(usuario);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		return new ModelAndView("redirect:/clientes") ;
+		return new ModelAndView("redirect:/usuarios") ;
+	}
+
+	@GetMapping("usuario/novousuario")
+	public ModelAndView novoCliente() { 
+		ModelAndView mv = new ModelAndView("usuario/novousuario");
+		return mv;
 	}
 }
