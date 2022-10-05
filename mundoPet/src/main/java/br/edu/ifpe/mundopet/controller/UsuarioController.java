@@ -19,10 +19,10 @@ public class UsuarioController {
 	@Autowired
 	UsuarioDao usuariodao;
 
-	@PostMapping("/usuarios")
-	public String createUsuario() {
-		return "redirect:/usuarios";
-	}
+//	@PostMapping("/usuarios")
+//	public String createUsuario() {
+//		return "redirect:/usuarios";
+//	}
 
 	@GetMapping("/usuarios")
 	public ModelAndView usuario() {
@@ -45,10 +45,15 @@ public class UsuarioController {
 	}
 	
 
-	@PostMapping("/clientes")
-	public ModelAndView createCliente(@Validated Usuario usuario, BindingResult bindingResults)
+	@PostMapping("/usuarios")
+	public ModelAndView createUsuario(@Validated Usuario usuario, BindingResult bindingResults)
 	{
-
+		if(bindingResults.hasErrors()) {
+			ModelAndView mv = new ModelAndView("usuario/novousuario");
+			mv.addObject("Usuario", usuario);
+			return mv;
+		}
+		
 		try {
 			usuariodao.adicionarUsuario(usuario);
 		} catch (ClassNotFoundException | SQLException e) {

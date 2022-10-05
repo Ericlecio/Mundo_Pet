@@ -31,7 +31,7 @@
     <tr th:each="usuario : ${usuarios}">
     <th class="col-1" scope="row" th:text="${usuario.getIdusuario}">ID</th>
     <td class="col-4" th:text="${usuario.nome}">Nome</td>
-    <td class="col-2" th:text="${usuario.data_Nasc}">Data</td>
+    <td class="col-2" th:text="${#dates.format(usuario.data_Nasc,'dd-MM-yyyy')}">Data</td>
     <td class="col-2" th:text="${usuario.email}">Email</td>
     <td class="col-2" th:text="${usuario.cpf}">CPF</td>
     <td class="col-1"><a th:href="@{/usuarios/{idUsuario}(idUsuario = ${usuario.idusuario})}">Detalhes</a></td>

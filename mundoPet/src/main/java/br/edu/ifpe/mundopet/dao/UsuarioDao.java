@@ -1,6 +1,7 @@
 package br.edu.ifpe.mundopet.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,11 +19,11 @@ public class UsuarioDao {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "INSERT INTO `usuario`"
 				+ "( `nome`,`data_nasc`,`email`,`cpf`, `senha`) "
-				+ " VALUES (? , ? , ? , ?, ?, ?)";
+				+ " VALUES (? , ? , ? , ?, ?)";
 		PreparedStatement stmt =  connection.prepareStatement(sql);
 
 		stmt.setString(1, usuario.getNome());
-		stmt.setInt(2, usuario.getData_Nasc());
+		stmt.setDate(2, new Date(usuario.getData_Nasc().getTime()));
 		stmt.setString(3, usuario.getEmail());
 		stmt.setString(4, usuario.getCpf());
 		stmt.setString(5, usuario.getSenha());
@@ -45,10 +46,10 @@ public class UsuarioDao {
 			Usuario usuario = new Usuario();
 
 			int idusuario =  resultSet.getInt("idusuario");
-			usuario.setIdusuario(idusuario);
+			usuario.setIdusuario(resultSet.getInt(1));
 			String nome = resultSet.getString(2);
 			usuario.setNome(nome);
-			usuario.setData_Nasc(resultSet.getInt(3));
+			usuario.setData_Nasc(new java.util.Date(resultSet.getDate(3).getTime()));
 			usuario.setEmail(resultSet.getString(4));
 			usuario.setCpf(resultSet.getString(5));
 			usuario.setSenha(resultSet.getString(6));
@@ -68,7 +69,7 @@ public class UsuarioDao {
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
 		stmt.setString(1, usuario.getNome());
-		stmt.setInt(2, usuario.getData_Nasc());
+		stmt.setDate(2, new Date(usuario.getData_Nasc().getTime()));
 		stmt.setString(3, usuario.getEmail());
 		stmt.setString(4, usuario.getCpf());
 		stmt.setString(5, usuario.getSenha());
