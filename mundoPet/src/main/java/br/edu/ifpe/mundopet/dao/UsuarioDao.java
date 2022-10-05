@@ -18,7 +18,7 @@ public class UsuarioDao {
 	public void adicionarUsuario(Usuario usuario) throws ClassNotFoundException, SQLException{
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "INSERT INTO `usuario`"
-				+ "( `nome`,`data_nasc`,`email`,`cpf`, `senha`) "
+				+ "(`nome`,`data_nasc`,`email`,`cpf`, `senha`) "
 				+ " VALUES (? , ? , ? , ?, ?)";
 		PreparedStatement stmt =  connection.prepareStatement(sql);
 
@@ -45,7 +45,6 @@ public class UsuarioDao {
 
 			Usuario usuario = new Usuario();
 
-			int idusuario =  resultSet.getInt("idusuario");
 			usuario.setIdusuario(resultSet.getInt(1));
 			String nome = resultSet.getString(2);
 			usuario.setNome(nome);
