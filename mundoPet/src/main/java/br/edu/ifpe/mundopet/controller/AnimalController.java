@@ -15,10 +15,10 @@ import br.edu.ifpe.mundopet.model.Animal;
 @Controller
 public class AnimalController {
 	
-	@PostMapping("/animal")
-	public String createAnimal() {
-		return "redirect/animal";
-	}
+//	@PostMapping("/animal")
+//	public String createAnimal() {
+//		return "redirect/animal";
+//	}
 	
 	@GetMapping("/animais")
 	public ModelAndView animal() {

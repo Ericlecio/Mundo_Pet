@@ -1,14 +1,16 @@
 package br.edu.ifpe.mundopet.model;
 
+import java.util.Date;
+
 public class Veterinario {
 	private int idveterinario;
 	private String nome;
-	private int data_Nasc;
+	private Date data_Nasc;
 	private String email;
-	private int cpf;
+	private String cpf;
 	private String senha;
 	
-	public Veterinario(int idveterinario, String nome, int data_Nasc, String email, int cpf, String senha) {
+	public Veterinario(int idveterinario, String nome, Date data_Nasc, String email, String cpf, String senha) {
 		super();
 		this.idveterinario = idveterinario;
 		this.nome = nome;
@@ -32,10 +34,10 @@ public class Veterinario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getData_Nasc() {
+	public Date getData_Nasc() {
 		return data_Nasc;
 	}
-	public void setData_Nasc(int data_Nasc) {
+	public void setData_Nasc(Date data_Nasc) {
 		this.data_Nasc = data_Nasc;
 	}
 	public String getEmail() {
@@ -44,10 +46,10 @@ public class Veterinario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 	public String getSenha() {

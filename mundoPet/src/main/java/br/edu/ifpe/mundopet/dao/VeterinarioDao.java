@@ -1,15 +1,17 @@
 package br.edu.ifpe.mundopet.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
 import br.edu.ifpe.mundopet.model.Veterinario;
-
-
-
+@Repository
 public class VeterinarioDao {
 	public void AdicionarVeterinario(Veterinario veterinario) throws ClassNotFoundException, SQLException{
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
@@ -19,9 +21,9 @@ public class VeterinarioDao {
 		PreparedStatement stmt =  connection.prepareStatement(sql);
 
 		stmt.setString(1, veterinario.getNome());
-		stmt.setInt(2, veterinario.getData_Nasc());
+		stmt.setDate(2, new Date(veterinario.getData_Nasc().getTime()));
 		stmt.setString(3, veterinario.getEmail());
-		stmt.setInt(4, veterinario.getCpf());
+		stmt.setString(4, veterinario.getCpf());
 		stmt.setString(5, veterinario.getSenha());
 
 		stmt.execute();
@@ -44,9 +46,9 @@ public class VeterinarioDao {
 			int idveterinario = resultSet.getInt("idveterinario");
 			veterinario.setIdveterinario(idveterinario);
 			veterinario.setNome(resultSet.getString(2));
-			veterinario.setData_Nasc(resultSet.getInt(3));
+			veterinario.setData_Nasc(new java.util.Date(resultSet.getDate(3).getTime()));
 			veterinario.setEmail(resultSet.getString(4));
-			veterinario.setCpf(resultSet.getInt(5));
+			veterinario.setCpf(resultSet.getString(5));
 			veterinario.setSenha(resultSet.getString(6));
 
 			listaTodosVeterinarios.add(veterinario);
@@ -64,9 +66,9 @@ public class VeterinarioDao {
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
 		stmt.setString(1, veterinario.getNome());
-		stmt.setInt(2, veterinario.getData_Nasc());
+		stmt.setDate(2, new Date(veterinario.getData_Nasc().getTime()));
 		stmt.setString(3, veterinario.getEmail());
-		stmt.setInt(4, veterinario.getCpf());
+		stmt.setString(4, veterinario.getCpf());
 		stmt.setString(5, veterinario.getSenha());
 		stmt.setInt(6, veterinario.getIdveterinario());
 

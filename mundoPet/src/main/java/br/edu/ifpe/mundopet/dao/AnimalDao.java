@@ -6,8 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import br.edu.ifpe.mundopet.model.Animal;
 
+import org.springframework.stereotype.Repository;
+
+import br.edu.ifpe.mundopet.model.Animal;
+import br.edu.ifpe.mundopet.model.Usuario;
+@Repository
 public class AnimalDao {
 	public void AdicionarAnimal(Animal animal) throws ClassNotFoundException, SQLException{
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
@@ -16,7 +20,7 @@ public class AnimalDao {
 				+ "VALUES(?, ?, ?, ?, ?)";
 		PreparedStatement stmt =  connection.prepareStatement(sql);
 
-		stmt.setInt(1, animal.getIdUsuario());
+		stmt.setInt(1, animal.getUsuario().getIdusuario());
 		stmt.setString(2, animal.getNome());
 		stmt.setString(3, animal.getRaca());
 		stmt.setInt(4, animal.getIdade());
@@ -28,7 +32,7 @@ public class AnimalDao {
 	}
 	public List<Animal> ConsultarTodosAnimais() throws ClassNotFoundException, SQLException{
 		Connection connection =  ConexaoMySQL.getConexaoMySQL();
-		String sql = "SELECT `idanimal`, `idusuario`, `nome`, `raca`, `idade`, `sexo`, FROM `animal`;";
+		String sql = "SELECT a.idanimal, u.nome, a.nome, a.raça, a.idade, a.sexo from animal as a INNER JOIN usuario as u on a.idusuario = u.idusuario;";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
 		ResultSet resultSet = stmt.executeQuery();
@@ -38,16 +42,19 @@ public class AnimalDao {
 		while(resultSet.next()) {
 
 			Animal animal = new Animal();
-
+			Usuario usuario = new Usuario();
+			
+			
 			int idAnimal = resultSet.getInt("idanimal");
-			animal.setIdAnimal(idAnimal);;
-			int idusuario = resultSet.getInt("idusuario");
-			animal.setIdUsuario(idusuario);
+			animal.setIdAnimal(idAnimal);		
+			usuario.setNome(resultSet.getString(2));
 			animal.setNome(resultSet.getString(3));;
 			animal.setRaca(resultSet.getString(4));
 			animal.setIdade(resultSet.getInt(5));
 			animal.setSexo(resultSet.getString(6));
 
+			animal.setUsuario(usuario);
+			
 			listaTodosAnimais.add(animal);
 		}
 		stmt.close();
