@@ -13,6 +13,7 @@ public class Veterinario {
 	private String cpf;
 	private String senha;
 	
+	
 	public Veterinario(int idveterinario, String nome, Date data_Nasc, String email, String cpf, String senha) {
 		super();
 		this.idveterinario = idveterinario;
