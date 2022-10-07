@@ -42,7 +42,7 @@ DROP TABLE IF EXISTS `endereco`;
 CREATE TABLE `usuario` (
   `idusuario` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
-  `data_Nasc` int(6) NOT NULL,
+  `data_Nasc` date NOT NULL,
   `email` varchar(100) NOT NULL,
   `CPF` char(11) NOT NULL,
   `senha` varchar(100) NOT NULL,
@@ -54,9 +54,11 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idusuario`, `nome`, `data_Nasc`, `email`, `CPF`, `senha`) VALUES
-(1, 'Vinícius', 250403, 'aaaaa@gmail.com', '1234566754', 'senha123'),
-(2, 'Ericlecio', 190302, 'ericlecio@gmail.com', '12345437857', 'ericlecio8978'),
-(3, 'Lucas', 110600, 'lucas@gmail.com', '12367547584', 'lucas343');
+(1, 'Vinícius', '2025-04-03', 'aaaaa@gmail.com', '1234566754', 'senha123'),
+(2, 'Ericlecio', '2019-03-02', 'ericlecio@gmail.com', '12345437857', 'ericlecio8978'),
+(3, 'Lucas', '2022-10-05', 'lucas@gmail.com', '12367547584', 'lucas343'),
+(6, 'SDSAASADSA', '2022-01-10', 'etma@discente.ifpe.edu.br', '33333333333', 'faafadas'),
+(7, 'SDSAASADSA', '2001-01-12', 'etma@discente.ifpe.edu.br', '33333333335', 'sadaaddad');
 
 -- --------------------------------------------------------
 
@@ -87,7 +89,7 @@ INSERT INTO `login` (`email`, `senha`) VALUES
 CREATE TABLE `veterinario` (
   `idveterinario` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
-  `data_Nasc` int(6) NOT NULL,
+  `data_Nasc` date NOT NULL,
   `email` varchar(100) NOT NULL,
   `CPF` char(11) NOT NULL,
   `senha` varchar(100) NOT NULL,
@@ -99,9 +101,9 @@ CREATE TABLE `veterinario` (
 --
 
 INSERT INTO `veterinario` (`idveterinario`, `nome`, `data_Nasc`, `email`, `CPF`, `senha`) VALUES
-(1, 'Alex', 190398, 'alex@gmail.com', '12334265733', 'alex123'),
-(2, 'maria isabel', 290501, 'maria@gmail.com', '11234222221', 'maria123'),
-(3, 'luiz', 110694, 'luzi@gmail.com', '14322995643', 'luiz123');
+(1, 'Alex', '1990-04-25', 'alex@gmail.com', '12334265733', 'alex123'),
+(2, 'maria isabel', '2029-05-01', 'maria@gmail.com', '11234222221', 'maria123'),
+(3, 'luiz', '2000-02-02', 'luzi@gmail.com', '14322995643', 'luiz123');
 
 
 --
