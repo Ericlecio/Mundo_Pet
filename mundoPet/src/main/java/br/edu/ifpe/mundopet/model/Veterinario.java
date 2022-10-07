@@ -2,13 +2,17 @@ package br.edu.ifpe.mundopet.model;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Veterinario {
 	private int idveterinario;
 	private String nome;
+	@DateTimeFormat(pattern = "dd/mm/yyyy")
 	private Date data_Nasc;
 	private String email;
 	private String cpf;
 	private String senha;
+	
 	
 	public Veterinario(int idveterinario, String nome, Date data_Nasc, String email, String cpf, String senha) {
 		super();
