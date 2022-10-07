@@ -49,7 +49,7 @@ public class UsuarioController {
 	public ModelAndView createUsuario(@Validated Usuario usuario, BindingResult bindingResults)
 	{
 		if(bindingResults.hasErrors()) {
-			ModelAndView mv = new ModelAndView("usuario/novousuario");
+			ModelAndView mv = new ModelAndView("usuario/Cadastro");
 			mv.addObject("Usuario", usuario);
 			return mv;
 		}
@@ -64,9 +64,9 @@ public class UsuarioController {
 		return new ModelAndView("redirect:/usuarios") ;
 	}
 
-	@GetMapping("usuario/novousuario")
+	@GetMapping("usuario/Cadastro")
 	public ModelAndView novoCliente() { 
-		ModelAndView mv = new ModelAndView("usuario/novousuario");
+		ModelAndView mv = new ModelAndView("usuario/Cadastro");
 		return mv;
 	}
 }
