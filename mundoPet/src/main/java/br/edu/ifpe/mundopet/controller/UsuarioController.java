@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.edu.ifpe.mundopet.dao.UsuarioDao;
 import br.edu.ifpe.mundopet.model.Usuario;
+import br.edu.ifpe.mundopet.util.Util;
 @Controller
 
 public class UsuarioController {
@@ -55,6 +56,9 @@ public class UsuarioController {
 		}
 
 		try {
+			Util util = new Util();
+			String senha = usuario.getSenha();
+			usuario.setSenha(util.MD5(senha));
 			usuariodao.adicionarUsuario(usuario);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block

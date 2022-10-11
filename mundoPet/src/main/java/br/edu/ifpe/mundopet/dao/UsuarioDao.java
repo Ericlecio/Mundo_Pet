@@ -32,6 +32,34 @@ public class UsuarioDao {
 		stmt.close();
 		connection.close();
 	}
+	public Usuario consultarUsuariosEmailSenha(Usuario pUsuario) throws ClassNotFoundException, SQLException{
+		Connection connection =  ConexaoMySQL.getConexaoMySQL();
+		String sql = "SELECT `idusuario`, `nome`, `data_nasc`, `email`, `cpf`, `senha` FROM `usuario` where 'email'= ? and 'senha'= ?";
+		PreparedStatement stmt = connection.prepareStatement(sql);
+
+		stmt.setString(1, pUsuario.getEmail());
+		stmt.setString(2, pUsuario.getSenha());
+		
+		ResultSet resultSet = stmt.executeQuery();
+
+		Usuario usuario = new Usuario();
+		if(resultSet.next()) {		
+
+			usuario.setIdusuario(resultSet.getInt(1));
+			String nome = resultSet.getString(2);
+			usuario.setNome(nome);
+			usuario.setData_Nasc(new java.util.Date(resultSet.getDate(3).getTime()));
+			usuario.setEmail(resultSet.getString(4));
+			usuario.setCpf(resultSet.getString(5));
+			usuario.setSenha(resultSet.getString(6));
+
+		}
+		stmt.close();
+		connection.close();
+
+		return usuario;
+
+	}
 	public List<Usuario> consultarTodosUsuarios() throws ClassNotFoundException, SQLException{
 		Connection connection =  ConexaoMySQL.getConexaoMySQL();
 		String sql = "SELECT `idusuario`, `nome`, `data_nasc`, `email`, `cpf`, `senha` FROM `usuario`";
