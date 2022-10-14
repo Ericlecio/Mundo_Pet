@@ -10,6 +10,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import br.edu.ifpe.mundopet.model.Usuario;
 import br.edu.ifpe.mundopet.model.Veterinario;
 @Repository
 public class VeterinarioDao {
@@ -29,6 +30,34 @@ public class VeterinarioDao {
 		stmt.execute();
 		stmt.close();
 		connection.close();
+	}
+	public Veterinario consultarVeterinariosEmailSenha(Veterinario pVeterinario) throws ClassNotFoundException, SQLException{
+		Connection connection =  ConexaoMySQL.getConexaoMySQL();
+		String sql = "SELECT `idveterinario`, `nome`, `data_nasc`, `email`, `cpf`, `senha` FROM `veterinario` where 'email'= ? and 'senha'= ?";
+		PreparedStatement stmt = connection.prepareStatement(sql);
+
+		stmt.setString(1, pVeterinario.getEmail());
+		stmt.setString(2, pVeterinario.getSenha());
+		
+		ResultSet resultSet = stmt.executeQuery();
+
+		Veterinario veterinario = new Veterinario();
+		if(resultSet.next()) {		
+
+			veterinario.setIdveterinario(resultSet.getInt(1));
+			String nome = resultSet.getString(2);
+			veterinario.setNome(nome);
+			veterinario.setData_Nasc(new java.util.Date(resultSet.getDate(3).getTime()));
+			veterinario.setEmail(resultSet.getString(4));
+			veterinario.setCpf(resultSet.getString(5));
+			veterinario.setSenha(resultSet.getString(6));
+
+		}
+		stmt.close();
+		connection.close();
+
+		return veterinario;
+
 	}
 	public List<Veterinario> ConsultarTodosVeterinarios() throws ClassNotFoundException, SQLException{
 		Connection connection =  ConexaoMySQL.getConexaoMySQL();

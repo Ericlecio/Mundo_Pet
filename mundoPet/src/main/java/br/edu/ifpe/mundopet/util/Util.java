@@ -19,7 +19,7 @@ public class Util {
 	
 	public static void main(String[] args) {
 		Util util = new Util();
-		System.out.println(util.MD5("leo12345"));
+		System.out.println(util.MD5("vini1234"));
 	}
 	
 }

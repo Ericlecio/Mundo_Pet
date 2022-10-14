@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import br.edu.ifpe.mundopet.dao.VeterinarioDao;
 import br.edu.ifpe.mundopet.model.Usuario;
 import br.edu.ifpe.mundopet.model.Veterinario;
+import br.edu.ifpe.mundopet.util.Util;
 
 
 @Controller
@@ -55,6 +56,9 @@ VeterinarioDao veterinariodao;
 				return mv;
 			}
 		try {
+			Util util = new Util();
+			String senha = veterinario.getSenha();
+			veterinario.setSenha(util.MD5(senha));
 			veterinariodao.AdicionarVeterinario(veterinario);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
