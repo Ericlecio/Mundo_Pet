@@ -14,22 +14,18 @@ import org.springframework.web.servlet.ModelAndView;
 import br.edu.ifpe.mundopet.dao.UsuarioDao;
 import br.edu.ifpe.mundopet.model.Usuario;
 import br.edu.ifpe.mundopet.util.Util;
+
 @Controller
 
 public class UsuarioController {
 	@Autowired
 	UsuarioDao usuariodao;
 
-	//	@PostMapping("/usuarios")
-	//	public String createUsuario() {
-	//		return "redirect:/usuarios";
-	//	}
-
 	@GetMapping("/usuarios")
 	public ModelAndView usuario() {
 
 		UsuarioDao usuarioDao = new UsuarioDao();
-		List<Usuario> usuario=null;
+		List<Usuario> usuario = null;
 		try {
 			usuario = usuarioDao.consultarTodosUsuarios();
 		} catch (ClassNotFoundException e) {
@@ -41,16 +37,14 @@ public class UsuarioController {
 		}
 
 		ModelAndView mv = new ModelAndView("usuario/usuario");
-		mv.addObject("usuarios",usuario);
+		mv.addObject("usuarios", usuario);
 		return mv;
 	}
 
-
 	@PostMapping("/usuarios")
-	public ModelAndView createUsuario(@Validated Usuario usuario, BindingResult bindingResults)
-	{
-		if(bindingResults.hasErrors()) {
-			ModelAndView mv = new ModelAndView("usuario/Cadastro");
+	public ModelAndView createUsuario(@Validated Usuario usuario, BindingResult bindingResults) {
+		if (bindingResults.hasErrors()) {
+			ModelAndView mv = new ModelAndView("usuario/cadastroUsuario");
 			mv.addObject("Usuario", usuario);
 			return mv;
 		}
@@ -65,12 +59,12 @@ public class UsuarioController {
 			e.printStackTrace();
 		}
 
-		return new ModelAndView("redirect:/usuarios") ;
+		return new ModelAndView("redirect:/usuarios");
 	}
 
-	@GetMapping("usuario/Cadastro")
-	public ModelAndView novoCliente() { 
-		ModelAndView mv = new ModelAndView("usuario/Cadastro");
+	@GetMapping("usuario/cadastroUsuario")
+	public ModelAndView novoCliente() {
+		ModelAndView mv = new ModelAndView("usuario/cadastroUsuario");
 		return mv;
 	}
 }

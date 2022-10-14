@@ -15,12 +15,11 @@ import br.edu.ifpe.mundopet.model.Usuario;
 @Repository
 
 public class UsuarioDao {
-	public void adicionarUsuario(Usuario usuario) throws ClassNotFoundException, SQLException{
+	public void adicionarUsuario(Usuario usuario) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
-		String sql = "INSERT INTO `usuario`"
-				+ "(`nome`,`data_nasc`,`email`,`cpf`, `senha`) "
+		String sql = "INSERT INTO `usuario`" + "(`nome`,`data_nasc`,`email`,`cpf`, `senha`) "
 				+ " VALUES (? , ? , ? , ?, ?)";
-		PreparedStatement stmt =  connection.prepareStatement(sql);
+		PreparedStatement stmt = connection.prepareStatement(sql);
 
 		stmt.setString(1, usuario.getNome());
 		stmt.setDate(2, new Date(usuario.getData_Nasc().getTime()));
@@ -32,18 +31,19 @@ public class UsuarioDao {
 		stmt.close();
 		connection.close();
 	}
-	public Usuario consultarUsuariosEmailSenha(Usuario pUsuario) throws ClassNotFoundException, SQLException{
-		Connection connection =  ConexaoMySQL.getConexaoMySQL();
+
+	public Usuario consultarUsuariosEmailSenha(Usuario pUsuario) throws ClassNotFoundException, SQLException {
+		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "SELECT `idusuario`, `nome`, `data_nasc`, `email`, `cpf`, `senha` FROM `usuario` where 'email'= ? and 'senha'= ?";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
 		stmt.setString(1, pUsuario.getEmail());
 		stmt.setString(2, pUsuario.getSenha());
-		
+
 		ResultSet resultSet = stmt.executeQuery();
 
 		Usuario usuario = new Usuario();
-		if(resultSet.next()) {		
+		if (resultSet.next()) {
 
 			usuario.setIdusuario(resultSet.getInt(1));
 			String nome = resultSet.getString(2);
@@ -60,8 +60,9 @@ public class UsuarioDao {
 		return usuario;
 
 	}
-	public List<Usuario> consultarTodosUsuarios() throws ClassNotFoundException, SQLException{
-		Connection connection =  ConexaoMySQL.getConexaoMySQL();
+
+	public List<Usuario> consultarTodosUsuarios() throws ClassNotFoundException, SQLException {
+		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "SELECT `idusuario`, `nome`, `data_nasc`, `email`, `cpf`, `senha` FROM `usuario`";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
@@ -69,7 +70,7 @@ public class UsuarioDao {
 
 		List<Usuario> listaTodosUsuarios = new ArrayList<Usuario>();
 
-		while(resultSet.next()) {
+		while (resultSet.next()) {
 
 			Usuario usuario = new Usuario();
 
@@ -89,7 +90,8 @@ public class UsuarioDao {
 		return listaTodosUsuarios;
 
 	}
-	public void AtualizarUsuairo (Usuario usuario) throws ClassNotFoundException, SQLException{
+
+	public void AtualizarUsuairo(Usuario usuario) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "UPDATE `usuario` set `nome` = ?, `data_Nasc`= ?, `email` = ?, `Cpf` = ?, `senha` = ? where `idusuario`= ? ";
 
@@ -107,16 +109,15 @@ public class UsuarioDao {
 		connection.close();
 	}
 
-	public void DeletarUsuario( int idusuario) throws ClassNotFoundException, SQLException {
+	public void DeletarUsuario(int idusuario) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "DELETE FROM `usuario` WHERE `idusuario`=?";
 		PreparedStatement stmt = connection.prepareStatement(sql);
-		stmt.setLong(2, idusuario);	
+		stmt.setLong(2, idusuario);
 
 		stmt.executeUpdate();
 		stmt.close();
 		connection.close();
-
 
 	}
 }
