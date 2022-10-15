@@ -16,27 +16,58 @@ body {
   background-image: url(../img/Wallpaperlogin.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
 
 
-.container {
+.container1 {
+
   background-color: #fafafa;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  width: 650px;
+  width: 550px;
+  height: 420px;
+  overflow: hidden;
+  position: block;
+  margin:25px;
+  
+}
+
+.container2 {
+  background-color:	0;
+  border-radius: 10px;
+  box-shadow: 10px 2px 5px rgba(0, 0, 0, 0.3);
+  width: 550px;
   height: 500px;
   overflow: hidden;
   position: block;
+  margin:25px;
+  border: solid rgb(255, 255, 255);
+  border-width: 3px;
 }
+
 
 .header {
   margin-top: 8%;
-  padding: 15px;
+  padding: 0px;
   display: flex;
   color: #1881FC;
   justify-content: center;
+}
+
+.header2 {
+  margin-top: 8%;
+  padding: 0px;
+  display: flex;
+  color: #fff;
+  justify-content: center;
+}
+
+
+img{
+	widht:50px;
+	height:70px;
+	padding:5px;
 }
 
 .form {
@@ -59,6 +90,7 @@ body {
   position: relative;
 
 }
+
 
 .form-control input {
   justify-content: center;
@@ -100,7 +132,7 @@ body {
   border-radius: 8px;
   padding: 10px;
   cursor: pointer;
-  margin-left: 200px;
+  margin-left: 170px;
 }
 
 @keyframes anima {
@@ -131,31 +163,4 @@ p {
 
 a {
   color: #1881FC;
-}
-
-
-
-
-/* Error and Success */
-.form-control.success input {
-  border-color: #2ecc71;
-}
-
-.form-control.error input {
-  border-color: #e74c3c;
-}
-
-.form-control.success i.fa-check-circle {
-  color: #2ecc71;
-  visibility: visible;
-}
-
-.form-control.error i.fa-exclamation-circle {
-  color: #e74c3c;
-  visibility: visible;
-}
-
-.form-control.error small {
-  visibility: visible;
-  color: #e74c3c;
 }

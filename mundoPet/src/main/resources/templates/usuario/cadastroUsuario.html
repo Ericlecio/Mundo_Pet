@@ -5,7 +5,7 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="../css/Cadastro.css">
+	<link rel="stylesheet" href="../css/cadastroUsuario.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -19,8 +19,8 @@
 <body>
 	<div class="container">
 		<div class="header">
-			<h2>Cadastra</h2>
-			<img src="../img/Logo.png" alt="">
+			<h2>Cadastro<br>Cliente</h2>
+			<img src="../img/Logo azul.png" alt="">
 		</div>
 
 		<form action="/usuarios" method="POST" th:object="${Usuario}" enctype="multipart/form-data" id="form"
@@ -67,9 +67,8 @@
 
 
 			<button class="btn btn-primary" type="submit">Cadastra- se</button>
-			<a href="javascript:history.back()">Voltar</a>
 		</form>
-		<p>Já possui uma conta ? <a href="Login.html">Clique aqui</a></p>
+		<p>Já possui uma conta ? <a href="/login">Clique aqui</a></p>
 	</div>
 
 </body>

@@ -2,52 +2,79 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../css/Login.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
-  <script src="../js/Login.js"></script>
-  <title>Login Mundo Pet</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="../css/loginUsuario.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
+	<script src="../js/Login.js"></script>
+	<title>Login Mundo Pet</title>
 
 </head>
 
 <body>
 
-  <div class="container">
-    <div class="header">
-      <h2>Login</h2>
-      <img src="../img/Logo.png" alt="">
-    </div>
+	<div class="container1">
+		<div class="header">
+			<h2>Login <br>Cliente</h2>
+			<img src="../img/Logo Azul.png" alt="">
+		</div>
 
-    <form action="/login" method="POST" id="form" class="form">
-      <div class="form-control">
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email" placeholder="Digite seu email.." />
-        <i class="fas fa-exclamation-circle"></i>
-        <i class="fas fa-check-circle"></i>
-        <small>Mensagem de erro</small>
-      </div>
+		<form action="/login" method="POST" id="form" class="form">
+			<div class="form-control">
+				<label for="email">Email</label>
+				<input type="text" id="email" name="email" placeholder="Digite seu email.." />
+			</div>
 
-      <div class="form-control">
-        <label for="password">Senha</label>
-        <input type="password" id="password" name="senha" placeholder="Digite sua senha..." />
-        <i class="fas fa-exclamation-circle"></i>
-        <i class="fas fa-check-circle"></i>
-        <small>Mensagem de erro</small>
-      </div>
+			<div class="form-control">
+				<label for="password">Senha</label>
+				<input type="password" id="password" name="senha" placeholder="Digite sua senha..." />
+			</div>
 
-      <button type="submit">Entrar
-       
-      </button>
+			<button type="submit">Entrar </button>
 
-    </form>
-    <p>Não possui uma conta ? <a href="/cadastro">Cadastre-se</a></p>
-  </div>
+		</form>
+		<p>Não possui uma conta como cliente ?<a href="usuario/cadastroUsuario">Cadastre-se</a></p>
 
+	</div>
+
+	<div class="container2">
+		<div class="header2">
+			<h2>Login<br>Veterinário</h2>
+			<img src="../img/Logo Branco.png" alt="">
+		</div>
+
+		<form action="/login" method="POST" id="form" class="form">
+			<div class="form-control">
+				<label style="color:white;" for="email">Email</label>
+				<input style="border: 2px solid #fff;" type="text" id="email" name="email"
+					placeholder="Digite seu email.." />
+			</div>
+
+			<div class="form-control">
+				<label style="color:white;" for="crmv">CRMV</label>
+				<input style="border: 2px solid #fff;" type="password" id="crmv" name="crmv"
+					placeholder="Digite sua CRMV" />
+			</div>
+
+			<div class="form-control">
+				<label style="color:white;" for="password">Senha</label>
+				<input style="border: 2px solid #fff;" type="password" id="password" name="senha"
+					placeholder="Digite sua senha..." />
+			</div>
+
+			<button style="color:#000;  background-color: #fff;
+ 			 border: 2px solid #fff;" type="submit">Entrar</button>
+
+		</form>
+		<p>Não possui uma conta como veterinario ? <a style="color: #fff;"
+				href="Veterinario/cadastroVeterinario">Cadastre-se</a></p>
+
+
+	</div>
 
 </body>
 

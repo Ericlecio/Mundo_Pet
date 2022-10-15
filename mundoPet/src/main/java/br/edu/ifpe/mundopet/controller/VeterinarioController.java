@@ -23,12 +23,6 @@ public class VeterinarioController {
 @Autowired
 VeterinarioDao veterinariodao;
 
-
-//	@PostMapping("/veterinario")
-//	public String createUsuario() {
-//		return "redirect:/usuarios";
-//	}
-
 	@GetMapping("/veterinarios")
 	public ModelAndView veterinario() {
 		VeterinarioDao veterinariodao = new VeterinarioDao();
@@ -51,7 +45,7 @@ VeterinarioDao veterinariodao;
 	@PostMapping("/veterinarios")
 	public ModelAndView createVeterinario(@Validated Veterinario veterinario, BindingResult bindingResults){
 			if(bindingResults.hasErrors()) {
-				ModelAndView mv = new ModelAndView("Veterinario/novoVeterinario");
+				ModelAndView mv = new ModelAndView("Veterinario/cadastroVeterinario");
 				mv.addObject("Veterinario", veterinario);
 				return mv;
 			}
@@ -68,9 +62,9 @@ VeterinarioDao veterinariodao;
 		return new ModelAndView("redirect:/veterinarios") ;
 	}
 
-	@GetMapping("Veterinario/novoVeterinario")
-	public ModelAndView novoVeterinario() { 
-		ModelAndView mv = new ModelAndView("Veterinario/novoVeterinario");
+	@GetMapping("Veterinario/cadastroVeterinario")
+	public ModelAndView cadastroVeterinario() { 
+		ModelAndView mv = new ModelAndView("Veterinario/cadastroVeterinario");
 		return mv;
 	}
 }

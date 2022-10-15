@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../img/wallpaper.jpg);
+  background-image: url(../img/Wallpaperusuarios.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -27,13 +27,18 @@ body {
 }
 
 .header {
-  margin-top: 25px;
-  padding: 15px;
+  margin-top: 15px;
+  padding: 10px;
   display: flex;
   margin-left: 170px;
   color: #1881FC;
 }
 
+img{
+	widht:50px;
+	height:70px;
+	padding:5px;
+}
 .form {
   padding: 20px;
 }
