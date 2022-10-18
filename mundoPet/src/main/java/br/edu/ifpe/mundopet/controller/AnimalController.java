@@ -8,11 +8,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.edu.ifpe.mundopet.dao.AnimalDao;
 import br.edu.ifpe.mundopet.model.Animal;
+import br.edu.ifpe.mundopet.model.Usuario;
 import br.edu.ifpe.mundopet.model.Veterinario;
 
 @Controller
@@ -22,6 +24,7 @@ public class AnimalController {
 
 	@GetMapping("/animais")
 	public ModelAndView animal() {
+		
 		AnimalDao animaldao = new AnimalDao();
 		List<Animal> animal = null;
 		try {
@@ -34,7 +37,7 @@ public class AnimalController {
 			e.printStackTrace();
 		}
 
-		ModelAndView mv = new ModelAndView("Animal/animal");
+		ModelAndView mv = new ModelAndView("animal/animal");
 		mv.addObject("animais",animal);
 		return mv;
 	}
@@ -42,10 +45,14 @@ public class AnimalController {
 	public ModelAndView createAnimal(@Validated Animal animal, BindingResult bindingResults){
 		if(bindingResults.hasErrors()) {
 			ModelAndView mv = new ModelAndView("Animal/newAnimal");
-			mv.addObject("Animal", animal);
+			mv.addObject("animal", animal);
 			return mv;
 		}
 		try {
+			//mock
+			Usuario usuario =new Usuario();
+			usuario.setNome("fulano");
+			animal.setUsuario(usuario);
 			animaldao.AdicionarAnimal(animal);
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
