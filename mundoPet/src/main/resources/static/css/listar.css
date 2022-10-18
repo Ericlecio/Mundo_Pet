@@ -1,0 +1,64 @@
+body{
+	background-color:#1C1C1C;
+}
+#detalhes{
+	background-color:rgb(0, 128, 255);
+	padding:15px;
+	border-radius:10px;
+	text-align:center;
+
+	
+}
+#editar{
+	background-color:rgb(0, 255, 64);
+	padding:15px;
+	border-radius:10px;
+	text-align:center;
+}
+#deletar{
+	background-color:red;
+	padding:15px;
+	border-radius:10px;
+	text-align:center;
+
+}
+a{
+	color:#fff;
+	text-decoration:none;
+	}
+a:link {
+   color: rgb(255, 255, 255);
+}
+
+/* link que foi visitado */
+a:visited {
+    color: rgb(0, 0, 0);
+}
+
+/* mouse over */
+a:hover {
+    color: #000000;
+}
+/* link selecionado */
+a:active {
+    color: blue;
+}
+
+h1{	
+	color:#fff;
+	text-align:center;
+	font-size:30px;
+}
+.novo{
+	border:solid #fff;
+	width:200px;
+	height:35px;
+	text-align:center;
+	color:red;
+	border-radius:7px;
+	background-color:#fff;
+
+}
+th, td{
+	color:aliceblue;
+}
