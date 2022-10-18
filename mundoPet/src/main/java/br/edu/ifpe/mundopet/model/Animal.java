@@ -57,5 +57,4 @@ public class Animal {
 		this.sexo = sexo;
 	}
 	
-
 }

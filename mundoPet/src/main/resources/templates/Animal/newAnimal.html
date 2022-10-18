@@ -7,15 +7,15 @@
     <title>Lista de Usuario</title>
   </head>
   <body>
-  <h1>Lista de Usuario</h1>
+  <h1>Cadastro de Animais</h1>
     <div class="container mt-4">
     	<div class="row">
      		<h1>Novo Animal</h1>
      		
-     		<form action="clientes" method="POST">
+     		<form action="/animais" method="POST" th:object="${Animal}">
      			<div class="mb-3">
      				<label class="form-label">Dono</label>
-     				<input class="form-control" type="text" name="dono">
+     				<input class="form-control" type="number" name="usuario">
      				<div></div>
      			</div>
      			<div class="mb-3">
@@ -25,7 +25,7 @@
      			</div>
      			<div class="mb-3">
      				<label class="form-label">Raça</label>
-         			<input class="form-control" type="text" name="raça">
+         			<input class="form-control" type="text" name="raca">
  					<div></div>
      			</div>
      			<div class="mb-3">
