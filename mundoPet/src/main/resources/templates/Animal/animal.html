@@ -1,49 +1,60 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Lista de Animais</title>
-  </head>
-  <body>
-  <h1>Lista de Animais</h1>
-    <div class="container mt-4">
-    <div class="row">
-    <div class="col-12">
-    <table class="table table-hover">
-    <thead>
-    <tr>
-    <th scope="col">IdAnimal</th>
-    <th scope="col">Nome</th>
-    <th scope="col">Raça</th>
-    <th scope="col">Idade</th>
-    <th scope="col">Sexo</th>
-    <th scope="col">Dono</th>
-    <th scope="col"></th>
-    <th scope="col"></th>
-    <th scope="col"></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="animal : ${animais}">
-    <th class="col-1" scope="row" th:text="${animal.getIdAnimal}">ID</th>
-    <td class="col-4" th:text="${animal.nome}">Nome</td>
-    <td class="col-2" th:text="${animal.raca}">Raça</td>
-    <td class="col-2" th:text="${animal.idade}">Idade</td>
-    <td class="col-2" th:text="${animal.sexo}">Sexo</td>
-    <td class="col-2" th:text="${animal.usuario.nome}">Dono</td>
-    <td class="col-1"><a th:href="@{/animais/{idAnimal}(idAnimal = ${animal.idAnimal})}">Detalhes</a></td>
-    <td class="col-1"><a th:href="@{/animais/{idAnimal}(idAnimal = ${animal.idAnimal})}">Editar</a></td>
-    <td class="col-1"><a th:href="@{/animais/{idAnimal}(idAnimal = ${animal.idAnimal})}">Deletar</a></td>
-    </tr>
-    </tbody>
-    </table>
-    </div>
-    </div>
-    <div class="row">
-    <a href="Animal/newAnimal">Novo Animal</a>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  </body>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/listar.css">
+
+	<title>Lista de Animais</title>
+</head>
+
+<body>
+	<h1>Lista todo os Animais mundo pet</h1>
+	<div class="container mt-4">
+		<div class="row">
+			<div class="col-12">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th scope="col">IdAnimal</th>
+							<th scope="col">Nome</th>
+							<th scope="col">Raça</th>
+							<th scope="col">Idade</th>
+							<th scope="col">Sexo</th>
+							<th scope="col">Dono</th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="animal : ${animais}">
+							<th class="col-1" scope="row" th:text="${animal.getIdAnimal}">ID</th>
+							<td class="col-4" th:text="${animal.nome}">Nome</td>
+							<td class="col-2" th:text="${animal.raca}">Raça</td>
+							<td class="col-2" th:text="${animal.idade}">Idade</td>
+							<td class="col-2" th:text="${animal.sexo}">Sexo</td>
+							<td class="col-2" th:text="${animal.usuario.nome}">Dono</td>
+							<td id="detalhes" class="col-1"><a
+									th:href="@{/animais/{idAnimal}(idAnimal = ${animal.idAnimal})}">Detalhes</a></td>
+							<td id="editar" class="col-1"><a
+									th:href="@{/animais/{idAnimal}(idAnimal = ${animal.idAnimal})}">Editar</a></td>
+							<td id="deletar" class="col-1"><a
+									th:href="@{/animais/{idAnimal}(idAnimal = ${animal.idAnimal})}">Deletar</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<a class="novo" href="Animal/newAnimal">Inserir novo Animal</a>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"></script>
+</body>
+
 </html>
