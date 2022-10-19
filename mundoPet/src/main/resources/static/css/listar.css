@@ -3,7 +3,7 @@ body{
 }
 #detalhes{
 	background-color:rgb(0, 128, 255);
-	padding:15px;
+	padding:10px;
 	border-radius:10px;
 	text-align:center;
 
@@ -11,13 +11,13 @@ body{
 }
 #editar{
 	background-color:rgb(0, 255, 64);
-	padding:15px;
+	padding:10px;
 	border-radius:10px;
 	text-align:center;
 }
 #deletar{
 	background-color:red;
-	padding:15px;
+	padding:10px;
 	border-radius:10px;
 	text-align:center;
 
