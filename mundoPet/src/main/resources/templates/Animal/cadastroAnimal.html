@@ -1,0 +1,53 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/cadastroAnimal.css">
+	<link rel="stylesheet" type="text/css" href="css.css">
+	<title>Cadastro Pet</title>
+</head>
+
+<body>
+
+	<div id="parallelogram"></div>
+	<section>
+		<form action="/lista/animais" method="POST" th:object="${Animal}">
+			<h1>Cadastrar seu pet</h1>
+			<fieldset>
+				<div class="container">
+					<input type="text" id="nome" required name="name" autofocus>
+					<label>Nome</label>
+				</div>
+
+				<div class="container">
+					<input type="text" id="raca" required name="raça">
+					<label>Raça</label>
+				</div>
+
+			</fieldset>
+
+			<fieldset>
+				<div class="container">
+					<input type="number" id="idade" required name="idade">
+					<label>Idade</label>
+				</div>
+
+				<div class="container">
+					<input type="text" id="sexo" required name="sexo">
+					<label>Sexo</label>
+				</div>
+			</fieldset>
+
+			<button name="submit">Cadastrar animal</button>
+
+		</form>
+
+		<img src="https://s2.glbimg.com/cZsVk_uFX2MGppi1Ncs58rk37KE=/e.glbimg.com/og/ed/f/original/2022/03/10/dia-nacional-do-animal-quais-bichos-podem-ser-domesticados-no-brasilentenda-o-que-diz-lei-vida-de-bicho_2.png"
+			alt="User">
+	</section>
+
+</body>
+
+</html>

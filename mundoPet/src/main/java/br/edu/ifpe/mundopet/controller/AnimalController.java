@@ -22,7 +22,7 @@ public class AnimalController {
 	@Autowired
 	AnimalDao animaldao;
 
-	@GetMapping("/listaanimais")
+	@GetMapping("/lista/animais")
 	public ModelAndView animal() {
 		
 		AnimalDao animaldao = new AnimalDao();
@@ -41,10 +41,10 @@ public class AnimalController {
 		mv.addObject("animais",animal);
 		return mv;
 	}
-	@PostMapping("/listaanimais")
+	@PostMapping("/lista/animais")
 	public ModelAndView createAnimal(@Validated Animal animal, BindingResult bindingResults){
 		if(bindingResults.hasErrors()) {
-			ModelAndView mv = new ModelAndView("Animal/newAnimal");
+			ModelAndView mv = new ModelAndView("Animal/cadastroAnimal");
 			mv.addObject("animal", animal);
 			return mv;
 		}
@@ -57,11 +57,12 @@ public class AnimalController {
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-		return new ModelAndView("redirect:/listaanimais") ;
+		return new ModelAndView("redirect:/lista/animais") ;
 	}
 	@GetMapping("Animal/cadastroAnimal")
-	public ModelAndView newAnimal() { 
-		ModelAndView mv = new ModelAndView("Animal/newAnimal");
+	public ModelAndView novoAnimal() { 
+		ModelAndView mv = new ModelAndView("Animal/cadastroAnimal");
 		return mv;
 	}
+	
 }
