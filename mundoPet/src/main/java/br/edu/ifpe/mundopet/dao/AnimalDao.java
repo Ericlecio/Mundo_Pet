@@ -11,14 +11,13 @@ import org.springframework.stereotype.Repository;
 
 import br.edu.ifpe.mundopet.model.Animal;
 import br.edu.ifpe.mundopet.model.Usuario;
+
 @Repository
 public class AnimalDao {
-	public void AdicionarAnimal(Animal animal) throws ClassNotFoundException, SQLException{
+	public void AdicionarAnimal(Animal animal) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
-		String sql = "INSERT INTO `Animal`"
-				+ "(`idusuario`, `nome`, `raca`, `idade`,`sexo`)"
-				+ "VALUES(?, ?, ?, ?, ?)";
-		PreparedStatement stmt =  connection.prepareStatement(sql);
+		String sql = "INSERT INTO `Animal`" + "(`idusuario`, `nome`, `raca`, `idade`,`sexo`)" + "VALUES(?, ?, ?, ?, ?)";
+		PreparedStatement stmt = connection.prepareStatement(sql);
 
 		stmt.setInt(1, animal.getUsuario().getIdusuario());
 		stmt.setString(2, animal.getNome());
@@ -30,8 +29,9 @@ public class AnimalDao {
 		stmt.close();
 		connection.close();
 	}
-	public List<Animal> ConsultarTodosAnimais() throws ClassNotFoundException, SQLException{
-		Connection connection =  ConexaoMySQL.getConexaoMySQL();
+
+	public List<Animal> ConsultarTodosAnimais() throws ClassNotFoundException, SQLException {
+		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "SELECT a.idanimal, u.nome, a.nome, a.raça, a.idade, a.sexo from animal as a INNER JOIN usuario as u on a.idusuario = u.idusuario;";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
@@ -39,22 +39,22 @@ public class AnimalDao {
 
 		List<Animal> listaTodosAnimais = new ArrayList<Animal>();
 
-		while(resultSet.next()) {
+		while (resultSet.next()) {
 
 			Animal animal = new Animal();
 			Usuario usuario = new Usuario();
-			
-			
+
 			int idAnimal = resultSet.getInt("idanimal");
-			animal.setIdAnimal(idAnimal);		
+			animal.setIdAnimal(idAnimal);
 			usuario.setNome(resultSet.getString(2));
-			animal.setNome(resultSet.getString(3));;
+			animal.setNome(resultSet.getString(3));
+			;
 			animal.setRaca(resultSet.getString(4));
 			animal.setIdade(resultSet.getInt(5));
 			animal.setSexo(resultSet.getString(6));
 
 			animal.setUsuario(usuario);
-			
+
 			listaTodosAnimais.add(animal);
 		}
 		stmt.close();
@@ -63,7 +63,7 @@ public class AnimalDao {
 		return listaTodosAnimais;
 	}
 
-	public void AtualizarAnimais (Animal animal) throws ClassNotFoundException, SQLException{
+	public void AtualizarAnimais(Animal animal) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "UPDATE `animal` set `nome` = ?, `raca`= ?, `idade` = ?, `sexo` = ?  where `idanimal`= ? ";
 
@@ -80,16 +80,15 @@ public class AnimalDao {
 		connection.close();
 	}
 
-	public void DeletarAnimal( int idanimal) throws ClassNotFoundException, SQLException {
+	public void DeletarAnimal(int idanimal) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "DELETE FROM `animal` WHERE `idAnimal`=?";
 		PreparedStatement stmt = connection.prepareStatement(sql);
-		stmt.setInt(4, idanimal);	
+		stmt.setInt(4, idanimal);
 
 		stmt.executeUpdate();
 		stmt.close();
 		connection.close();
-
 
 	}
 }

@@ -12,14 +12,14 @@ import org.springframework.stereotype.Repository;
 
 import br.edu.ifpe.mundopet.model.Usuario;
 import br.edu.ifpe.mundopet.model.Veterinario;
+
 @Repository
 public class VeterinarioDao {
-	public void AdicionarVeterinario(Veterinario veterinario) throws ClassNotFoundException, SQLException{
+	public void AdicionarVeterinario(Veterinario veterinario) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
-		String sql = "INSERT INTO `veterinario`"
-				+ "(`nome`, `data_nasc`, `email`,`cpf`, `senha`)"
+		String sql = "INSERT INTO `veterinario`" + "(`nome`, `data_nasc`, `email`,`cpf`, `senha`)"
 				+ "VALUES(?, ?, ?, ?, ?)";
-		PreparedStatement stmt =  connection.prepareStatement(sql);
+		PreparedStatement stmt = connection.prepareStatement(sql);
 
 		stmt.setString(1, veterinario.getNome());
 		stmt.setDate(2, new Date(veterinario.getData_Nasc().getTime()));
@@ -31,18 +31,20 @@ public class VeterinarioDao {
 		stmt.close();
 		connection.close();
 	}
-	public Veterinario consultarVeterinariosEmailSenha(Veterinario pVeterinario) throws ClassNotFoundException, SQLException{
-		Connection connection =  ConexaoMySQL.getConexaoMySQL();
+
+	public Veterinario consultarVeterinariosEmailSenha(Veterinario pVeterinario)
+			throws ClassNotFoundException, SQLException {
+		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "SELECT `idveterinario`, `nome`, `data_nasc`, `email`, `cpf`, `senha` FROM `veterinario` where 'email'= ? and 'senha'= ?";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
 		stmt.setString(1, pVeterinario.getEmail());
 		stmt.setString(2, pVeterinario.getSenha());
-		
+
 		ResultSet resultSet = stmt.executeQuery();
 
 		Veterinario veterinario = new Veterinario();
-		if(resultSet.next()) {		
+		if (resultSet.next()) {
 
 			veterinario.setIdveterinario(resultSet.getInt(1));
 			String nome = resultSet.getString(2);
@@ -59,8 +61,9 @@ public class VeterinarioDao {
 		return veterinario;
 
 	}
-	public List<Veterinario> ConsultarTodosVeterinarios() throws ClassNotFoundException, SQLException{
-		Connection connection =  ConexaoMySQL.getConexaoMySQL();
+
+	public List<Veterinario> ConsultarTodosVeterinarios() throws ClassNotFoundException, SQLException {
+		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "SELECT `idveterinario`, `nome`, `data_nasc`, `email`, `cpf`, `senha` FROM `veterinario`";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
@@ -68,7 +71,7 @@ public class VeterinarioDao {
 
 		List<Veterinario> listaTodosVeterinarios = new ArrayList<Veterinario>();
 
-		while(resultSet.next()) {
+		while (resultSet.next()) {
 
 			Veterinario veterinario = new Veterinario();
 
@@ -88,7 +91,7 @@ public class VeterinarioDao {
 		return listaTodosVeterinarios;
 	}
 
-	public void AtualizarVeterinario (Veterinario veterinario) throws ClassNotFoundException, SQLException{
+	public void AtualizarVeterinario(Veterinario veterinario) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "UPDATE `veterinario` set `nome` = ?, `data_nasc`= ?, `email` = ?, `cpf` = ?, `senha` = ? where `idveterinario`= ? ";
 
@@ -110,12 +113,11 @@ public class VeterinarioDao {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "DELETE FROM `veterinario` WHERE `idveterinario`=?";
 		PreparedStatement stmt = connection.prepareStatement(sql);
-		stmt.setLong(4, idveterinario);	
+		stmt.setLong(4, idveterinario);
 
 		stmt.executeUpdate();
 		stmt.close();
 		connection.close();
-
 
 	}
 }

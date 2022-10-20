@@ -21,7 +21,7 @@ public class UsuarioController {
 	@Autowired
 	UsuarioDao usuariodao;
 
-	@GetMapping("/listausuarios")
+	@GetMapping("/lista/usuarios")
 	public ModelAndView usuario() {
 
 		UsuarioDao usuarioDao = new UsuarioDao();
@@ -41,7 +41,7 @@ public class UsuarioController {
 		return mv;
 	}
 
-	@PostMapping("/listausuarios")
+	@PostMapping("/lista/usuarios")
 	public ModelAndView createUsuario(@Validated Usuario usuario, BindingResult bindingResults) {
 		if (bindingResults.hasErrors()) {
 			ModelAndView mv = new ModelAndView("usuario/cadastroUsuario");
@@ -59,7 +59,7 @@ public class UsuarioController {
 			e.printStackTrace();
 		}
 
-		return new ModelAndView("redirect:/listausuarios");
+		return new ModelAndView("redirect:/lista/usuarios");
 	}
 
 	@GetMapping("usuario/cadastroUsuario")

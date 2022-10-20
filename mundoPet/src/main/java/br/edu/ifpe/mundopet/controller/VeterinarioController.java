@@ -23,7 +23,7 @@ public class VeterinarioController {
 @Autowired
 VeterinarioDao veterinariodao;
 
-	@GetMapping("/veterinarios")
+	@GetMapping("/lista/veterinarios")
 	public ModelAndView veterinario() {
 		VeterinarioDao veterinariodao = new VeterinarioDao();
 		List<Veterinario> veterinario=null;
@@ -42,7 +42,7 @@ VeterinarioDao veterinariodao;
 		return mv;
 	}
 	
-	@PostMapping("/veterinarios")
+	@PostMapping("/lista/veterinarios")
 	public ModelAndView createVeterinario(@Validated Veterinario veterinario, BindingResult bindingResults){
 			if(bindingResults.hasErrors()) {
 				ModelAndView mv = new ModelAndView("Veterinario/cadastroVeterinario");
@@ -59,10 +59,10 @@ VeterinarioDao veterinariodao;
 			e.printStackTrace();
 		}
 
-		return new ModelAndView("redirect:/veterinarios") ;
+		return new ModelAndView("redirect:/lista/veterinarios") ;
 	}
 
-	@GetMapping("Veterinario/cadastroVeterinario")
+	@GetMapping("Veterinarios/cadastroVeterinario")
 	public ModelAndView cadastroVeterinario() { 
 		ModelAndView mv = new ModelAndView("Veterinario/cadastroVeterinario");
 		return mv;
