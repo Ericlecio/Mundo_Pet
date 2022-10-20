@@ -1,0 +1,61 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/listar.css">
+
+	<title>Lista de Endereços</title>
+</head>
+
+<body>
+	<h1>Lista todos os endereco Mundo pet</h1>
+	<div class="container mt-4">
+		<div class="row">
+			<div class="col-12">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th scope="col">IdEndereco</th>
+							<th scope="col">Bairro</th>
+							<th scope="col">Rua</th>
+							<th scope="col">Cidade</th>
+							<th scope="col">Numero</th>
+							<th scope="col">UF</th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="endereco : ${enderecos}">
+							<th class="col-1" scope="row" th:text="${endereco.getIdEndereco}">ID Endereco</th>
+							<td class="col-4" th:text="${endereco.bairro}">Bairro</td>
+							<td class="col-2" th:text="${endereco.rua}">Rua</td>
+							<td class="col-2" th:text="${endereco.cidade}">Cidade</td>
+							<td class="col-2" th:text="${endereco.numero}">Numero</td>
+							<td class="col-2" th:text="${endereco.uf}">UF</td>
+							<td class="col-2" th:text="${endereco.usuario.nome}">Dono</td>
+							<td id="detalhes" class="col-1"><a
+									th:href="@{/animais/{idAnimal}(idAnimal = ${animal.idAnimal})}">Detalhes</a></td>
+							<td id="editar" class="col-1"><a
+									th:href="@{/animais/{idAnimal}(idAnimal = ${animal.idAnimal})}">Editar</a></td>
+							<td id="deletar" class="col-1"><a
+									th:href="@{/animais/{idAnimal}(idAnimal = ${animal.idAnimal})}">Deletar</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<a class="novo" href="../Endereco/cadastroEndereco">Inserir novo Endereco</a>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"></script>
+</body>
+
+</html>
