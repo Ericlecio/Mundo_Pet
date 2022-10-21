@@ -48,7 +48,6 @@ public class AnimalDao {
 			animal.setIdAnimal(idAnimal);
 			usuario.setNome(resultSet.getString(2));
 			animal.setNome(resultSet.getString(3));
-			;
 			animal.setRaca(resultSet.getString(4));
 			animal.setIdade(resultSet.getInt(5));
 			animal.setSexo(resultSet.getString(6));

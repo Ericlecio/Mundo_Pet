@@ -1,0 +1,65 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/listar.css">
+	<title>Lista de Veterinarios</title>
+</head>
+
+<body>
+	<h1>Lista de consultas mundo pet</h1>
+	<div class="container mt-4">
+		<div class="row">
+			<div class="col-12">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th scope="col">ID Consulta</th>
+							<th scope="col">Nome da consulta</th>
+							<th scope="col">Data da Consulta</th>
+							<th scope="col">Horario</th>
+							<th scope="col">Veterinario</th>
+							<th scope="col">Dono</th>
+							<th scope="col">Animal</th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="consulta : ${consultas}">
+							<th class="col-1" scope="row" th:text="${consulta.getIdconsulta}">ID</th>
+							<td class="col-4" th:text="${consulta.nome}">Nome</td>
+							<td class="col-2" th:text="${#dates.format(consulta.data_Consulta,'dd-MM-yyyy')}">Data da consulta</td>
+							<td class="col-2" th:text="${consulta.horario}">Horario</td>
+							<td class="col-2" th:text="${consulta.cpf}">CPF</td>
+							<td id="detalhes" class="col-1"><a
+									th:href="@{/consultas/{idconsulta}(idconsulta = ${consulta.idconsulta})}">Detalhes</a>
+							</td>
+							<td id="editar" class="col-1"><a
+									th:href="@{/consultas/{idconsulta}(idconsulta = ${consulta.idconsulta})}">Editar</a>
+							</td>
+							<td id="deletar" class="col-1"><a
+									th:href="@{/consultas/{idconsulta}(idconsulta = ${consulta.idconsulta})}">Deletar</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<a class="novo" href="../Consulta/cadastroConsulta"> Inserir novo Veterinário</a>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"></script>
+</body>
+
+</html>

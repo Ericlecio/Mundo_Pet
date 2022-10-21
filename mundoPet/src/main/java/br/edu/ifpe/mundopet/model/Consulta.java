@@ -1,22 +1,41 @@
 package br.edu.ifpe.mundopet.model;
 
+import java.util.Date;
+
 public class Consulta {
 	private int idconsulta;
-	private int idVeterinario;
-	private int idUsuario;
 	private String nome;
-	private int data_Consulta;
+	private Date data_Consulta;
 	private int horario;
 	
-	public Consulta(int idconsulta, int idUsuario, int idVeterinario, String nome, int data_Consulta, int horario) {
+	private Usuario usuario;
+	private Veterinario veterinario;
+
+	
+	
+	public Consulta(int idconsulta, String nome, Date data_Consulta, int horario, Usuario usuario,
+			Veterinario veterinario) {
 		super();
 		this.idconsulta = idconsulta;
-		this.idUsuario = idUsuario;
-		this.idVeterinario = idVeterinario;	
 		this.nome = nome;
 		this.data_Consulta = data_Consulta;
 		this.horario = horario;
+		this.usuario = usuario;
+		this.veterinario = veterinario;
 	}
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	public Veterinario getVeterinario() {
+		return veterinario;
+	}
+	public void setVeterinario(Veterinario veterinario) {
+		this.veterinario = veterinario;
+	}
+	
 	public Consulta() {
 		// TODO Auto-generated constructor stub
 	}
@@ -26,28 +45,16 @@ public class Consulta {
 	public void setIdconsulta(int idconsulta) {
 		this.idconsulta = idconsulta;
 	}
-	public int getIdUsuario() {
-		return idUsuario;
-	}
-	public void setIdUsuario(int idUsuario) {
-		this.idUsuario = idUsuario;
-	}
-	public int getIdVeterinario() {
-		return idVeterinario;
-	}
-	public void setIdVeterinario(int idVeterinario) {
-		this.idVeterinario = idVeterinario;
-	}
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getData_Consulta() {
+	public Date getData_Consulta() {
 		return data_Consulta;
 	}
-	public void setData_Consulta(int data_Consulta) {
+	public void setData_Consulta(Date data_Consulta) {
 		this.data_Consulta = data_Consulta;
 	}
 	public int getHorario() {
