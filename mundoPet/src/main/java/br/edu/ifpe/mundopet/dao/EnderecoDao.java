@@ -6,31 +6,33 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
 import br.edu.ifpe.mundopet.model.Endereco;
 
-
+@Repository
 
 public class EnderecoDao {
-	public void AdicionarEndereco(Endereco endereco) throws ClassNotFoundException, SQLException{
+	public void AdicionarEndereco(Endereco endereco) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
-		String sql = "INSERT INTO `Endereco`"
-				+ "(`idusuario`, `bairro`, `rua`, `cidade`,`numero`, `uf`)"
-				+ "VALUES(?, ?, ?, ?, ?, ?)";
-		PreparedStatement stmt =  connection.prepareStatement(sql);
+		String sql = "INSERT INTO `Endereco`" + "(`bairro`, `rua`, `cidade`,`numero`, `uf`)"
+				+ "VALUES(?, ?, ?, ?, ?)";
+		PreparedStatement stmt = connection.prepareStatement(sql);
 
-		stmt.setInt(1, endereco.getIdUsuario());
-		stmt.setString(2, endereco.getBairro());
-		stmt.setString(3, endereco.getRua());
-		stmt.setString(4, endereco.getCidade());
-		stmt.setInt(5, endereco.getNumero());
-		stmt.setString(6, endereco.getUf());
+		stmt.setString(1, endereco.getBairro());
+		stmt.setString(2, endereco.getRua());
+		stmt.setString(3, endereco.getCidade());
+		stmt.setInt(4, endereco.getNumero());
+		stmt.setString(5, endereco.getUf());
 
 		stmt.execute();
 		stmt.close();
 		connection.close();
 	}
-	public List<Endereco> ConsultarTodosEnderecos() throws ClassNotFoundException, SQLException{
-		Connection connection =  ConexaoMySQL.getConexaoMySQL();
+
+	public List<Endereco> ConsultarTodosEnderecos() throws ClassNotFoundException, SQLException {
+		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "SELECT `idendereco`, `idusuario`, `bairro`, `rua`, `cidade`, `numero`, `uf` FROM `endereco`";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
@@ -38,19 +40,17 @@ public class EnderecoDao {
 
 		List<Endereco> listaTodosEnderecos = new ArrayList<Endereco>();
 
-		while(resultSet.next()) {
+		while (resultSet.next()) {
 
 			Endereco endereco = new Endereco();
 
 			int idenderenco = resultSet.getInt("idendereco");
 			endereco.setIdEndereco(idenderenco);
-			int idusuario = resultSet.getInt("idusuario");
-			endereco.setIdUsuario(idusuario);
-			endereco.setBairro(resultSet.getString(3));;
-			endereco.setRua(resultSet.getString(4));
-			endereco.setCidade(resultSet.getString(5));
-			endereco.setNumero(resultSet.getInt(6));
-			endereco.setUf(resultSet.getString(7));
+			endereco.setBairro(resultSet.getString(1));
+			endereco.setRua(resultSet.getString(2));
+			endereco.setCidade(resultSet.getString(3));
+			endereco.setNumero(resultSet.getInt(4));
+			endereco.setUf(resultSet.getString(5));
 
 			listaTodosEnderecos.add(endereco);
 		}
@@ -60,7 +60,7 @@ public class EnderecoDao {
 		return listaTodosEnderecos;
 	}
 
-	public void AtualizarEndereco (Endereco endereco) throws ClassNotFoundException, SQLException{
+	public void AtualizarEndereco(Endereco endereco) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "UPDATE `endereco` set `bairro` = ?, `rua`= ?, `cidade` = ?, `numero` = ?, `uf` = ? where `idendereco`= ? ";
 
@@ -78,16 +78,15 @@ public class EnderecoDao {
 		connection.close();
 	}
 
-	public void DeletarEndereco( int idendereco) throws ClassNotFoundException, SQLException {
+	public void DeletarEndereco(int idendereco) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "DELETE FROM `endereco` WHERE `idendereco`=?";
 		PreparedStatement stmt = connection.prepareStatement(sql);
-		stmt.setLong(4, idendereco);	
+		stmt.setLong(4, idendereco);
 
 		stmt.executeUpdate();
 		stmt.close();
 		connection.close();
-
 
 	}
 }

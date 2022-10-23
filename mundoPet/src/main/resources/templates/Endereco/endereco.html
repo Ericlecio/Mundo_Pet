@@ -38,13 +38,12 @@
 							<td class="col-2" th:text="${endereco.cidade}">Cidade</td>
 							<td class="col-2" th:text="${endereco.numero}">Numero</td>
 							<td class="col-2" th:text="${endereco.uf}">UF</td>
-							<td class="col-2" th:text="${endereco.usuario.nome}">Dono</td>
 							<td id="detalhes" class="col-1"><a
-									th:href="@{/animais/{idAnimal}(idAnimal = ${animal.idAnimal})}">Detalhes</a></td>
+									th:href="@{/endereco/{idEndereco}(idEndereco = ${endereco.idEndereco})}">Detalhes</a></td>
 							<td id="editar" class="col-1"><a
-									th:href="@{/animais/{idAnimal}(idAnimal = ${animal.idAnimal})}">Editar</a></td>
+									th:href="@{/endereco/{idEndereco}(idEndereco = ${endereco.idEndereco})}">Editar</a></td>
 							<td id="deletar" class="col-1"><a
-									th:href="@{/animais/{idAnimal}(idAnimal = ${animal.idAnimal})}">Deletar</a></td>
+									th:href="@{/endereco/{idEndereco}(idEndereco = ${endereco.idEndereco})}">Deletar</a></td>
 						</tr>
 					</tbody>
 				</table>

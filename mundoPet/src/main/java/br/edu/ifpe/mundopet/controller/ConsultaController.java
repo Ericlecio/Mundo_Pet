@@ -58,8 +58,8 @@ public class ConsultaController {
 		return new ModelAndView("redirect:/lista/consultas");
 	}
 
-	@GetMapping("consulta/cadastroConsulta")
-	public ModelAndView novaConsulta() {
+	@GetMapping("Consulta/cadastroConsulta")
+	public ModelAndView cadastroConsulta() {
 		ModelAndView mv = new ModelAndView("Consulta/cadastroConsulta");
 		return mv;
 	}

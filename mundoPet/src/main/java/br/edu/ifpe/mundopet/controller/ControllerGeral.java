@@ -8,10 +8,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class ControllerGeral {
 
 	@GetMapping("/home")
-	public ModelAndView home() { 
+	public ModelAndView home() {
 		ModelAndView mv = new ModelAndView("html/telaPrincipal");
 		return mv;
 	}
-	
-	
+
 }

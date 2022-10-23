@@ -24,7 +24,7 @@ public class AnimalController {
 
 	@GetMapping("/lista/animais")
 	public ModelAndView animal() {
-		
+
 		AnimalDao animaldao = new AnimalDao();
 		List<Animal> animal = null;
 		try {
@@ -38,31 +38,33 @@ public class AnimalController {
 		}
 
 		ModelAndView mv = new ModelAndView("animal/animal");
-		mv.addObject("animais",animal);
+		mv.addObject("animais", animal);
 		return mv;
 	}
+
 	@PostMapping("/lista/animais")
-	public ModelAndView createAnimal(@Validated Animal animal, BindingResult bindingResults){
-		if(bindingResults.hasErrors()) {
+	public ModelAndView createAnimal(@Validated Animal animal, BindingResult bindingResults) {
+		if (bindingResults.hasErrors()) {
 			ModelAndView mv = new ModelAndView("Animal/cadastroAnimal");
 			mv.addObject("animal", animal);
 			return mv;
 		}
 		try {
-			//mock
-			Usuario usuario =new Usuario();
+			// mock
+			Usuario usuario = new Usuario();
 			usuario.setNome("fulano");
 			animal.setUsuario(usuario);
 			animaldao.AdicionarAnimal(animal);
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-		return new ModelAndView("redirect:/lista/animais") ;
+		return new ModelAndView("redirect:/lista/animais");
 	}
+
 	@GetMapping("Animal/cadastroAnimal")
-	public ModelAndView novoAnimal() { 
+	public ModelAndView novoAnimal() {
 		ModelAndView mv = new ModelAndView("Animal/cadastroAnimal");
 		return mv;
 	}
-	
+
 }

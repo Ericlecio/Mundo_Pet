@@ -83,6 +83,7 @@ fieldset:last-child {
 	font-size: 18px;
 	font-weight: 700;
 	padding: 14px 10px 0 10px;
+	margin-top:25px;
 }
 
 .container label {
@@ -102,7 +103,7 @@ fieldset:last-child {
 .container input:focus ~ label,
 .container input:valid ~ label {
 	left: 20px;
-	top: -10px;
+	top: -1px;
 	color:  #1881FC;
 }
 

@@ -23,51 +23,36 @@
 			<img src="../img/Logo Azul.png" alt="">
 		</div>
 
-		<form action="/lista/veterinarios" method="POST" th:object="${Veterinario}" enctype="multipart/form-data" id="form"
-			class="form">
+		<form action="/lista/veterinarios" method="POST" th:object="${Veterinario}" enctype="multipart/form-data"
+			id="form" class="form">
 			<div class="form-control">
 				<label for="username">Nome Completo</label>
 				<input type="text" id="nome" placeholder="Digite seu nome Completo" name="nome" />
-				<i class="fas fa-exclamation-circle"></i>
-				<i class="fas fa-check-circle"></i>
-				<small>Mensagem de erro</small>
 			</div>
 
 			<div class="form-control">
 				<label for="email">Email</label>
 				<input type="email" id="email" placeholder="Digite seu email.." name="email" />
-				<i class="fas fa-exclamation-circle"></i>
-				<i class="fas fa-check-circle"></i>
-				<small>Mensagem de erro</small>
 			</div>
 
 			<div class="form-control">
 				<label for="CPF">CPF</label>
 				<input type="CPF" id="cpf" minlength="11" maxlength="11" placeholder="Digite seu CPF..." name="cpf" />
-				<i class="fas fa-exclamation-circle"></i>
-				<i class="fas fa-check-circle"></i>
-				<small>Mensagem de erro</small>
 			</div>
 
 			<div class="form-control">
 				<label for="DATA">Data de nascimento</label>
 				<input type="text" id="dataNascimento" placeholder="Digite sua data de nascimento" name="data_Nasc" />
-				<i class="fas fa-exclamation-circle"></i>
-				<i class="fas fa-check-circle"></i>
-				<small>Mensagem de erro</small>
 			</div>
 
 			<div class="form-control">
 				<label for="password">Senha</label>
 				<input type="password" id="password" placeholder="Digite sua senha..." name="senha" />
-				<i class="fas fa-exclamation-circle"></i>
-				<i class="fas fa-check-circle"></i>
-				<small>Mensagem de erro</small>
 			</div>
 
 
 			<button class="btn btn-primary" type="submit">Cadastra- se</button><br>
-			
+
 		</form>
 		<p>Já possui uma conta ? <a href="Login.html">Clique aqui</a></p>
 	</div>

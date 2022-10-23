@@ -11,22 +11,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-
 import br.edu.ifpe.mundopet.dao.VeterinarioDao;
 import br.edu.ifpe.mundopet.model.Usuario;
 import br.edu.ifpe.mundopet.model.Veterinario;
 import br.edu.ifpe.mundopet.util.Util;
 
-
 @Controller
 public class VeterinarioController {
-@Autowired
-VeterinarioDao veterinariodao;
+	@Autowired
+	VeterinarioDao veterinariodao;
 
 	@GetMapping("/lista/veterinarios")
 	public ModelAndView veterinario() {
 		VeterinarioDao veterinariodao = new VeterinarioDao();
-		List<Veterinario> veterinario=null;
+		List<Veterinario> veterinario = null;
 		try {
 			veterinario = veterinariodao.ConsultarTodosVeterinarios();
 		} catch (ClassNotFoundException e) {
@@ -38,17 +36,17 @@ VeterinarioDao veterinariodao;
 		}
 
 		ModelAndView mv = new ModelAndView("Veterinario/veterinario");
-		mv.addObject("veterinarios",veterinario);
+		mv.addObject("veterinarios", veterinario);
 		return mv;
 	}
-	
+
 	@PostMapping("/lista/veterinarios")
-	public ModelAndView createVeterinario(@Validated Veterinario veterinario, BindingResult bindingResults){
-			if(bindingResults.hasErrors()) {
-				ModelAndView mv = new ModelAndView("Veterinario/cadastroVeterinario");
-				mv.addObject("Veterinario", veterinario);
-				return mv;
-			}
+	public ModelAndView createVeterinario(@Validated Veterinario veterinario, BindingResult bindingResults) {
+		if (bindingResults.hasErrors()) {
+			ModelAndView mv = new ModelAndView("Veterinario/cadastroVeterinario");
+			mv.addObject("Veterinario", veterinario);
+			return mv;
+		}
 		try {
 			Util util = new Util();
 			String senha = veterinario.getSenha();
@@ -59,13 +57,12 @@ VeterinarioDao veterinariodao;
 			e.printStackTrace();
 		}
 
-		return new ModelAndView("redirect:/lista/veterinarios") ;
+		return new ModelAndView("redirect:/lista/veterinarios");
 	}
 
-	@GetMapping("Veterinarios/cadastroVeterinario")
-	public ModelAndView cadastroVeterinario() { 
+	@GetMapping("Veterinario/cadastroVeterinario")
+	public ModelAndView cadastroVeterinario() {
 		ModelAndView mv = new ModelAndView("Veterinario/cadastroVeterinario");
 		return mv;
 	}
 }
-
