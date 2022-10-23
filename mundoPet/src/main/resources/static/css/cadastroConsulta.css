@@ -10,7 +10,7 @@
 }
 
 body {
-	background-color:  #1881FC;
+	background-color:  #013cc8;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -24,59 +24,40 @@ div#parallelogram {
 	max-width: 70vw;
 	border-radius: 10px;
 	box-shadow: 5px 5px 15px;
-	transform: skew(6deg, 3deg);
+	transform: skew(10deg, 3deg);
 	position: absolute;
    	z-index: -1;
 }
 
 section {
-	display: flex;
 	background: #fff;
-	padding: 30px 5px;
 	border-radius: 10px;
-	box-shadow: 5px 5px 15px;
-	max-width: 60vw;
+	box-shadow: 5px 5px 15px  #013cc8 ;
+	max-width: 60%;
+	border: solid 1px  #013cc8;
 }
 
 section h1 {
-	padding: 40px 10px;
+	padding: 30px 10px;
 	text-align: center;
-    color: #1881FC;
+    color:  #013cc8;
 }
 
-fieldset{
+.fieldset{
 	border:none;
-}
-
-fieldset:nth-child(2) {
 	display: flex;
+	padding: 10px 10px;
 }
 
-fieldset:nth-child(2) {
-	display: flex;
-	padding-top: 20px;
-}
-
-fieldset:nth-child(3) {
-	display: flex;
-	width: 100%;
-	margin-top: 20px;
-	padding: 0px 10px;
-}
-
-fieldset:last-child {
-	
-}
 
 .container {
 	position: relative;
 }
 
 .container input {
-	margin: 10px 10px;
-	width: calc(100% - 20px);
+	width: 240px;
 	height: 70px;
-	border: none;
+	border: solid 1px  #1881FC;
 	background-color: #ededed;
 	border-radius: 4px;
 	color: #333;
@@ -90,7 +71,7 @@ fieldset:last-child {
 	text-transform: uppercase;
 	font-size: 14px;
 	font-weight: 700;
-	color: #9d9d9d;
+	color: rgb(128, 128, 128);
 	position: absolute;
 	line-height: 70px;
 	top: 10px;
@@ -133,14 +114,14 @@ fieldset:last-child {
 
 button {
 	margin: 40px 0;
-	margin-left: 110px;
+	margin-left: 25%;
 	width: calc(50% - 10px);
 	height: 70px;
-	background-color:  #1881FC;
+	background-color: #013cc8;
 	color: #fff;
 	font-size: 20px;
 	border:none;
-	border-radius: 20px;
+	border-radius: 10px;
 	cursor: pointer;
 	transition: .3s linear;
 

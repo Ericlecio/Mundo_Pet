@@ -6,11 +6,11 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "Ubuntu", sans-serif;
+	font-family: "arial";
 }
 
 body {
-	background-color:  #1881FC;
+	background-color:  #013cc8;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -41,7 +41,7 @@ section {
 section h1 {
 	padding: 40px 10px;
 	text-align: center;
-    color: #1881FC;
+    color: #013cc8;
 }
 
 fieldset{
@@ -103,7 +103,7 @@ fieldset:last-child {
 .container input:valid ~ label {
 	left: 20px;
 	top: -10px;
-	color:  #1881FC;
+	color:   #013cc8;
 }
 
 #check {
@@ -135,11 +135,11 @@ button {
 	margin-left: 110px;
 	width: calc(50% - 10px);
 	height: 70px;
-	background-color:  #1881FC;
+	background-color: #013cc8;
 	color: #fff;
 	font-size: 20px;
 	border:none;
-	border-radius: 20px;
+	border-radius: 10px;
 	cursor: pointer;
 	transition: .3s linear;
 
@@ -165,9 +165,10 @@ form a:hover {
 }
 
 section img {
-	width: 250px;
+	width: 240px;
 	height: 250px;
 	margin: auto 40px;
+	border-radius:10px;
 }
 
 @media only screen and (max-width: 1080px) {

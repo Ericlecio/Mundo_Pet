@@ -13,8 +13,8 @@
 	<div id="parallelogram"></div>
 	<section>
 		<form action="/lista/consultas" method="POST" th:object="${Consulta}">
-			<h1>Cadastrar Consulta</h1>
-			<fieldset>
+			<h1>Cadastrar Consulta <br> Mundo pet</h1>
+			<div class="fieldset">
 				<div class="container">
 					<input type="text" id="nome" required name="nome" autofocus>
 					<label>Nome da Consulta</label>
@@ -29,9 +29,9 @@
 					<input type="time" id="horario" required name="horario">
 					<label>Horario</label>
 				</div>
-			</fieldset>
+			</div>
 
-			<fieldset>
+			<div class="fieldset">
 				<div class="container">
 					<input type="text" id="veterinario" required name="veterinario">
 					<label>Veterinario</label>
@@ -45,7 +45,7 @@
 					<input type="text" id="animal" required name="animal">
 					<label>Animal</label>
 				</div>
-			</fieldset>
+			</div>
 
 			<button name="submit">Agendar Consulta</button>
 

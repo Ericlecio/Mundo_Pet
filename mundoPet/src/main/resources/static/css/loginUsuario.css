@@ -22,7 +22,7 @@ body {
 
 .container1 {
 
-  background-color: #fafafa;
+  background-color: 0;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   width: 550px;
@@ -30,6 +30,8 @@ body {
   overflow: hidden;
   position: block;
   margin:25px;
+  border: solid rgb(255, 255, 255);
+  border-width: 3px;
   
 }
 
@@ -51,7 +53,7 @@ body {
   margin-top: 8%;
   padding: 0px;
   display: flex;
-  color: #1881FC;
+  color: #fff;
   justify-content: center;
 }
 
@@ -86,7 +88,7 @@ img{
   justify-content: center;
   display: inline-block;
   margin-bottom: 5px;
-  color: #1881FC;
+  color: #fff;
   position: relative;
 
 }
@@ -124,8 +126,8 @@ img{
 
 /* Botão entrar */
 .form button {
-  background-color: #1881FC;
-  border: 2px solid #1881FC;
+  background-color:  #013cc8;
+  border: 2px solid rgb(192, 192, 192);
   color: #fff;
   font-size: 16px;
   width: 30%;
@@ -158,9 +160,9 @@ p {
   justify-content: center;
   font-size: 14px;
   text-align: center;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 a {
-  color: #1881FC;
+  color: #fff;
 }
