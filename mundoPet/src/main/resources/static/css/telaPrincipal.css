@@ -1,123 +1,176 @@
-* {
-  margin: 0;
-  padding: 0;
+*{
+    margin: 0;
+    padding: 0;
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url();
+body{
+	background-image: url(https://img.freepik.com/vetores-gratis/fundo-branco-elegante-com-linhas-brilhantes_1017-17580.jpg?w=740&t=st=1666654185~exp=1666654785~hmac=4aef281072beaae08d464a6b36320f81e78d77a85fdedc3e9fc56f116b8f2685);
+	border-image: cover;
 }
 
-a {
-  color: #fff;
-  text-decoration: none;
-  transition: 0.3s;
+a{
+	color:#fff;
+	text-align: center;
+}
+.aba{
+	margin-left:25px;
+	margin-top: 15px;
+}
+.fa-regular{
+	color:#fff;
 }
 
-a:hover {
-  opacity: 0.7;
+nav{
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    background-color: #013cc8;
+    border-radius: 5px;
+    position:relative;
+    z-index: 100;
 }
+.dropdown-menu{
+    display: flex;
+    gap: 2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.aba{
+	color:aliceblue;
+}
+
+.dropdown-menu li{
+    width: 150px;
+    height: 50px;
+    list-style: none;
+}
+	/*#00008B*/
+
+.dropdown-menu a{
+    display: block;
+    background-color:  #013cc8;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    transition: all .2s linear;
+        position:relative;
+
+}
+
+.dropdown-menu li:hover > .dropdown-submenu {
+    display: block;
+}
+
+.dropdown-submenu{
+    margin-top: 1px;
+    display: none;
+}
+
+.dropdown-submenu a{
+    background-color: #00000080;
+    width: 150%;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 20px;
+    font-size: .8rem;
+    border-left: 8px solid transparent;
+}
+.dropdown-submenu li:hover > a{
+    border-left: 8px solid  #013cc8;
+}
+
+
 
 .logo {
-  width: 100px;
+  width: 8%;
+  height:8%;
   display: flex;
+  margin-left: 50px;
 }
-
-
-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: #1881fc;
-  height: 8vh;
-  border: solid #1881FC;
-  border-width: 1px;
-
-}
-
-.nav-list {
-  list-style: none;
-  display: flex;
-}
-
-.nav-list li {
-  letter-spacing: 3px;
-  margin-left: 32px;
-}
-
-.mobile-menu {
-  display: none;
-  cursor: pointer;
-}
-
-.mobile-menu div {
-  width: 32px;
-  height: 2px;
-  background: #fff;
-  margin: 8px;
-  transition: 0.3s;
-}
-
-@media (max-width: 999px) {
-  body {
-    overflow-x: hidden;
-  }
-
-  .nav-list {
-    position: absolute;
-    top: 8vh;
-    right: 0;
-    width: 50vw;
-    height: 92vh;
-    background: #23232e;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in;
-  }
-
-  .nav-list li {
-    margin-left: 0;
-    opacity: 0;
-  }
-
-  .mobile-menu {
-    display: block;
-  }
-}
-
-.nav-list.active {
-  transform: translateX(0);
-}
-
-@keyframes navLinkFade {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.mobile-menu.active .line1 {
-  transform: rotate(-45deg) translate(-8px, 8px);
-}
-
-.mobile-menu.active .line2 {
-  opacity: 0;
-}
-
-.mobile-menu.active .line3 {
-  transform: rotate(45deg) translate(-5px, -7px);
-}
-
 
 main {
-  height: 10vh;
+  height: 75vh;
 }
+
+
+ /* carrossel*/
+.content {
+    height: 400px;
+    width: 750px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: absolute;
+    top: 57%;
+    left: 68%;
+    transform: translate(-50%, -50%);
+    box-shadow: 10px 10px 5px 0px rgb(192, 192, 192);
+    position:absolute;
+    z-index: 0;
+}
+
+.content .slide img {
+    height: 100%;
+    width: 100%;
+}
+
+.navigation {
+    position: absolute;
+    bottom: 160px;
+    left: 850px;
+    display: flex;
+}
+
+.bar {
+
+    width: 15px;
+    height: 15px;
+    border: 2px solid white;
+    margin: 6px;
+    border-radius: 15px;
+    cursor: pointer;
+    transform: .5s ease;
+
+}
+
+.bar:hover {
+    background-color: white;
+}
+
+input {
+  display: none;
+}
+
+.slides {
+    display: flex;
+    width: 500%;
+    height: 100%;
+}
+
+.slide {
+    width: 20%;
+    transition: .6s;
+}
+
+#slide1:checked ~ .s1 {
+    margin-left: 0;
+} 
+
+#slide2:checked ~ .s1 {
+    margin-left: -20%;
+} 
+
+#slide3:checked ~ .s1 {
+    margin-left: -40%;
+} 
+
+#slide4:checked ~ .s1 {
+    margin-left: -60%;
+} 
+
+#slide5:checked ~ .s1 {
+    margin-left: -80%;
+} 

@@ -21,32 +21,78 @@
 </head>
 
 <body>
-	<header>
-		<nav>
-			<img class="logo" src="../img/Logo branco.png" alt="">
-			<div class="mobile-menu">
-				<div class="line1"></div>
-				<div class="line2"></div>
-				<div class="line3"></div>
+	<img class="logo" src="../img/Frame1.png" alt="">
+	<nav>
+		<ul class="dropdown-menu">
+			<li><a href="#">Inicio</a></li>
+			<li><a href="#Serviços">Serviços</a></li>
+			<li><a href="#">Links</a>
+				<ul class="dropdown-submenu">
+					<li><a href="usuario/cadastroUsuario">Cadastro de usuarios</a></li>
+					<li><a href="Veterinario/cadastroVeterinario">Cadastro de veterinarios</a></li>
+					<li><a href="Animal/cadastroAnimal">Cadastro de animais</a></li>
+					<li><a href="Consulta/cadastroConsulta">Cadastro de consultas</a></li>
+					<li><a href="Endereco/cadastroEndereco">Cadastro de Endereços</a></li>
+
+				</ul>
+			</li>
+			<li><a href="#">Chat</a></li>
+			<li><a href="#">Fale conosco</a></li>
+		</ul>
+		<div class="aba">
+			<a href="/login" style="text-decoration:none">
+				<i class="fa-solid fa-user"></i>
+			</a>
+		</div>
+	</nav>
+
+
+	<div class="content">
+
+		<div class="slides">
+
+			<input class="input" type="radio" name="slide" id="slide1" checked>
+			<input class="input" type="radio" name="slide" id="slide2">
+			<input class="input" type="radio" name="slide" id="slide3">
+			<input class="input" type="radio" name="slide" id="slide4">
+			<input class="input" type="radio" name="slide" id="slide5">
+
+
+			<div class="slide s1">
+				<img src="https://decorstyle.ig.com.br/wp-content/uploads/2022/08/personalidadecachorro0-730x438.jpg">
 			</div>
-			<ul class="nav-list">
-				<li><a href="#">Início</a></li>
-				<li><a href="#Serviços">Serviços</a></li>
-				<li><a href="#">Chat</a></li>
-				<li><a href="#">Fale conosco</a></li>
-			</ul>
-			<div class="aba">
-				<a href="/login" style="text-decoration:none">
-					<i class="fa-regular fa-user"></i>
-					<span>User</span>
-				</a>
+
+			<div class="slide">
+				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/C%C3%A1gado.jpg/1200px-C%C3%A1gado.jpg">
+
 			</div>
-		</nav>
-	</header>
+
+			<div class="slide">
+				<img src="https://www.astrocentro.com.br/blog/wp-content/uploads/2020/10/cachorro-significado-espiritual.jpg">
+			</div>
+
+			<div class="slide">
+				<img src="https://images5.alphacoders.com/812/812594.jpg" alt="">
+			</div>
+
+			<div class="slide">
+				<img src="https://p4.wallpaperbetter.com/wallpaper/346/493/314/cats-cat-wallpaper-preview.jpg">
+
+			</div>
+		</div>
+	</div>
+
+	<div class="navigation">
+
+		<label class="bar" for="slide1"></label>
+		<label class="bar" for="slide2"></label>
+		<label class="bar" for="slide3"></label>
+		<label class="bar" for="slide4"></label>
+		<label class="bar" for="slide5"></label>
+
+	</div>
 
 	<main></main>
-	
-	
 
 	<h2 class="abaserviços">Serviços</h2>
 	<div id="Serviços" class="container">
@@ -153,6 +199,5 @@
 	</div>
 
 </body>
-
 
 </html>

@@ -7,8 +7,8 @@
   
   /* Card */
   .card {
-    width: 300px;
-    height: 460px;
+    width: 270px;
+    height: 450px;
     margin: 15px;
     background-color: #fff;
     border-radius: 15px;
@@ -26,13 +26,13 @@
   
   .card-img {
     min-width: 100%;
-    width: auto;
+    width:50%;
     height: 100%;
   }
   
   /* Card Body */
   .card-body {
-    height: 170px;
+    height: 160px;
     padding: 15px;
     text-align: center;
     font-family: sans-serif;
