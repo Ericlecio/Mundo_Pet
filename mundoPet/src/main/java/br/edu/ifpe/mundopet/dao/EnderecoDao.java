@@ -33,7 +33,7 @@ public class EnderecoDao {
 
 	public List<Endereco> ConsultarTodosEnderecos() throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
-		String sql = "SELECT `idendereco`, `idusuario`, `bairro`, `rua`, `cidade`, `numero`, `uf` FROM `endereco`";
+		String sql = "SELECT `idEndereco`, `bairro`, `rua`, `cidade`, `numero`, `uf` FROM `endereco`";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
 		ResultSet resultSet = stmt.executeQuery();
@@ -44,13 +44,12 @@ public class EnderecoDao {
 
 			Endereco endereco = new Endereco();
 
-			int idenderenco = resultSet.getInt("idendereco");
-			endereco.setIdEndereco(idenderenco);
-			endereco.setBairro(resultSet.getString(1));
-			endereco.setRua(resultSet.getString(2));
-			endereco.setCidade(resultSet.getString(3));
-			endereco.setNumero(resultSet.getInt(4));
-			endereco.setUf(resultSet.getString(5));
+			endereco.setIdEndereco(resultSet.getInt(1));
+			endereco.setBairro(resultSet.getString(2));
+			endereco.setRua(resultSet.getString(3));
+			endereco.setCidade(resultSet.getString(4));
+			endereco.setNumero(resultSet.getInt(5));
+			endereco.setUf(resultSet.getString(6));
 
 			listaTodosEnderecos.add(endereco);
 		}

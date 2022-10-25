@@ -14,7 +14,6 @@ import br.edu.ifpe.mundopet.model.Endereco;
 
 @Controller
 public class EnderecoController {
-	
 
 	@GetMapping("/lista/enderecos")
 	public ModelAndView endereco() {
@@ -42,7 +41,7 @@ public class EnderecoController {
 			ModelAndView mv = new ModelAndView("Endereco/cadastroEndereco");
 			mv.addObject("Endereco", endereco);
 			return mv;
-			
+
 		}
 		EnderecoDao enderecodao = new EnderecoDao();
 
