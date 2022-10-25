@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="UTF-8" />
@@ -22,7 +22,7 @@
 
 <body>
 	<img class="logo" src="../img/Frame1.png" alt="">
-	<nav id = "menu">
+	<nav th:fragment="navbar">
 		<ul class="dropdown-menu">
 			<li><a href="#">Inicio</a></li>
 			<li><a href="#Serviços">Serviços</a></li>
