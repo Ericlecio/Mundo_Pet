@@ -1,33 +1,34 @@
-<nav th:fragment="menu">
-		<ul class="dropdown-menu">
-			<li><a href="#">Inicio</a></li>
-			<li><a href="#Serviços">Serviços</a></li>
-			<li><a href="#">Cadastros</a>
-				<ul class="dropdown-submenu">
-					<li><a href="usuario/cadastroUsuario">Cadastro de usuarios</a></li>
-					<li><a href="Veterinario/cadastroVeterinario">Cadastro de veterinarios</a></li>
-					<li><a href="Animal/cadastroAnimal">Cadastro de animais</a></li>
-					<li><a href="Consulta/cadastroConsulta">Cadastro de consultas</a></li>
-					<li><a href="Endereco/cadastroEndereco">Cadastro de Endereços</a></li>
+<link rel="stylesheet" href="../css/menu.css">
+<nav id="menu">
+	<ul class="dropdown-menu">
+		<li><a href="#">Inicio</a></li>
+		<li><a href="#Serviços">Serviços</a></li>
+		<li><a href="#">Cadastros</a>
+			<ul class="dropdown-submenu">
+				<li><a href="usuario/cadastroUsuario">Cadastro de usuarios</a></li>
+				<li><a href="Veterinario/cadastroVeterinario">Cadastro de veterinarios</a></li>
+				<li><a href="Animal/cadastroAnimal">Cadastro de animais</a></li>
+				<li><a href="Consulta/cadastroConsulta">Cadastro de consultas</a></li>
+				<li><a href="Endereco/cadastroEndereco">Cadastro de Endereços</a></li>
 
-				</ul>
-			</li>
-			<li><a href="#">Consultas</a>
-				<ul class="dropdown-submenu">
-					<li><a href="lista/usuarios">Consulta de usuarios</a></li>
-					<li><a href="lista/veterinarios">Consulta de veterinarios</a></li>
-					<li><a href="lista/animais">Consulta de animais</a></li>
-					<li><a href="lista/consultas">Consulta de consultas</a></li>
-					<li><a href="lista/enderecos">Consulta de Endereços</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Consultas</a>
+			<ul class="dropdown-submenu">
+				<li><a href="lista/usuarios">Consulta de usuarios</a></li>
+				<li><a href="lista/veterinarios">Consulta de veterinarios</a></li>
+				<li><a href="lista/animais">Consulta de animais</a></li>
+				<li><a href="lista/consultas">Consulta de consultas</a></li>
+				<li><a href="lista/enderecos">Consulta de Endereços</a></li>
 
-				</ul>
-			</li>
-			<li><a href="#">Chat</a></li>
-			<li><a href="#">Fale conosco</a></li>
-		</ul>
-		<div class="aba">
-			<a href="/login" style="text-decoration:none">
-				<i class="fa-solid fa-user"></i>
-			</a>
-		</div>
-	</nav>
+			</ul>
+		</li>
+		<li><a href="#">Chat</a></li>
+		<li><a href="#">Fale conosco</a></li>
+	</ul>
+	<div class="aba">
+		<a href="/login" style="text-decoration:none">
+			<i class="fa-solid fa-user"></i>
+		</a>
+	</div>
+</nav>
