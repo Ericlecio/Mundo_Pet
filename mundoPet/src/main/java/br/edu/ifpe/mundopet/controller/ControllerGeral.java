@@ -12,5 +12,11 @@ public class ControllerGeral {
 		ModelAndView mv = new ModelAndView("html/telaPrincipal");
 		return mv;
 	}
+	
+	@GetMapping("/dashboard")
+	public ModelAndView dashboard() {
+		ModelAndView mv = new ModelAndView("html/dashboard");
+		return mv;
+	}
 
 }
