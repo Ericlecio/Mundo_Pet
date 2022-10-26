@@ -18,12 +18,13 @@
 <body>
 
 	<div class="container1">
+	<span th:text="${mensagem}">${mensagem}	</span>
 		<div class="header">
 			<h2>Login <br>Cliente</h2>
 			<img src="../img/Logo Branco.png" alt="">
 		</div>
 
-		<form action="/logar" method="POST" id="form" class="form">
+		<form action="/login" method="POST" id="form" class="form">
 			<div class="form-control">
 				<label for="email">Email</label>
 				<input type="email" id="email" name="email" placeholder="Digite seu email.." />

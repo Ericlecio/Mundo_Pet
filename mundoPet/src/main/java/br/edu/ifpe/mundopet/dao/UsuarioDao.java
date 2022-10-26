@@ -34,7 +34,7 @@ public class UsuarioDao {
 
 	public Usuario consultarUsuariosEmailSenha(Usuario pUsuario) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
-		String sql = "SELECT `idusuario`, `nome`, `data_nasc`, `email`, `cpf`, `senha` FROM `usuario` where 'email'= ? and 'senha'= ?";
+		String sql = "SELECT `idusuario`, `nome`, `data_nasc`, `email`, `cpf`, `senha` FROM `usuario` where email= ? and senha= ?";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
 		stmt.setString(1, pUsuario.getEmail());

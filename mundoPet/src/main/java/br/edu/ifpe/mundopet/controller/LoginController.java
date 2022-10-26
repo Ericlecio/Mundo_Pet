@@ -49,13 +49,20 @@ public class LoginController {
 			String senha = usuario.getSenha();
 			usuario.setSenha(util.MD5(senha));
 
-			usuariodao.consultarUsuariosEmailSenha(usuario);
+			Usuario vUsuario = usuariodao.consultarUsuariosEmailSenha(usuario);
+			
+			if( vUsuario.getCpf() !=null) {
+				return new ModelAndView("redirect:/menu");	
+			}
+			
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		ModelAndView mv = new ModelAndView("redirect:/login");
+		mv.addObject("mensagem", "Login e senha invalido"); 
+		return mv;
 
-		return new ModelAndView("redirect:/usuarios");
 	}
 
 	@GetMapping("/cadastro")

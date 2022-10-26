@@ -5,18 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class ControllerGeral {
+public class HomeController {
 
-	@GetMapping("/pagina1")
-	public ModelAndView pagina1() {
-		ModelAndView mv = new ModelAndView("html/telaPrincipal");
-		return mv;
-	}
-
-	@GetMapping("/menu")
-	public ModelAndView dashboard() {
+    @GetMapping("/")
+	public ModelAndView home() {
 		ModelAndView mv = new ModelAndView("html/menu");
 		return mv;
 	}
-
 }
