@@ -4,59 +4,51 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<link rel="stylesheet" href="../css/listar.css">
+	<link rel="stylesheet" href="../css/listaUsuarios.css">
 	<title>Lista de Usuario</title>
 </head>
 
 <body>
 	<h1>Lista de todos os Usuarios Mundo pet</h1>
-	
-	
-	<div class="container mt-4">
-		<div class="row">
-			<div class="col-12">
-				<table class="table">
-					<thead>
-						<tr>
-							<th scope="col">ID</th>
-							<th scope="col">Nome Completo</th>
-							<th scope="col">Data de nascimento</th>
-							<th scope="col">Email</th>
-							<th scope="col">CPF</th>
-							<th scope="col"></th>
-							<th scope="col"></th>
-							<th scope="col"></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="usuario : ${usuarios}">
-							<th class="col-1" scope="row" th:text="${usuario.getIdusuario}">ID</th>
-							<td class="col-4" th:text="${usuario.nome}">Nome</td>
-							<td class="col-2" th:text="${#dates.format(usuario.data_Nasc,'dd-MM-yyyy')}">Data</td>
-							<td class="col-2" th:text="${usuario.email}">Email</td>
-							<td class="col-2" th:text="${usuario.cpf}">CPF</td>
-							<td id="detalhes" class="col-11"><a
-									th:href="@{/usuarios/{idUsuario}(idUsuario = ${usuario.idusuario})}">Detalhes</a>
-							</td>
-							<td id="editar" class="col-11"><a
-									th:href="@{/usuarios/{idUsuario}/edit(idUsuario = ${usuario.idusuario})}">Editar</a>
-							</td>
-							<td id="deletar" class="col-11"><a
-									th:href="@{/usuarios/{idUsuario}/edit(idUsuario = ${usuario.idusuario})}">Deletar</a>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-		<div class="row">
-			<a class="novo" href="../usuario/cadastroUsuario">Inserir novo usuario</a>
-		</div>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-			crossorigin="anonymous"></script>
+
+	<table class="table" border="1" >
+		<thead>
+			<tr>
+				<th scope="col">ID</th>
+				<th scope="col">Nome Completo</th>
+				<th scope="col">Data de nascimento</th>
+				<th scope="col">Email</th>
+				<th scope="col">CPF</th>
+				<th scope="col"></th>
+				<th scope="col"></th>
+				<th scope="col"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="usuario : ${usuarios}">
+				<th class="col-1" scope="row" th:text="${usuario.getIdusuario}">ID</th>
+				<td class="col-4" th:text="${usuario.nome}">Nome</td>
+				<td class="col-2" th:text="${#dates.format(usuario.data_Nasc,'dd-MM-yyyy')}">Data</td>
+				<td class="col-2" th:text="${usuario.email}">Email</td>
+				<td class="col-2" th:text="${usuario.cpf}">CPF</td>
+				<td id="detalhes" class="col-11"><a
+						th:href="@{/usuarios/{idUsuario}(idUsuario = ${usuario.idusuario})}">Detalhes</a>
+				</td>
+				<td id="editar" class="col-11"><a
+						th:href="@{/usuarios/{idUsuario}/edit(idUsuario = ${usuario.idusuario})}">Editar</a>
+				</td>
+				<td id="deletar" class="col-11"><a
+						th:href="@{/usuarios/{idUsuario}/edit(idUsuario = ${usuario.idusuario})}">Deletar</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="novo">
+		<a href="../usuario/cadastroUsuario">Inserir novo usuario</a>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
 </body>
 
 </html>
