@@ -7,16 +7,19 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ControllerGeral {
 
-	@GetMapping("/pagina1")
+	@GetMapping("/MundoPet")
 	public ModelAndView pagina1() {
 		ModelAndView mv = new ModelAndView("html/telaPrincipal");
 		return mv;
 	}
-
-	@GetMapping("/menu")
-	public ModelAndView dashboard() {
+	@GetMapping("/sistema")
+	public ModelAndView sistema() {
+		ModelAndView mv = new ModelAndView("html/home");
+		return mv;
+	}
+    @GetMapping("/menu")
+	public ModelAndView home() {
 		ModelAndView mv = new ModelAndView("html/menu");
 		return mv;
 	}
-
 }

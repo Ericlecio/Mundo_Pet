@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins" , sans-serif;
 }
 
 a{
@@ -8,7 +10,7 @@ a{
 	text-align: center;
 }
 .aba{
-	margin-left:25px;
+	margin-left:10px;
 	margin-top: 15px;
 }
 .fa-regular{
@@ -19,7 +21,7 @@ nav{
     margin-top: 0px;
     display: flex;
     justify-content: center;
-    background-color: #013cc8;
+    background-color:#1C1C1C;
     border-radius: 0px;
     position:relative;
     z-index: 100;
@@ -27,7 +29,6 @@ nav{
 .dropdown-menu{
     display: flex;
     gap: 2px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .aba{
 	color:aliceblue;
@@ -42,7 +43,7 @@ nav{
 
 .dropdown-menu a{
     display: block;
-    background-color:  #013cc8;
+    background-color:#1C1C1C;
     width: 100%;
     height: 100%;
     color: white;
@@ -66,16 +67,16 @@ nav{
 }
 
 .dropdown-submenu a{
-    background-color: #00000080;
-    width: 150%;
+    background-color:#1C1C1C  ;
+    width: 130%;
     display: flex;
     justify-content: flex-start;
     padding-left: 20px;
     font-size: .8rem;
-    border-left: 8px solid transparent;
+    border-left: 8px solid;
 }
 .dropdown-submenu li:hover > a{
-    border-left: 8px solid  #013cc8;
+    border-left: 8px solid  rgb(0, 0, 128);
 }
 
 

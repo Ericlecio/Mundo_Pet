@@ -1,47 +1,69 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
-<head >
-	<link rel="stylesheet" href="../css/menu.css"></head>
+<nav id="menu" th:fragment="menu">
+	<link rel="stylesheet" href="../css/menu.css">
+	<script src="https://kit.fontawesome.com/cdc6c5b4dc.js" crossorigin="anonymous"></script>
 
-<nav id="menu">
 
 	<ul class="dropdown-menu">
-		<li><a href="#">Inicio</a></li>
-		<li><a href="#Serviços">Serviços</a></li>
-		<li><a href="#">Cadastros</a>
-			<ul class="dropdown-submenu">
-				<li><a href="usuario/cadastroUsuario">Cadastro de usuarios</a></li>
-				<li><a href="Veterinario/cadastroVeterinario">Cadastro de veterinarios</a></li>
-				<li><a href="Animal/cadastroAnimal">Cadastro de animais</a></li>
-				<li><a href="Consulta/cadastroConsulta">Cadastro de consultas</a></li>
-				<li><a href="Endereco/cadastroEndereco">Cadastro de Endereços</a></li>
+		<li><a href="/MundoPet">MundoPet</a></li>
 
+		<div class="aba">
+			<i class="fa-solid fa-users"></i>
+		</div>
+		<li><a href="#Serviços">Usuarios</a>
+			<ul class="dropdown-submenu">
+				<li><a href="lista/usuarios">Lista de usuario</a></li>
+				<li><a href="usuario/cadastroUsuario">cadastro de usuarios</a></li>
 			</ul>
 		</li>
+
+		<div class="aba">
+			<i class="fa-solid fa-user-doctor"></i>
+		</div>
+		<li><a href="#">Veterinarios</a>
+			<ul class="dropdown-submenu">
+				<li><a href="lista/veterinarios">Lista de veterinarios</a></li>
+				<li><a href="Veterinario/cadastroVeterinario">Cadastro de veterinarios</a></li>
+			</ul>
+		</li>
+
+		<div class="aba">
+			<i class="fa-solid fa-calendar-days"></i>
+		</div>
 		<li><a href="#">Consultas</a>
 			<ul class="dropdown-submenu">
-				<li><a href="lista/usuarios">Consulta de usuarios</a></li>
-				<li><a href="lista/veterinarios">Consulta de veterinarios</a></li>
-				<li><a href="lista/animais">Consulta de animais</a></li>
-				<li><a href="lista/consultas">Consulta de consultas</a></li>
-				<li><a href="lista/enderecos">Consulta de Endereços</a></li>
-
+				<li><a href="lista/consultas">Lista de consultas</a></li>
+				<li><a href="Consulta/cadastroConsulta">Cadastro de consultas</a></li>
 			</ul>
 		</li>
-		<li><a href="#">Chat</a></li>
-		<li><a href="#">Fale conosco</a></li>
+
+		<div class="aba">
+			<i class="fa-solid fa-dog"></i>
+		</div>
+		<li><a href="#">Animais</a>
+			<ul class="dropdown-submenu">
+				<li><a href="lista/animais">Lista de animais</a></li>
+				<li><a href="Animal/cadastroAnimal">Cadastro de animais</a></li>
+			</ul>
+		</li>
+
+		<div class="aba">
+			<i class="fa-solid fa-location-dot"></i>
+		</div>
+		<li><a href="#">Endereços</a>
+			<ul class="dropdown-submenu">
+				<li><a href="lista/enderecos">Lista de enderecços</a></li>
+				<li><a href="Endereco/cadastroEndereco">Cadastro de endereços</a></li>
+			</ul>
+		</li>
 	</ul>
-	<div class="aba">
-		<a href="/login" style="text-decoration:none">
-			<i class="fa-solid fa-user"></i>
-		</a>
-	</div>
 </nav>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-		crossorigin="anonymous"></script>
-		
-		
+	integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+	crossorigin="anonymous"></script>
+
+
 </html>

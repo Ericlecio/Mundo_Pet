@@ -5,29 +5,37 @@
   font-family: "Poppins" , sans-serif;
 }
 body{
-	background-color:#1C1C1C;
+	background-color:#363636;
 	text-align: center;
 }
 .table{
 	margin:auto;
+	border-radius: 8px;
+	margin-top: 15px;
 }
 #detalhes{
-	background-color:rgb(0, 128, 255);
 	padding:10px;
 	border-radius:10px;
 	text-align:center;
+	width:50px;
+	height:20px;
 }
 #editar{
-	background-color:rgb(0, 128, 0);
 	padding:10px;
 	border-radius:10px;
 	text-align:center;
+	width:50px;
+	height:20px;
 }
 #deletar{
-	background-color:rgb(174, 0, 0);
 	padding:10px;
 	border-radius:10px;
 	text-align:center;
+	width:50px;
+	height:20px;
+}
+.table i{
+	padding:10px;
 }
 a{
 	color:#fff;
@@ -55,17 +63,18 @@ h1{
 	color:#fff;
 	text-align:center;
 	font-size:30px;
+	margin-top: 30px;
 }
 .novo{
 	border:solid 1px #fff;
 	margin-top: 10px;
-	margin-left:165px;
+	margin-left:260px;
 	width:200px;
-	height:35px;
+	height:30px;
+	font-size: 18px;
 	text-align:center;
-	color:red;
+	color:with;
 	border-radius:7px;
-	background-color:#fff;
 
 }
 th, td{
