@@ -99,14 +99,13 @@ main {
 
  /* carrossel*/
 .content {
-    height: 400px;
-    width: 750px;
-    border-radius: 20px;
+    height: 450px;
+    width: 99%;
+    border-radius: 10px;
     overflow: hidden;
     position: absolute;
-    top: 57%;
-    left: 68%;
-    transform: translate(-50%, -50%);
+    top: 20%;
+    left:8px;
     box-shadow: 10px 10px 5px 0px rgb(192, 192, 192);
     position:absolute;
     z-index: 0;
@@ -115,13 +114,6 @@ main {
 .content .slide img {
     height: 100%;
     width: 100%;
-}
-
-.navigation {
-    position: absolute;
-    bottom: 160px;
-    left: 850px;
-    display: flex;
 }
 
 .bar {

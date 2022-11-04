@@ -61,7 +61,7 @@ public class AnimalController {
 		return new ModelAndView("redirect:/lista/animais");
 	}
 
-	@GetMapping("Animal/cadastroAnimal")
+	@GetMapping("animal/cadastroAnimal")
 	public ModelAndView novoAnimal() {
 		ModelAndView mv = new ModelAndView("Animal/cadastroAnimal");
 		return mv;

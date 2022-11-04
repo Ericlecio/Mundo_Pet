@@ -60,7 +60,7 @@ public class VeterinarioController {
 		return new ModelAndView("redirect:/lista/veterinarios");
 	}
 
-	@GetMapping("Veterinario/cadastroVeterinario")
+	@GetMapping("veterinario/cadastroVeterinario")
 	public ModelAndView cadastroVeterinario() {
 		ModelAndView mv = new ModelAndView("Veterinario/cadastroVeterinario");
 		return mv;

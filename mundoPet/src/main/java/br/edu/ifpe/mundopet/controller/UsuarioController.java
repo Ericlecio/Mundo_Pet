@@ -36,7 +36,7 @@ public class UsuarioController {
 			e.printStackTrace();
 		}
 
-		ModelAndView mv = new ModelAndView("usuario/usuario");
+		ModelAndView mv = new ModelAndView("Usuario/usuario");
 		mv.addObject("usuarios", usuario);
 		return mv;
 	}
@@ -44,7 +44,7 @@ public class UsuarioController {
 	@PostMapping("/lista/usuarios")
 	public ModelAndView createUsuario(@Validated Usuario usuario, BindingResult bindingResults) {
 		if (bindingResults.hasErrors()) {
-			ModelAndView mv = new ModelAndView("usuario/cadastroUsuario");
+			ModelAndView mv = new ModelAndView("Usuario/cadastroUsuario");
 			mv.addObject("Usuario", usuario);
 			return mv;
 		}
@@ -64,7 +64,7 @@ public class UsuarioController {
 
 	@GetMapping("usuario/cadastroUsuario")
 	public ModelAndView novoCliente() {
-		ModelAndView mv = new ModelAndView("usuario/cadastroUsuario");
+		ModelAndView mv = new ModelAndView("Usuario/cadastroUsuario");
 		return mv;
 	}
 }

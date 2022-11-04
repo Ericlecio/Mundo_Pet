@@ -9,17 +9,17 @@ public class ControllerGeral {
 
 	@GetMapping("/MundoPet")
 	public ModelAndView pagina1() {
-		ModelAndView mv = new ModelAndView("html/telaPrincipal");
+		ModelAndView mv = new ModelAndView("Html/telaPrincipal");
 		return mv;
 	}
 	@GetMapping("/sistema")
 	public ModelAndView sistema() {
-		ModelAndView mv = new ModelAndView("html/home");
+		ModelAndView mv = new ModelAndView("Html/home");
 		return mv;
 	}
     @GetMapping("/menu")
 	public ModelAndView home() {
-		ModelAndView mv = new ModelAndView("html/menu");
+		ModelAndView mv = new ModelAndView("Html/menu");
 		return mv;
 	}
 }
