@@ -125,7 +125,7 @@ CREATE TABLE `endereco` (
 --
 
 INSERT INTO `endereco` (`idendereco`, `idusuario`, `Bairro`, `Rua`, `Cidade`, `Numero`, `UF`) VALUES
-(1, 1, 'newton', 'rua quinze', 'palmares', 222, 'Pe'),
+(1, 1, 'newton', 'rua quinze', 'palmares', 222, 'PE'),
 (2, 2, 'Cohab', 'rua dom pedro I', 'Palmares', 330, 'PE'),
 (3, 3, 'Quilombo', 'rua 87', 'Joaquim Nabuco', 75, 'PE');
 
@@ -165,20 +165,23 @@ CREATE TABLE `consulta` (
   `idconsulta` int(11) NOT NULL AUTO_INCREMENT,
   `idveterinario` int(11) NOT NULL,
   `idusuario` int(11) NOT NULL,
+  `idanimal` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `data_consulta` date NOT NULL,
   `horario` int(4) NOT NULL,
   PRIMARY KEY (`idconsulta`),
   CONSTRAINT `consulta_ibfk_1` FOREIGN KEY (`idveterinario`) REFERENCES `veterinario` (`idveterinario`),
-  CONSTRAINT `consulta_ibfk_2` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`idusuario`)
+  CONSTRAINT `consulta_ibfk_2` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`idusuario`),
+  CONSTRAINT `consulta_ibfk_3` FOREIGN KEY (`idanimal`) REFERENCES `animal` (`idanimal`)
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `consulta`
 --
 
-INSERT INTO `consulta` (`idconsulta`, `idveterinario`, `idusuario`, `nome`, `data_consulta`, `horario`) VALUES
-(1, 1, 2, 'thor', '2023-04-04', 13);
+INSERT INTO `consulta` (`idconsulta`, `idveterinario`, `idusuario`, `idanimal`,`nome`, `data_consulta`, `horario`) VALUES
+(1, 1, 2, 2, 'thor', '2023-04-04', 13);
 
 -- --------------------------------------------------------
 
