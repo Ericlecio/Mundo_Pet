@@ -8,7 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.edu.ifpe.mundopet.dao.UsuarioDao;
@@ -16,7 +18,6 @@ import br.edu.ifpe.mundopet.model.Usuario;
 import br.edu.ifpe.mundopet.util.Util;
 
 @Controller
-
 public class UsuarioController {
 	@Autowired
 	UsuarioDao usuariodao;
@@ -67,4 +68,21 @@ public class UsuarioController {
 		ModelAndView mv = new ModelAndView("Usuario/cadastroUsuario");
 		return mv;
 	}
+	
+	@GetMapping("/usuarios/{id}/edit")
+	public ModelAndView edit(@PathVariable Long id, Usuario usuario) {
+		ModelAndView mv = new ModelAndView("Usuario/editUsuario");
+		int idusuario = (int) id.intValue();
+		
+		try {
+			usuario = (Usuario) usuariodao.consultarTodosUsuarios();
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return mv;
+	}
+	
+	
 }
