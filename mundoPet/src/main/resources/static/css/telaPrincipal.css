@@ -1,11 +1,13 @@
 *{
     margin: 0;
     padding: 0;
+    
 }
 
 body{
 	background-image: url(https://img.freepik.com/vetores-gratis/fundo-branco-elegante-com-linhas-brilhantes_1017-17580.jpg?w=740&t=st=1666654185~exp=1666654785~hmac=4aef281072beaae08d464a6b36320f81e78d77a85fdedc3e9fc56f116b8f2685);
 	border-image: cover;
+	width:100%;
 }
 
 a{

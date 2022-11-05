@@ -10,9 +10,11 @@ public class Consulta {
 
 	private Usuario usuario;
 	private Veterinario veterinario;
+	private Consulta consulta;
+
 
 	public Consulta(int idconsulta, String nome, Date data_Consulta, int horario, Usuario usuario,
-			Veterinario veterinario) {
+			Veterinario veterinario, Consulta consulta ) {
 		super();
 		this.idconsulta = idconsulta;
 		this.nome = nome;
@@ -20,6 +22,15 @@ public class Consulta {
 		this.horario = horario;
 		this.usuario = usuario;
 		this.veterinario = veterinario;
+		this.consulta = consulta;
+	}
+
+	public Consulta getConsulta() {
+		return consulta;
+	}
+
+	public void setConsulta(Consulta consulta) {
+		this.consulta = consulta;
 	}
 
 	public Usuario getUsuario() {

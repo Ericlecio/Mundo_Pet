@@ -17,29 +17,32 @@ import br.edu.ifpe.mundopet.model.Veterinario;
 public class VeterinarioDao {
 	public void AdicionarVeterinario(Veterinario veterinario) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
-		String sql = "INSERT INTO `veterinario`" + "(`nome`, `data_nasc`, `email`,`cpf`, `senha`)"
-				+ "VALUES(?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO `veterinario`" + "(`nome`, `data_nasc`, `email`,`cpf`,`crmv`, `senha`)"
+				+ "VALUES(?, ?, ?, ?, ?, ?)";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
 		stmt.setString(1, veterinario.getNome());
 		stmt.setDate(2, new Date(veterinario.getData_Nasc().getTime()));
 		stmt.setString(3, veterinario.getEmail());
 		stmt.setString(4, veterinario.getCpf());
-		stmt.setString(5, veterinario.getSenha());
+		stmt.setString(5, veterinario.getCrmv());
+		stmt.setString(6, veterinario.getSenha());
 
 		stmt.execute();
 		stmt.close();
 		connection.close();
 	}
 
-	public Veterinario consultarVeterinariosEmailSenha(Veterinario pVeterinario)
+	public Veterinario consultarVeterinariosEmailSenhaCrmv(Veterinario pVeterinario)
 			throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
-		String sql = "SELECT `idveterinario`, `nome`, `data_nasc`, `email`, `cpf`, `senha` FROM `veterinario` where 'email'= ? and 'senha'= ?";
+		String sql = "SELECT `idveterinario`, `nome`, `data_nasc`, `email`, `cpf`,`crmv`, `senha` FROM `veterinario` where 'email'= ? and 'senha'= ?";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
 		stmt.setString(1, pVeterinario.getEmail());
 		stmt.setString(2, pVeterinario.getSenha());
+		stmt.setString(3, pVeterinario.getCrmv());
+
 
 		ResultSet resultSet = stmt.executeQuery();
 
@@ -52,7 +55,8 @@ public class VeterinarioDao {
 			veterinario.setData_Nasc(new java.util.Date(resultSet.getDate(3).getTime()));
 			veterinario.setEmail(resultSet.getString(4));
 			veterinario.setCpf(resultSet.getString(5));
-			veterinario.setSenha(resultSet.getString(6));
+			veterinario.setCrmv(resultSet.getString(6));
+			veterinario.setSenha(resultSet.getString(7));
 
 		}
 		stmt.close();
@@ -64,7 +68,7 @@ public class VeterinarioDao {
 
 	public List<Veterinario> ConsultarTodosVeterinarios() throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
-		String sql = "SELECT `idveterinario`, `nome`, `data_nasc`, `email`, `cpf`, `senha` FROM `veterinario`";
+		String sql = "SELECT `idveterinario`, `nome`, `data_nasc`, `email`, `cpf`,`crmv`, `senha` FROM `veterinario`";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
 		ResultSet resultSet = stmt.executeQuery();
@@ -81,7 +85,8 @@ public class VeterinarioDao {
 			veterinario.setData_Nasc(new java.util.Date(resultSet.getDate(3).getTime()));
 			veterinario.setEmail(resultSet.getString(4));
 			veterinario.setCpf(resultSet.getString(5));
-			veterinario.setSenha(resultSet.getString(6));
+			veterinario.setCrmv(resultSet.getString(6));
+			veterinario.setSenha(resultSet.getString(7));
 
 			listaTodosVeterinarios.add(veterinario);
 		}
@@ -93,7 +98,7 @@ public class VeterinarioDao {
 
 	public void AtualizarVeterinario(Veterinario veterinario) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
-		String sql = "UPDATE `veterinario` set `nome` = ?, `data_nasc`= ?, `email` = ?, `cpf` = ?, `senha` = ? where `idveterinario`= ? ";
+		String sql = "UPDATE `veterinario` set `nome` = ?, `data_nasc`= ?, `email` = ?, `cpf` = ?, `crmv` = ?, `senha` = ? where `idveterinario`= ? ";
 
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
@@ -101,8 +106,9 @@ public class VeterinarioDao {
 		stmt.setDate(2, new Date(veterinario.getData_Nasc().getTime()));
 		stmt.setString(3, veterinario.getEmail());
 		stmt.setString(4, veterinario.getCpf());
-		stmt.setString(5, veterinario.getSenha());
-		stmt.setInt(6, veterinario.getIdveterinario());
+		stmt.setString(5, veterinario.getCrmv());
+		stmt.setString(6, veterinario.getSenha());
+		stmt.setInt(7, veterinario.getIdveterinario());
 
 		stmt.executeUpdate();
 		stmt.close();

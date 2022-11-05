@@ -1,5 +1,6 @@
+
 .container {
-    width: 100%;
+    width: 93%;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -7,67 +8,78 @@
   
   /* Card */
   .card {
-    width: 270px;
-    height: 450px;
+    width: 80%;
+    height: 430px;
     margin: 15px;
     background-color: #fff;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
     transition: 0.3s;
+    display:flex;
   }
   
   /* Card Header*/
   .card-header {
-    width: 100%;
-    height: 200px;
+	display:flex;
+    width: 50%;
+    height: 100%;
     overflow: hidden;
+
   }
   
   .card-img {
-    min-width: 100%;
-    width:50%;
+    width:100%;
     height: 100%;
+
   }
   
   /* Card Body */
   .card-body {
-    height: 160px;
-    padding: 15px;
+    padding:100px;
     text-align: center;
     font-family: sans-serif;
+    margin-right:10px;
+
   }
   
   .card-local {
-    font-size: 16px;
+    font-size: 30px;
     margin: 10px 0;
+
   }
   
   .card-titulo {
     font-size: 25px;
     margin: 15px 0;
+
   }
   
   .card-texto {
-    font-size: 12px;
+    font-size: 16px;
     width: 250px;
     margin: 0 auto;
+
   }
   
   /* Card Footer */
   .card-footer {
-    margin-top: 10px;
     text-align: center;
     background-color: #000;
+    height:100%;
+    width:12%;
+
   }
   
   .card-footer a {
     color: #fff;
     display: block;
-    padding: 16px;
+    padding: 20px;
     text-decoration: none;
     font-family: sans-serif;
     font-weight: 600;
+    margin-top: 100%;
+    
   }
   
   /* Cores Cards */
@@ -127,7 +139,3 @@
     text-align: center;
    
 }
-
-
-
-

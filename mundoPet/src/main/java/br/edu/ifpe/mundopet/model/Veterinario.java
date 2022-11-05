@@ -11,16 +11,26 @@ public class Veterinario {
 	private Date data_Nasc;
 	private String email;
 	private String cpf;
+	private String crmv;
 	private String senha;
 
-	public Veterinario(int idveterinario, String nome, Date data_Nasc, String email, String cpf, String senha) {
+	public Veterinario(int idveterinario, String nome, Date data_Nasc, String email, String cpf, String crmv, String senha) {
 		super();
 		this.idveterinario = idveterinario;
 		this.nome = nome;
 		this.data_Nasc = data_Nasc;
 		this.email = email;
 		this.cpf = cpf;
+		this.crmv = crmv;
 		this.senha = senha;
+	}
+
+	public String getCrmv() {
+		return crmv;
+	}
+
+	public void setCrmv(String crmv) {
+		this.crmv = crmv;
 	}
 
 	public Veterinario() {
