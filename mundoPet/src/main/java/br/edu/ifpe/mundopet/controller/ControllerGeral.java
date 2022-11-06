@@ -14,7 +14,7 @@ public class ControllerGeral {
 	}
 	@GetMapping("/sistema")
 	public ModelAndView sistema() {
-		ModelAndView mv = new ModelAndView("Html/home");
+		ModelAndView mv = new ModelAndView("Html/modal");
 		return mv;
 	}
     @GetMapping("/menu")

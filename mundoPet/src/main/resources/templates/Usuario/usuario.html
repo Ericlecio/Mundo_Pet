@@ -6,11 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../css/listar.css">
 	<link rel="stylesheet" href="../css/modal.css">
-	<script src="../js/modal.js"></script>
-
-
 	<script src="https://kit.fontawesome.com/cdc6c5b4dc.js" crossorigin="anonymous"></script>
 	<title>Lista de Usuario</title>
+
 </head>
 
 <body>
@@ -47,16 +45,20 @@
 						<i class="fa-solid fa-file-pen" style="color:rgb(0, 255, 64);"></i></a>
 				</td>
 				<td id="deletar">
-					<a th:href="@{/usuarios/{idUsuario}/edit(idUsuario = ${usuario.idusuario})}">
-						<i class="fa-regular fa-trash-can" style="color:red;"></i></a>
+					<a role="button" id="open-modal" href="">
+						<i class="fa-regular fa-trash-can" style="color:red;">Deletar</i></a>
 
 				</td>
 			</tr>
+
+
 		</tbody>
 	</table>
 	<div class="novo">
 		<a href="../usuario/cadastroUsuario">Inserir usuario</a>
 	</div>
+
+
 </body>
 
 </html>
