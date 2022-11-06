@@ -68,21 +68,6 @@ public class UsuarioController {
 		ModelAndView mv = new ModelAndView("Usuario/cadastroUsuario");
 		return mv;
 	}
-	
-	@GetMapping("/usuarios/{id}/edit")
-	public ModelAndView edit(@PathVariable Long id, Usuario usuario) {
-		ModelAndView mv = new ModelAndView("Usuario/editUsuario");
-		int idusuario = (int) id.intValue();
-		
-		try {
-			usuario = (Usuario) usuariodao.consultarTodosUsuarios();
-			
-		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return mv;
-	}
-	
+
 	
 }
