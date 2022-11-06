@@ -1,7 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-    
 }
 
 body{
@@ -9,6 +8,7 @@ body{
 	border-image: cover;
 	width:100%;
 }
+  /* BARRA DE MENU */
 
 a{
 	color:#fff;
@@ -21,7 +21,6 @@ a{
 .fa-regular{
 	color:#fff;
 }
-
 nav{
     margin-top: 0px;
     display: flex;
@@ -59,8 +58,7 @@ nav{
     align-items: center;
     font-size: 1rem;
     transition: all .2s linear;
-        position:relative;
-
+    position:relative;
 }
 
 .dropdown-menu li:hover > .dropdown-submenu {
@@ -85,8 +83,6 @@ nav{
     border-left: 8px solid  #013cc8;
 }
 
-
-
 .logo {
   width: 8%;
   height:8%;
@@ -99,7 +95,7 @@ main {
 }
 
 
- /* carrossel*/
+ /* CARROSSEL*/
 .content {
     height: 450px;
     width: 99%;
@@ -119,7 +115,6 @@ main {
 }
 
 .bar {
-
     width: 15px;
     height: 15px;
     border: 2px solid white;
@@ -127,7 +122,6 @@ main {
     border-radius: 15px;
     cursor: pointer;
     transform: .5s ease;
-
 }
 
 .bar:hover {
@@ -167,4 +161,127 @@ input {
 
 #slide5:checked ~ .s1 {
     margin-left: -80%;
-} 
+}   
+    
+    
+/* CADS*/
+    
+.container {
+    width: 93%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+.card {
+    width: 80%;
+    height: 430px;
+    margin: 15px;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+    transition: 0.3s;
+    display:flex;
+  }
+  .card-header {
+	display:flex;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .card-img {
+    width:100%;
+    height: 100%;
+  }
+  .card-body {
+    padding:100px;
+    text-align: center;
+    font-family: sans-serif;
+    margin-right:10px;
+  }
+  
+  .card-local {
+    font-size: 30px;
+    margin: 10px 0;
+  }
+  .card-titulo {
+    font-size: 25px;
+    margin: 15px 0;
+  }
+  .card-texto {
+    font-size: 16px;
+    width: 250px;
+    margin: 0 auto;
+
+  }
+ .card-footer {
+    text-align: center;
+    background-color: #000;
+    height:100%;
+    width:12%;
+  }
+  .card-footer a {
+    color: #fff;
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin-top: 100%;
+  }
+  .card-1 .card-footer {
+    background-color: #1881FC;
+  }
+  
+  .card-1 .card-local {
+    color: #2740d1;
+  }
+  
+  .card-2 .card-footer{
+    background-color: #1881FC;
+  }
+  
+  .card-2 .card-local {
+    color: #d12761;
+  }
+  
+  .card-3 .card-footer {
+    background-color: #1881FC;
+  }
+  
+  .card-3 .card-local {
+    color: #00c702;
+  }
+
+  .card-4 .card-footer {
+    background-color: #1881FC;
+  }
+  
+  .card-4 .card-local {
+    color: #c0d127;
+  }
+
+  .card-5 .card-footer {
+    background-color: #1881FC;
+  }
+  
+  .card-5 .card-local {
+    color: #272ad1;
+  }
+  
+  .card-6 .card-footer {
+    background-color: #1881FC;
+  }
+  
+  .card-6 .card-local {
+    color: #d15d27;
+  }
+  /* Animação Hover */
+  .card:hover {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+  
+.abaserviços{
+    text-align: center;
+   
+}

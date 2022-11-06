@@ -5,6 +5,10 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../css/listar.css">
+	<link rel="stylesheet" href="../css/modal.css">
+	<script src="../js/modal.js"></script>
+
+
 	<script src="https://kit.fontawesome.com/cdc6c5b4dc.js" crossorigin="anonymous"></script>
 	<title>Lista de Usuario</title>
 </head>
@@ -33,7 +37,7 @@
 				<td th:text="${#dates.format(usuario.data_Nasc,'dd-MM-yyyy')}">Data</td>
 				<td th:text="${usuario.email}">Email</td>
 				<td th:text="${usuario.cpf}">CPF</td>
-				
+
 				<td id="detalhes">
 					<a th:href="@{/usuarios/{idUsuario}(idUsuario = ${usuario.idusuario})}">
 						<i class="fa-solid fa-circle-info" style="color:rgb(128, 255, 255);"></i></a>
@@ -45,6 +49,7 @@
 				<td id="deletar">
 					<a th:href="@{/usuarios/{idUsuario}/edit(idUsuario = ${usuario.idusuario})}">
 						<i class="fa-regular fa-trash-can" style="color:red;"></i></a>
+
 				</td>
 			</tr>
 		</tbody>
