@@ -1,69 +1,98 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
-<nav id="menu" th:fragment="menu">
+
+<nav class="navbar navbar-expand-lg bg-dark" id="menu" th:fragment="menu">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/menu.css">
-	<script src="https://kit.fontawesome.com/cdc6c5b4dc.js" crossorigin="anonymous"></script>
 
 
-	<ul class="dropdown-menu">
-		<li><a href="/MundoPet">MundoPet</a></li>
 
-		<div class="aba">
-			<i class="fa-solid fa-users"></i>
+	<div class="container-fluid">
+		<a class="navbar-brand" href="/MundoPet">MundoPet</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+				<div class="aba"><i class="fa-solid fa-users"></i></div>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+						aria-expanded="false">
+						Usuarios
+					</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="../lista/usuarios">Lista de usuario</a></li>
+						<li><a class="dropdown-item" href="../usuario/cadastroUsuario">Cadastro de usuario</a></li>
+
+					</ul>
+				</li>
+
+				<div class="aba"><i class="fa-solid fa-user-doctor"></i></div>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+						aria-expanded="false">
+						Veterinarios
+					</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="../lista/veterinarios">Lista de Veterinario</a></li>
+						<li><a class="dropdown-item" href="../veterinario/cadastroVeterinario">Cadastro de
+								Veterinario</a></li>
+
+					</ul>
+				</li>
+
+				<div class="aba"><i class="fa-solid fa-dog"></i></div>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+						aria-expanded="false">
+						Animais
+					</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="../lista/animais">Lista de Animais</a></li>
+						<li><a class="dropdown-item" href="../animal/cadastroAnimal">Cadastro de animais</a></li>
+
+					</ul>
+				</li>
+
+				<div class="aba"><i class="fa-solid fa-calendar-days"></i></div>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+						aria-expanded="false">
+						Consultas
+					</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="../lista/consultas">Lista de consulta</a></li>
+						<li><a class="dropdown-item" href="../Consulta/cadastroConsulta">Cadastro de consulta</a></li>
+
+					</ul>
+				</li>
+
+				<div class="aba"><i class="fa-solid fa-location-dot"></i></div>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+						aria-expanded="false">
+						Endereços
+					</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="../lista/enderecos">Lista de Endereço</a></li>
+						<li><a class="dropdown-item" href="../Endereco/cadastroEndereco">Cadastro de endereço</a></li>
+
+					</ul>
+				</li>
 		</div>
-		<li><a href="#Serviços">Usuarios</a>
-			<ul class="dropdown-submenu">
-				<li><a href="../lista/usuarios">Lista de usuario</a></li>
-				<li><a href="../usuario/cadastroUsuario">cadastro de usuarios</a></li>
-			</ul>
-		</li>
-
-		<div class="aba">
-			<i class="fa-solid fa-user-doctor"></i>
-		</div>
-		<li><a href="#">Veterinarios</a>
-			<ul class="dropdown-submenu">
-				<li><a href="../lista/veterinarios">Lista de veterinarios</a></li>
-				<li><a href="../veterinario/cadastroVeterinario">Cadastro de veterinarios</a></li>
-			</ul>
-		</li>
-
-		<div class="aba">
-			<i class="fa-solid fa-calendar-days"></i>
-		</div>
-		<li><a href="#">Consultas</a>
-			<ul class="dropdown-submenu">
-				<li><a href="../lista/consultas">Lista de consultas</a></li>
-				<li><a href="../Consulta/cadastroConsulta">Cadastro de consultas</a></li>
-			</ul>
-		</li>
-
-		<div class="aba">
-			<i class="fa-solid fa-dog"></i>
-		</div>
-		<li><a href="#">Animais</a>
-			<ul class="dropdown-submenu">
-				<li><a href="../lista/animais">Lista de animais</a></li>
-				<li><a href="../animal/cadastroAnimal">Cadastro de animais</a></li>
-			</ul>
-		</li>
-
-		<div class="aba">
-			<i class="fa-solid fa-location-dot"></i>
-		</div>
-		<li><a href="#">Endereços</a>
-			<ul class="dropdown-submenu">
-				<li><a href="../lista/enderecos">Lista de enderecços</a></li>
-				<li><a href="../Endereco/cadastroEndereco">Cadastro de endereços</a></li>
-			</ul>
-		</li>
-	</ul>
+	</div>
 </nav>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
 	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/cdc6c5b4dc.js" crossorigin="anonymous"></script>
+
 
 
 </html>

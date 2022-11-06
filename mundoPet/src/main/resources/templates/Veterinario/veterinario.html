@@ -4,56 +4,93 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/listar.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+		crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/cdc6c5b4dc.js" crossorigin="anonymous"></script>
+	<title>Lista de veterinario</title>
 
-	<title>Lista de Veterinarios</title>
 </head>
 
-<body>
+<body style="background-color:#1C1C1C;">
 	<nav th:replace="~{/html/menu :: menu}"></nav>
 
-	<h1>Lista de Veterinarios mundo pet</h1>
-	<table class="table" border="1">
-		<thead>
-			<tr>
-				<th scope="col">ID</th>
-				<th scope="col">Nome Completo</th>
-				<th scope="col">Data de nascimento</th>
-				<th scope="col">Email</th>
-				<th scope="col">CPF</th>
-				<th scope="col">CRMV</th>
-				<th scope="col"></th>
-				<th scope="col"></th>
-				<th scope="col"></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="veterinario : ${veterinarios}">
-				<th scope="row" th:text="${veterinario.getIdveterinario}">ID</th>
-				<td th:text="${veterinario.nome}">Nome</td>
-				<td th:text="${#dates.format(veterinario.data_Nasc,'dd-MM-yyyy')}">Data</td>
-				<td th:text="${veterinario.email}">Email</td>
-				<td th:text="${veterinario.cpf}">CPF</td>
-				<td th:text="${veterinario.crmv}">CRMV</td>
-				<td id="detalhes"> <a>
-						<i class="fa-solid fa-circle-info" style="color:rgb(128, 255, 255);"></i></a>
-				</td>
-				<td id="editar"><a>
-						<i class="fa-solid fa-file-pen" style="color:rgb(0, 255, 64);"></i></a>
-				</td>
-				<td id="deletar"><a>
-						<i class="fa-regular fa-trash-can" style="color:red;"></i></a>
-				</td>
-			</tr>
-		</tbody>
-	</table>
+	<h2>Lista de Veterinario Mundo pet</h2>
+	<div class="container mt-4">
+		<div class="row">
+			<div class="col-12">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th scope="col">ID</th>
+							<th scope="col">Nome Completo</th>
+							<th scope="col">Data de nascimento</th>
+							<th scope="col">Email</th>
+							<th scope="col">CPF</th>
+							<th scope="col">CRMV</th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="veterinario : ${veterinarios}">
+
+							<th class="col-1" scope="row" th:text="${veterinario.getIdveterinario}">ID</th>
+							<td class="col-2" th:text="${veterinario.nome}">Nome</td>
+							<td class="col-2" th:text="${#dates.format(veterinario.data_Nasc,'dd-MM-yyyy')}">Data</td>
+							<td class="col-2" th:text="${veterinario.email}">Email</td>
+							<td class="col-2" th:text="${veterinario.cpf}">CPF</td>
+							<td class="col-2" th:text="${veterinario.crmv}">CRMV</td>
+							
+							<td class="col-1">
+								<a>
+									<i class="fa-solid fa-circle-info" style="color:rgb(128, 255, 255);"></i></a>
+							</td>
+							<td class="col-1">
+								<a>
+									<i class="fa-solid fa-file-pen" style="color:rgb(0, 128, 0);"></i></a>
+							</td>
+							<td class="col-1">
+								<a role="button" data-bs-toggle="modal" data-bs-target="#deleteVeterinario" href="">
+									<i class=" fa-regular fa-trash-can" style="color:rgb(255, 0, 0);"></i></a>
+
+								<div class="modal fade" id="deleteVeterinario" tabindex="-1"
+									aria-labelledby="exampleModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h1 class="modal-title fs-5" id="exdeleteVeterinario">Deletar Veterinario</h1>
+												<button type="button" class="btn-close" data-bs-dismiss="modal"
+													aria-label="Close"></button>
+											</div>
+											<div class="modal-body">
+												Deseja realmente deletar este veterinario ?
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary"
+													data-bs-dismiss="modal">Fechar</button>
+												<button type="button" class="btn btn-primary">Deletar</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
 	<div class="novo">
 		<a href="../veterinario/cadastroVeterinario">Inserir veterinario</a>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-		crossorigin="anonymous"></script>
+
+
 </body>
 
 </html>

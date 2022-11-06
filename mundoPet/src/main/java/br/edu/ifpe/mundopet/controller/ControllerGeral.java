@@ -12,12 +12,14 @@ public class ControllerGeral {
 		ModelAndView mv = new ModelAndView("Html/telaPrincipal");
 		return mv;
 	}
+
 	@GetMapping("/sistema")
 	public ModelAndView sistema() {
-		ModelAndView mv = new ModelAndView("Html/modal");
+		ModelAndView mv = new ModelAndView("Html/home");
 		return mv;
 	}
-    @GetMapping("/menu")
+
+	@GetMapping("/menu")
 	public ModelAndView home() {
 		ModelAndView mv = new ModelAndView("Html/menu");
 		return mv;

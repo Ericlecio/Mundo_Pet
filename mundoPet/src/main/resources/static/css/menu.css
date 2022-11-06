@@ -1,84 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins" , sans-serif;
+.aba{
+    margin-left:10px;
+	margin-top: 8px;
 }
-
-nav a{
-	color:#fff;
-	text-align: center;
-	color:aliceblue;
-}
-nav .aba{
-	margin-left:10px;
-	margin-top: 15px;
-}
-nav .fa-regular{
-	color:#fff;
-}
-
-nav{
-    margin-top: 0px;
-    display: flex;
+navbar{
     justify-content: center;
-    background-color:#1C1C1C;
-    border-radius: 0px;
-    position:relative;
-    z-index: 100;
+    margin: 0%;
 }
-nav .dropdown-menu{
-    display: flex;
-    gap: 2px;
+.navbar .container-fluid .navbar-brand {
+    color: aliceblue;
 }
-
-nav .dropdown-menu li{
-    width: 150px;
-    height: 50px;
-    list-style: none;
+.navbar .nav-link{
+    color: aliceblue;
 }
 
-nav .dropdown-menu a{
-    display: block;
-    background-color:#1C1C1C;
-    width: 100%;
-    height: 100%;
-    color: white;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    transition: all .2s linear;
-        position:relative;
-
+.navbar .nav-item{
+    color: aliceblue;
 }
-
-nav .dropdown-menu li:hover > .dropdown-submenu {
-    display: block;
+.navbar .aba i{
+    color: aliceblue;
 }
-
-nav .dropdown-submenu{
-    margin-top: 1px;
-    display: none;
-}
-nav i {
-	color:white;
-}
-
-nav .dropdown-submenu a{
-    background-color:#1C1C1C  ;
-    width: 130%;
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 20px;
-    font-size: .8rem;
-    border-left: 8px solid;
-}
-nav .dropdown-submenu li:hover > a{
-    border-left: 8px solid  rgb(0, 0, 128);
-}
-
-
-
-
