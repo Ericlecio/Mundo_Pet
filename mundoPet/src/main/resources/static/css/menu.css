@@ -1,3 +1,8 @@
+*{
+	margin:0;
+	padding:0;
+}
+
 .aba{
     margin-left:10px;
 	margin-top: 8px;
@@ -5,9 +10,14 @@
 navbar{
     justify-content: center;
     margin: 0%;
+    
+    
 }
-.navbar .container-fluid .navbar-brand {
+.navbar .container-fluid{
     color: aliceblue;
+    margin-left: 25%;
+    justify-content: center;
+    align-items: center;
 }
 .navbar .nav-link{
     color: aliceblue;
@@ -18,4 +28,11 @@ navbar{
 }
 .navbar .aba i{
     color: aliceblue;
+}
+
+.logo img{
+	margin-left: 30px;
+	margin-right:10px;
+	width:70px;
+	height:40px;
 }
