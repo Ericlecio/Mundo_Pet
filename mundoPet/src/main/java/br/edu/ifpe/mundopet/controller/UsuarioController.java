@@ -69,5 +69,17 @@ public class UsuarioController {
 		return mv;
 	}
 
+	@PostMapping("/{idusuario}/delete")
+	public ModelAndView deleteUsuario(@PathVariable Long idusuario) {
+		int codigo = (int) idusuario.intValue();
+		try {
+			usuariodao.DeletarUsuario(codigo);
+			
+		} catch ( ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		return new ModelAndView("redirect:/lista/usuarios");
+	}
+	
 	
 }

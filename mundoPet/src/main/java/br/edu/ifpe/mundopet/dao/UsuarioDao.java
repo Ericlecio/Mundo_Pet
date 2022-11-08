@@ -113,7 +113,7 @@ public class UsuarioDao {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "DELETE FROM `usuario` WHERE `idusuario`=?";
 		PreparedStatement stmt = connection.prepareStatement(sql);
-		stmt.setLong(2, idusuario);
+		stmt.setLong(1, idusuario);
 
 		stmt.executeUpdate();
 		stmt.close();
