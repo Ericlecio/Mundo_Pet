@@ -46,8 +46,11 @@
 							<td class="col-2" th:text="${#dates.format(consulta.data_Consulta,'dd-MM-yyyy')}">Data da
 								consulta</td>
 							<td class="col-2" th:text="${consulta.horario}">Horario</td>
-							<td class="col-2" th:text="${consulta.cpf}">CPF</td>
-							<td class="col-1">
+							<td class="col-2" th:text="${consulta.veterinario.nome}">Veterinario</td>
+							<td class="col-2" th:text="${consulta.usuario.nome}">Dono</td>
+							<td class="col-2" th:text="${consulta.animal.nome}">Animal</td>
+							<td class="col-2">
+							<td class="col-2">
 								<a>
 									<i class="fa-solid fa-circle-info" style="color:rgb(128, 255, 255);"></i></a>
 							</td>
