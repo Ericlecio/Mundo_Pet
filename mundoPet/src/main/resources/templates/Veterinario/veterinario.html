@@ -15,14 +15,14 @@
 
 </head>
 
-<body style="background-color:#1C1C1C;">
+<body style="background-color: #E7dFDD;">
 	<nav th:replace="~{/html/menu :: menu}"></nav>
 
 	<h2>Lista de Veterinario Mundo pet</h2>
 	<div class="container mt-4">
 		<div class="row">
 			<div class="col-12">
-				<table class="table table-hover">
+				<table class="table table-dark and table-striped and table-bordered">
 					<thead>
 						<tr>
 							<th scope="col">ID</th>
@@ -30,7 +30,7 @@
 							<th scope="col">Data de nascimento</th>
 							<th scope="col">Email</th>
 							<th scope="col">CPF</th>
-							<th scope="col">CRMV</th>
+							<th scope="col">Crmv</th>
 							<th scope="col"></th>
 							<th scope="col"></th>
 							<th scope="col"></th>
@@ -38,14 +38,12 @@
 					</thead>
 					<tbody>
 						<tr th:each="veterinario : ${veterinarios}">
-
 							<th class="col-1" scope="row" th:text="${veterinario.getIdveterinario}">ID</th>
 							<td class="col-2" th:text="${veterinario.nome}">Nome</td>
 							<td class="col-2" th:text="${#dates.format(veterinario.data_Nasc,'dd-MM-yyyy')}">Data</td>
 							<td class="col-2" th:text="${veterinario.email}">Email</td>
 							<td class="col-2" th:text="${veterinario.cpf}">CPF</td>
 							<td class="col-2" th:text="${veterinario.crmv}">CRMV</td>
-							
 							<td class="col-1">
 								<a>
 									<i class="fa-solid fa-circle-info" style="color:rgb(128, 255, 255);"></i></a>
@@ -63,7 +61,8 @@
 									<div class="modal-dialog">
 										<div class="modal-content">
 											<div class="modal-header">
-												<h1 class="modal-title fs-5" id="exdeleteVeterinario">Deletar Veterinario</h1>
+												<h1 class="modal-title fs-5" id="exdeleteVeterinario">Deletar
+													Veterinario</h1>
 												<button type="button" class="btn-close" data-bs-dismiss="modal"
 													aria-label="Close"></button>
 											</div>

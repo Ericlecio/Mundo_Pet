@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 
-<nav class="navbar navbar-expand-lg bg-dark" id="menu" th:fragment="menu">
+<nav class="navbar navbar-expand-lg " style="background-color: #013cc8;" id="menu" th:fragment="menu">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/menu.css">
@@ -19,6 +19,19 @@
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			
+			<div class="aba"><i class="fa-solid fa-right-to-bracket"></i></div>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+						aria-expanded="false">
+						Login
+					</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="../login">Login usuario</a></li>
+						<li><a class="dropdown-item" href="../login">Login veterinario</a></li>
+
+					</ul>
+				</li>
 
 				<div class="aba"><i class="fa-solid fa-users"></i></div>
 				<li class="nav-item dropdown">
@@ -47,7 +60,7 @@
 					</ul>
 				</li>
 
-				<div class="logo"><a class="navbar-brand" href="/MundoPet"> <img src="../img/Logo azul.png"></a></div>
+				<div class="logo"><a class="navbar-brand" href="/MundoPet"> <img src="../img/Logo branco.png"></a></div>
 
 				<div class="aba"><i class="fa-solid fa-dog"></i></div>
 				<li class="nav-item dropdown">

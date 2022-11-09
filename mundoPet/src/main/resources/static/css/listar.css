@@ -8,16 +8,19 @@
 
 h2{
 	text-align: center;
-	color:aliceblue;
+	color:rgb(41, 41, 41);
 }
 
 .table tr{
-	color:aliceblue;
+	color:rgb(255, 255, 255);
+}
+.table{
+	text-align: center;
 }
 
 .novo{
+	background-color: #013cc8;
 	position:relative;
-	background-color: rgb(14, 7, 99);
 	width:10%;
 	border-radius: 5px;
 	padding:10px;
@@ -28,9 +31,7 @@ h2{
 	  text-decoration: none;
 	  color:aliceblue;
 }
-.novo a:hover{
-	color:aliceblue;
-}
+
 
 
 /*------------MODAL---------------*/
