@@ -91,7 +91,7 @@ public class UsuarioDao {
 
 	}
 
-	public void AtualizarUsuairo(Usuario usuario) throws ClassNotFoundException, SQLException {
+	public void AtualizarUsuario(Usuario usuario) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "UPDATE `usuario` set `nome` = ?, `data_Nasc`= ?, `email` = ?, `Cpf` = ?, `senha` = ? where `idusuario`= ? ";
 

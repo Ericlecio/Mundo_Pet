@@ -81,5 +81,22 @@ public class UsuarioController {
 		return new ModelAndView("redirect:/lista/usuarios");
 	}
 	
-	
+	@GetMapping("/usuario/{idusuario}/edit")
+	public ModelAndView edit (@PathVariable Long idusuario, Usuario usuario1) {
+		ModelAndView mv = new ModelAndView("Usuario/editarUsuario");
+		int codigo = (int) idusuario.intValue();
+		try {
+			usuario1 = usuariodao.consultarTodosUsuarios(codigo);
+			if(usuario1 != null) {
+				mv.addObject("usuario", usuario1);
+				return mv;
+			}else {
+				return new ModelAndView("redirec:/lista/usuarios");
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return mv;
+}
 }
