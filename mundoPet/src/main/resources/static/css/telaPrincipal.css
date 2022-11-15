@@ -3,11 +3,7 @@
     padding: 0;
 }
 
-body{
-	background-image: url(https://img.freepik.com/vetores-gratis/fundo-branco-elegante-com-linhas-brilhantes_1017-17580.jpg?w=740&t=st=1666654185~exp=1666654785~hmac=4aef281072beaae08d464a6b36320f81e78d77a85fdedc3e9fc56f116b8f2685);
-	border-image: cover;
-	width:100%;
-}
+
   /* BARRA DE MENU */
 
 a{
@@ -15,7 +11,7 @@ a{
 	text-align: center;
 }
 .aba{
-	margin-left:25px;
+	margin-left:30px;
 	margin-top: 15px;
 }
 .fa-regular{
@@ -25,15 +21,25 @@ nav{
     margin-top: 0px;
     display: flex;
     justify-content: center;
-    background-color: #013cc8;
+    background-color: 0;
     border-radius: 0px;
     position:relative;
     z-index: 100;
+    backdrop-filter: blur(3px);
+
+}
+nav ul img{
+	margin-top: 5px;
+	margin-left:30px;
+	width:70px;
+	height:40px;
+    
 }
 .dropdown-menu{
     display: flex;
     gap: 2px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
 }
 .aba{
 	color:aliceblue;
@@ -48,7 +54,7 @@ nav{
 
 .dropdown-menu a{
     display: block;
-    background-color:  #013cc8;
+    background-color:0;
     width: 100%;
     height: 100%;
     color: white;
@@ -59,6 +65,7 @@ nav{
     font-size: 1rem;
     transition: all .2s linear;
     position:relative;
+    backdrop-filter: blur(3px);
 }
 
 .dropdown-menu li:hover > .dropdown-submenu {
@@ -83,98 +90,22 @@ nav{
     border-left: 8px solid  #013cc8;
 }
 
-.logo {
-  width: 8%;
-  height:8%;
-  display: flex;
-  margin-left: 50px;
-}
-
 main {
   height: 75vh;
 }
 
-
- /* CARROSSEL*/
-.content {
-    height: 450px;
-    width: 99%;
-    border-radius: 10px;
-    overflow: hidden;
-    position: absolute;
-    top: 20%;
-    left:8px;
-    box-shadow: 10px 10px 5px 0px rgb(192, 192, 192);
-    position:absolute;
-    z-index: 0;
-}
-
-.content .slide img {
-    height: 100%;
-    width: 100%;
-}
-
-.bar {
-    width: 15px;
-    height: 15px;
-    border: 2px solid white;
-    margin: 6px;
-    border-radius: 15px;
-    cursor: pointer;
-    transform: .5s ease;
-}
-
-.bar:hover {
-    background-color: white;
-}
-
-input {
-  display: none;
-}
-
-.slides {
-    display: flex;
-    width: 500%;
-    height: 100%;
-}
-
-.slide {
-    width: 20%;
-    transition: .6s;
-}
-
-#slide1:checked ~ .s1 {
-    margin-left: 0;
-} 
-
-#slide2:checked ~ .s1 {
-    margin-left: -20%;
-} 
-
-#slide3:checked ~ .s1 {
-    margin-left: -40%;
-} 
-
-#slide4:checked ~ .s1 {
-    margin-left: -60%;
-} 
-
-#slide5:checked ~ .s1 {
-    margin-left: -80%;
-}   
-    
     
 /* CADS*/
-    
 .container {
-    width: 93%;
+    width: 95%;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    z-index: 100;
   }
 .card {
-    width: 80%;
-    height: 430px;
+    width: 45%;
+    height: 300px;
     margin: 15px;
     background-color: #fff;
     border-radius: 15px;
@@ -182,6 +113,8 @@ input {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
     transition: 0.3s;
     display:flex;
+     z-index: 100;
+
   }
   .card-header {
 	display:flex;
@@ -194,10 +127,11 @@ input {
     height: 100%;
   }
   .card-body {
-    padding:100px;
+    padding:0px;
     text-align: center;
     font-family: sans-serif;
     margin-right:10px;
+    margin-top: 50px;
   }
   
   .card-local {
@@ -206,7 +140,7 @@ input {
   }
   .card-titulo {
     font-size: 25px;
-    margin: 15px 0;
+    margin: 10px 0;
   }
   .card-texto {
     font-size: 16px;
@@ -223,11 +157,11 @@ input {
   .card-footer a {
     color: #fff;
     display: block;
-    padding: 20px;
+    padding: 10px;
     text-decoration: none;
     font-family: sans-serif;
     font-weight: 600;
-    margin-top: 100%;
+    margin-top: 110%;
   }
   .card-1 .card-footer {
     background-color: #1881FC;
@@ -284,4 +218,47 @@ input {
 .abaserviços{
     text-align: center;
    
+}
+
+  /* Video de apresentação */
+.banner {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ z-index: 1;
+}
+.banner video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+}
+.banner .content {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+.banner .content .img {
+ z-index: 1;
+ width:80%;
+ height:80%;
+ justify-content: center;
+}
+
+.banner .content p {
+  font-size: 1.5em;
+  color: #ffff;
+  backdrop-filter: blur(3px #000);
+  
+}
+.banner .content img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
 }
