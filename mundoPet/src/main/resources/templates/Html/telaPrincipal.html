@@ -23,7 +23,6 @@
 </head>
 
 <body>
-	<img class="logo" src="../img/Frame1.png" alt="">
 	<nav th:fragment="navbar">
 		<ul class="dropdown-menu">
 			<li><a href="#">Inicio</a></li>
@@ -59,6 +58,7 @@
 			</li>
 			<li><a href="#">Chat</a></li>
 			<li><a href="#">Fale conosco</a></li>
+			<img src="../img/logo branco.png">
 		</ul>
 		<div class="aba">
 			<a href="/login" style="text-decoration:none">
@@ -68,38 +68,20 @@
 	</nav>
 
 
-	<div class="content">
+	<div class="banner">
+		<video autoplay muted loop>
+			<source src="../img/" type="video/mp4">
+		</video>
+		<div class="content">
+					<img class="img"src="../img/Frame1.png">
 
-		<div class="slides">
-
-			<input class="input" type="radio" name="slide" id="slide1" checked>
-			<input class="input" type="radio" name="slide" id="slide2">
-			<input class="input" type="radio" name="slide" id="slide3">
-			<input class="input" type="radio" name="slide" id="slide4">
-			<input class="input" type="radio" name="slide" id="slide5">
-
-
-			<div class="slide s1">
-				<img src="">
-			</div>
-
-			<div class="slide">
-				<img src="">
-
-			</div>
-
-			<div class="slide">
-				<img src="">
-			</div>
-
-			<div class="slide">
-				<img src="">
-			</div>
-
-			<div class="slide">
-				<img src="">
-
-			</div>
+			<p>Melhor serviço para o seu Pet</p>
+			<a href="#"><img
+					src="https://i0.wp.com/www.multarte.com.br/wp-content/uploads/2019/03/logo-instagram-png-fundo-transparente8.png?resize=696%2C696&ssl=1"
+					alt="Instagram"></a>
+			<a href="#"><img
+					src="https://w7.pngwing.com/pngs/567/358/png-transparent-white-and-black-phone-logo-whatsapp-computer-icons-mobile-phones-logo-black-and-white-text-silhouette-instant-messaging.png"
+					alt="WhatsApp"></a>
 		</div>
 	</div>
 
@@ -109,7 +91,7 @@
 	<br>
 
 	<div id="Serviços" class="container" data-aos="fade-up">
-		<div class="card card-1" id="acompanhamentopet">
+		<div class="card card-1" id="acompanhamentopet" data-aos="fade-right">
 			<div class="card-header">
 				<img src="https://love.doghero.com.br/wp-content/uploads/2018/04/Por-que-passeio-%C3%A9-t%C3%A3o-importante-1024x683.jpg"
 					class="card-img" />
@@ -126,10 +108,8 @@
 				<a href="#">Agende aqui</a>
 			</div>
 		</div>
-	</div>
 
-	<div id="Serviços" class="container" data-aos="fade-left">
-		<div class="card card-2">
+		<div class="card card-2" data-aos="fade-left">
 			<div class="card-footer">
 				<a href="#">Agende aqui</a>
 			</div>
@@ -148,8 +128,8 @@
 		</div>
 	</div>
 
-	<div id="Serviços" class="container" data-aos="fade-right">
-		<div class="card card-3">
+	<div id="Serviços" class="container" data-aos="fade-up">
+		<div class="card card-3" data-aos="fade-right">
 			<div class="card-header">
 				<img src="https://perigot.com.br/wp-content/uploads/2021/08/blog.jpg" class="card-img" />
 			</div>
@@ -164,10 +144,8 @@
 				<a href="#">Agende aqui</a>
 			</div>
 		</div>
-	</div>
 
-	<div id="Serviços" class="container" data-aos="fade-left">
-		<div class="card card-4">
+		<div class="card card-4" data-aos="fade-left">
 			<div class="card-footer">
 				<a href="#">Agende aqui</a>
 			</div>
@@ -185,9 +163,9 @@
 		</div>
 	</div>
 
-	<div id="Serviços" class="container" data-aos="fade-right">
+	<div id="Serviços" class="container" data-aos="fade-up">
 
-		<div class="card card-5">
+		<div class="card card-5" data-aos="fade-right">
 			<div class="card-header">
 				<img src="https://i0.wp.com/ethosanimal.com.br/wp-content/uploads/2014/11/adestramento-treinamento-de-caes-ethos-animal-terapia-comportamental-especialista-em-comportamento-animal-helena-truksa.jpg?fit=1024%2C680&ssl=1"
 					class="card-img" />
@@ -203,10 +181,8 @@
 				<a href="#">Agende aqui</a>
 			</div>
 		</div>
-	</div>
 
-	<div id="Serviços" class="container" data-aos="fade-left">
-		<div class="card card-6">
+		<div class="card card-6" data-aos="fade-left">
 			<div class="card-footer">
 				<a href="#">Agende aqui</a>
 			</div>
