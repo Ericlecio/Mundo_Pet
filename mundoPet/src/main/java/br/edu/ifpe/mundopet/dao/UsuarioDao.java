@@ -60,7 +60,32 @@ public class UsuarioDao {
 		return usuario;
 
 	}
+	public Usuario consultarUsuarioPorId(Long id ) throws ClassNotFoundException, SQLException {
+		Connection connection = ConexaoMySQL.getConexaoMySQL();
+		String sql = "SELECT `idusuario`, `nome`, `data_nasc`, `email`, `cpf`, `senha` FROM `usuario` where idUsuario= ?";
+		PreparedStatement stmt = connection.prepareStatement(sql);
+        stmt.setLong(1, id);
+        ResultSet resultSet = stmt.executeQuery();
 
+		Usuario usuario = new Usuario();
+
+		if (resultSet.next()) {
+
+			usuario.setIdusuario(resultSet.getInt(1));
+			String nome = resultSet.getString(2);
+			usuario.setNome(nome);
+			usuario.setData_Nasc(new java.util.Date(resultSet.getDate(3).getTime()));
+			usuario.setEmail(resultSet.getString(4));
+			usuario.setCpf(resultSet.getString(5));
+			usuario.setSenha(resultSet.getString(6));
+
+		}
+		stmt.close();
+		connection.close();
+
+		return usuario;
+
+	}
 	public List<Usuario> consultarTodosUsuarios() throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "SELECT `idusuario`, `nome`, `data_nasc`, `email`, `cpf`, `senha` FROM `usuario`";
@@ -93,7 +118,7 @@ public class UsuarioDao {
 
 	public void AtualizarUsuario(Usuario usuario) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
-		String sql = "UPDATE `usuario` set `nome` = ?, `data_Nasc`= ?, `email` = ?, `Cpf` = ?, `senha` = ? where `idusuario`= ? ";
+		String sql = "UPDATE `usuario` set `nome` = ?, `data_Nasc`= ?, `email` = ?, `Cpf` = ? where `idusuario`= ? ";
 
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
@@ -101,8 +126,7 @@ public class UsuarioDao {
 		stmt.setDate(2, new Date(usuario.getData_Nasc().getTime()));
 		stmt.setString(3, usuario.getEmail());
 		stmt.setString(4, usuario.getCpf());
-		stmt.setString(5, usuario.getSenha());
-		stmt.setInt(6, usuario.getIdusuario());
+		stmt.setInt(5, usuario.getIdusuario());
 
 		stmt.executeUpdate();
 		stmt.close();

@@ -12,7 +12,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
-	<script src="../js/cadastroUsuario.js"></script>
+	<script src="/../js/cadastroUsuario.js"></script>
 	<title>Edição Mundo Pet</title>
 </head>
 
@@ -23,33 +23,27 @@
 			<img src="../img/Logo azul.png" alt="">
 		</div>
 
-		<form action="/lista/usuarios" method="POST" th:object="${usuario}" enctype="multipart/form-data" id="form"
+		<form th:action="@{/lista/usuarios/{idusuario}(idusuario = ${idusuario})}" method="POST" th:object="${usuario}" enctype="multipart/form-data" id="form"
 			class="form">
 			<div class="form-control">
 				<label for="username">Nome Completo</label>
+				<input type="text" id="nome" placeholder="Digite seu nome Completo" name="nome" th:field="*{nome}" />
 			</div>
 
 			<div class="form-control">
 				<label for="email">Email</label>
-				<input type="email" id="email" placeholder="Digite seu email.." name="email" />
+				<input type="email" id="email" placeholder="Digite seu email.." name="email" th:field="*{email}"/>
 			</div>
 
 			<div class="form-control">
-				<label for="CPF">CPF</label>
-				<input type="CPF" id="cpf" minlength="11" maxlength="11" placeholder="Digite seu CPF..." name="cpf" />
+				<label for="cpf">CPF</label>
+				<input type="text" id="cpf" minlength="11" maxlength="11" placeholder="Digite seu CPF..." name="cpf" th:field="*{cpf}" />
 			</div>
 
 			<div class="form-control">
 				<label for="DATA">Data de nascimento</label>
-				<input type="text" id="dataNascimento" placeholder="Digite sua data de nascimento" name="data_Nasc" />
+				<input type="text" id="dataNascimento" placeholder="Digite sua data de nascimento" name="data_Nasc" th:field="*{data_Nasc}"/>
 			</div>
-
-			<div class="form-control">
-				<label for="password">Senha</label>
-				<input type="password" id="password" placeholder="Digite sua senha..." name="senha" />
-			</div>
-
-
 			<button class="btn btn-primary" type="submit">Cadastra- se</button>
 		</form>
 		<p>Já possui uma conta ? <a href="/login">Clique aqui</a></p>

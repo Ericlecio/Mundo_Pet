@@ -69,7 +69,7 @@ public class UsuarioController {
 		return mv;
 	}
 
-	@PostMapping("/{idusuario}/delete")
+	@PostMapping("/usuario/{idusuario}/delete")
 	public ModelAndView deleteUsuario(@PathVariable Long idusuario) {
 		int codigo = (int) idusuario.intValue();
 		try {
@@ -86,12 +86,12 @@ public class UsuarioController {
 		ModelAndView mv = new ModelAndView("Usuario/editarUsuario");
 		int codigo = (int) idusuario.intValue();
 		try {
-			usuario1 = usuariodao.consultarTodosUsuarios(codigo);
+			usuario1 = usuariodao.consultarUsuarioPorId(idusuario);
 			if(usuario1 != null) {
 				mv.addObject("usuario", usuario1);
 				return mv;
 			}else {
-				return new ModelAndView("redirec:/lista/usuarios");
+				return new ModelAndView("redirect:/lista/usuarios");
 			}
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO: handle exception
@@ -99,4 +99,23 @@ public class UsuarioController {
 		}
 		return mv;
 }
+	@PostMapping("/lista/usuarios/{idusuario}")
+	public ModelAndView update(@PathVariable Long idusuario, @Validated Usuario usuario, BindingResult bindingResults) {
+		
+		if(bindingResults.hasErrors()) {
+			ModelAndView mv = new ModelAndView("usuario/editarUsuario");
+			mv.addObject("usuario", usuario);
+			return mv;
+		} else {
+			int codigo = (int) idusuario.intValue();
+			
+			try {
+				usuario.setIdusuario(codigo);
+				usuariodao.AtualizarUsuario(usuario);
+			}catch (ClassNotFoundException | SQLException e){
+				e.printStackTrace();
+			}
+			return new ModelAndView("redirect:/lista/usuarios");
+		}
+	}
 }
