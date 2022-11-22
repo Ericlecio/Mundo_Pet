@@ -81,9 +81,9 @@ public class AnimalDao {
 
 	public void DeletarAnimal(int idanimal) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
-		String sql = "DELETE FROM `animal` WHERE `idAnimal`=?";
+		String sql = "DELETE FROM `animal` WHERE `idanimal`=?";
 		PreparedStatement stmt = connection.prepareStatement(sql);
-		stmt.setInt(4, idanimal);
+		stmt.setInt(1, idanimal);
 
 		stmt.executeUpdate();
 		stmt.close();

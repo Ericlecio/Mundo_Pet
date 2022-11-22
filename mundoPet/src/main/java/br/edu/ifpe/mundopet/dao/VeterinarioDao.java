@@ -43,7 +43,6 @@ public class VeterinarioDao {
 		stmt.setString(2, pVeterinario.getSenha());
 		stmt.setString(3, pVeterinario.getCrmv());
 
-
 		ResultSet resultSet = stmt.executeQuery();
 
 		Veterinario veterinario = new Veterinario();
@@ -56,6 +55,34 @@ public class VeterinarioDao {
 			veterinario.setEmail(resultSet.getString(4));
 			veterinario.setCpf(resultSet.getString(5));
 			veterinario.setCrmv(resultSet.getString(6));
+			veterinario.setSenha(resultSet.getString(7));
+
+		}
+		stmt.close();
+		connection.close();
+
+		return veterinario;
+
+	}
+
+	public Veterinario consultarVeterinarioPorId(Long id) throws ClassNotFoundException, SQLException {
+		Connection connection = ConexaoMySQL.getConexaoMySQL();
+		String sql = "SELECT `idveterinario`, `nome`, `data_nasc`, `email`, `cpf`,`crmv`, `senha` FROM `veterinario` where idVeterinario= ?";
+		PreparedStatement stmt = connection.prepareStatement(sql);
+		stmt.setLong(1, id);
+		ResultSet resultSet = stmt.executeQuery();
+
+		Veterinario veterinario = new Veterinario();
+
+		if (resultSet.next()) {
+
+			veterinario.setIdveterinario(resultSet.getInt(1));
+			String nome = resultSet.getString(2);
+			veterinario.setNome(nome);
+			veterinario.setData_Nasc(new java.util.Date(resultSet.getDate(3).getTime()));
+			veterinario.setEmail(resultSet.getString(4));
+			veterinario.setCrmv(resultSet.getString(5));
+			veterinario.setCpf(resultSet.getString(6));
 			veterinario.setSenha(resultSet.getString(7));
 
 		}
@@ -119,7 +146,7 @@ public class VeterinarioDao {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "DELETE FROM `veterinario` WHERE `idveterinario`=?";
 		PreparedStatement stmt = connection.prepareStatement(sql);
-		stmt.setLong(4, idveterinario);
+		stmt.setLong(1, idveterinario);
 
 		stmt.executeUpdate();
 		stmt.close();

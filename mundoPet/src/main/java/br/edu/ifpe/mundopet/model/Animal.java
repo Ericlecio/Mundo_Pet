@@ -1,7 +1,7 @@
 package br.edu.ifpe.mundopet.model;
 
 public class Animal {
-	private int idAnimal;
+	private int idanimal;
 	private String nome;
 	private String raca;
 	private int idade;
@@ -9,9 +9,9 @@ public class Animal {
 
 	private Usuario usuario;
 
-	public Animal(int idAnimal, String nome, String raca, int idade, String sexo) {
+	public Animal(int idanimal, String nome, String raca, int idade, String sexo) {
 		super();
-		this.idAnimal = idAnimal;
+		this.idanimal = idanimal;
 		this.nome = nome;
 		this.raca = raca;
 		this.idade = idade;
@@ -31,11 +31,11 @@ public class Animal {
 	}
 
 	public int getIdAnimal() {
-		return idAnimal;
+		return idanimal;
 	}
 
 	public void setIdAnimal(int idAnimal) {
-		this.idAnimal = idAnimal;
+		this.idanimal = idAnimal;
 	}
 
 	public String getNome() {

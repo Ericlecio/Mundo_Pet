@@ -24,7 +24,6 @@ public class UsuarioController {
 
 	@GetMapping("/lista/usuarios")
 	public ModelAndView usuario() {
-
 		UsuarioDao usuarioDao = new UsuarioDao();
 		List<Usuario> usuario = null;
 		try {
@@ -36,7 +35,6 @@ public class UsuarioController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 		ModelAndView mv = new ModelAndView("Usuario/usuario");
 		mv.addObject("usuarios", usuario);
 		return mv;
@@ -49,7 +47,6 @@ public class UsuarioController {
 			mv.addObject("Usuario", usuario);
 			return mv;
 		}
-
 		try {
 			Util util = new Util();
 			String senha = usuario.getSenha();
@@ -59,7 +56,6 @@ public class UsuarioController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 		return new ModelAndView("redirect:/lista/usuarios");
 	}
 
@@ -74,23 +70,23 @@ public class UsuarioController {
 		int codigo = (int) idusuario.intValue();
 		try {
 			usuariodao.DeletarUsuario(codigo);
-			
-		} catch ( ClassNotFoundException | SQLException e) {
+
+		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
 		return new ModelAndView("redirect:/lista/usuarios");
 	}
-	
+
 	@GetMapping("/usuario/{idusuario}/edit")
-	public ModelAndView edit (@PathVariable Long idusuario, Usuario usuario1) {
+	public ModelAndView edit(@PathVariable Long idusuario, Usuario usuario1) {
 		ModelAndView mv = new ModelAndView("Usuario/editarUsuario");
 		int codigo = (int) idusuario.intValue();
 		try {
 			usuario1 = usuariodao.consultarUsuarioPorId(idusuario);
-			if(usuario1 != null) {
+			if (usuario1 != null) {
 				mv.addObject("usuario", usuario1);
 				return mv;
-			}else {
+			} else {
 				return new ModelAndView("redirect:/lista/usuarios");
 			}
 		} catch (ClassNotFoundException | SQLException e) {
@@ -98,24 +94,25 @@ public class UsuarioController {
 			e.printStackTrace();
 		}
 		return mv;
-}
+	}
+
 	@PostMapping("/lista/usuarios/{idusuario}")
 	public ModelAndView update(@PathVariable Long idusuario, @Validated Usuario usuario, BindingResult bindingResults) {
-		
-		if(bindingResults.hasErrors()) {
+		if (bindingResults.hasErrors()) {
 			ModelAndView mv = new ModelAndView("usuario/editarUsuario");
 			mv.addObject("usuario", usuario);
 			return mv;
 		} else {
 			int codigo = (int) idusuario.intValue();
-			
+
 			try {
 				usuario.setIdusuario(codigo);
 				usuariodao.AtualizarUsuario(usuario);
-			}catch (ClassNotFoundException | SQLException e){
+			} catch (ClassNotFoundException | SQLException e) {
 				e.printStackTrace();
 			}
 			return new ModelAndView("redirect:/lista/usuarios");
 		}
 	}
+
 }

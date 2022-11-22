@@ -44,6 +44,7 @@
 							<td class="col-2" th:text="${veterinario.email}">Email</td>
 							<td class="col-2" th:text="${veterinario.cpf}">CPF</td>
 							<td class="col-2" th:text="${veterinario.crmv}">CRMV</td>
+
 							<td class="col-1">
 								<a>
 									<i class="fa-solid fa-circle-info" style="color:rgb(128, 255, 255);"></i></a>
@@ -53,30 +54,37 @@
 									<i class="fa-solid fa-file-pen" style="color:rgb(0, 128, 0);"></i></a>
 							</td>
 							<td class="col-1">
-								<a role="button" data-bs-toggle="modal" data-bs-target="#deleteVeterinario" href="">
-									<i class=" fa-regular fa-trash-can" style="color:rgb(255, 0, 0);"></i></a>
+								<a role="button" data-bs-toggle="modal"
+									th:data-bs-target="${'#deleteVeterinario' + veterinario.idveterinario}" href="">
+									<i class="fa-regular fa-trash-can" style="color:rgb(255, 0, 0);"></i></a>
+								<form
+									th:action="@{/veterinario/{idVeterinario}/delete(idVeterinario = ${veterinario.idveterinario})}"
+									method="post">
 
-								<div class="modal fade" id="deleteVeterinario" tabindex="-1"
-									aria-labelledby="exampleModalLabel" aria-hidden="true">
-									<div class="modal-dialog">
-										<div class="modal-content">
-											<div class="modal-header">
-												<h1 class="modal-title fs-5" id="exdeleteVeterinario">Deletar
-													Veterinario</h1>
-												<button type="button" class="btn-close" data-bs-dismiss="modal"
-													aria-label="Close"></button>
-											</div>
-											<div class="modal-body">
-												Deseja realmente deletar este veterinario ?
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-secondary"
-													data-bs-dismiss="modal">Fechar</button>
-												<button type="button" class="btn btn-primary">Deletar</button>
+									<div class="modal fade" th:id="${'deleteVeterinario' + veterinario.idveterinario}"
+										tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h1 class="modal-title fs-5" id="exdeleteVeterinario">Deletar
+														usuario
+													</h1>
+													<button type="button" class="btn-close" data-bs-dismiss="modal"
+														aria-label="Close"></button>
+												</div>
+												<div class="modal-body">
+													Deseja realmente deletar veterinario ?<span
+														th:text="${veterinario.idveterinario}"></span>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-secondary"
+														data-bs-dismiss="modal">Fechar</button>
+													<button type="submit" class="btn btn-danger">Deletar</button>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
+								</form>
 							</td>
 						</tr>
 					</tbody>

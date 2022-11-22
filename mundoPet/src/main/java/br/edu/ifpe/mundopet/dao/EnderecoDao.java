@@ -81,7 +81,7 @@ public class EnderecoDao {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "DELETE FROM `endereco` WHERE `idendereco`=?";
 		PreparedStatement stmt = connection.prepareStatement(sql);
-		stmt.setLong(4, idendereco);
+		stmt.setLong(1, idendereco);
 
 		stmt.executeUpdate();
 		stmt.close();

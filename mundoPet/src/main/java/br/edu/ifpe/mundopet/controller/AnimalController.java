@@ -66,5 +66,19 @@ public class AnimalController {
 		ModelAndView mv = new ModelAndView("Animal/cadastroAnimal");
 		return mv;
 	}
+	
+	
+
+	@PostMapping("/animal/{idanimal}/delete")
+	public ModelAndView deleteAnimal(@PathVariable Long idanimal) {
+		int codigo = (int) idanimal.intValue();
+		try {
+			animaldao.DeletarAnimal(codigo);
+
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		return new ModelAndView("redirect:/lista/animais");
+	}
 
 }

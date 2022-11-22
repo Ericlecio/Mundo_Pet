@@ -1,7 +1,7 @@
 package br.edu.ifpe.mundopet.model;
 
 public class Endereco {
-	private int idEnderenco;
+	private int idenderenco;
 	private String bairro;
 	private String rua;
 	private String cidade;
@@ -9,11 +9,11 @@ public class Endereco {
 	private String uf;
 
 	public int getIdEndereco() {
-		return idEnderenco;
+		return idenderenco;
 	}
 
 	public void setIdEndereco(int idEnderenco) {
-		this.idEnderenco = idEnderenco;
+		this.idenderenco = idEnderenco;
 	}
 
 	public String getBairro() {
