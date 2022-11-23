@@ -81,8 +81,8 @@ public class VeterinarioDao {
 			veterinario.setNome(nome);
 			veterinario.setData_Nasc(new java.util.Date(resultSet.getDate(3).getTime()));
 			veterinario.setEmail(resultSet.getString(4));
-			veterinario.setCrmv(resultSet.getString(5));
-			veterinario.setCpf(resultSet.getString(6));
+			veterinario.setCpf(resultSet.getString(5));
+			veterinario.setCrmv(resultSet.getString(6));
 			veterinario.setSenha(resultSet.getString(7));
 
 		}
@@ -125,17 +125,16 @@ public class VeterinarioDao {
 
 	public void AtualizarVeterinario(Veterinario veterinario) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
-		String sql = "UPDATE `veterinario` set `nome` = ?, `data_nasc`= ?, `email` = ?, `cpf` = ?, `crmv` = ?, `senha` = ? where `idveterinario`= ? ";
+		String sql = "UPDATE `veterinario` set `nome` = ?, `email` = ?, `cpf` = ?, `data_nasc`= ?, `crmv` = ? where `idveterinario`= ? ";
 
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
 		stmt.setString(1, veterinario.getNome());
-		stmt.setDate(2, new Date(veterinario.getData_Nasc().getTime()));
-		stmt.setString(3, veterinario.getEmail());
-		stmt.setString(4, veterinario.getCpf());
+		stmt.setString(2, veterinario.getEmail());
+		stmt.setString(3, veterinario.getCpf());
+		stmt.setDate(4, new Date(veterinario.getData_Nasc().getTime()));
 		stmt.setString(5, veterinario.getCrmv());
-		stmt.setString(6, veterinario.getSenha());
-		stmt.setInt(7, veterinario.getIdveterinario());
+		stmt.setInt(6, veterinario.getIdveterinario());
 
 		stmt.executeUpdate();
 		stmt.close();

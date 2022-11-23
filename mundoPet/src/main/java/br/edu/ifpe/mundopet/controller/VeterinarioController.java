@@ -81,7 +81,7 @@ public class VeterinarioController {
 	
 	@GetMapping("/veterinario/{idveterinario}/edit")
 	public ModelAndView edit (@PathVariable Long idveterinario, Veterinario veterinario1) {
-		ModelAndView mv = new ModelAndView("Usuario/editarUsuario");
+		ModelAndView mv = new ModelAndView("Veterinario/editarVeterinario");
 		int codigo = (int) idveterinario.intValue();
 		try {
 			veterinario1 = veterinariodao.consultarVeterinarioPorId(idveterinario);
@@ -101,7 +101,7 @@ public class VeterinarioController {
 	public ModelAndView update(@PathVariable Long idveterinario, @Validated Veterinario veterinario, BindingResult bindingResults) {
 		
 		if(bindingResults.hasErrors()) {
-			ModelAndView mv = new ModelAndView("veterinario/editarVeterinario");
+			ModelAndView mv = new ModelAndView("Veterinario/editarVeterinario");
 			mv.addObject("veterinario", veterinario);
 			return mv;
 		} else {
@@ -113,7 +113,7 @@ public class VeterinarioController {
 			}catch (ClassNotFoundException | SQLException e){
 				e.printStackTrace();
 			}
-			return new ModelAndView("redirect:/lista/usuarios");
+			return new ModelAndView("redirect:/lista/veterinarios");
 		}
 	}
 }

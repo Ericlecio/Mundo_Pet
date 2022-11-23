@@ -7,7 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Veterinario {
 	private int idveterinario;
 	private String nome;
-	@DateTimeFormat(pattern = "dd/mm/yyyy")
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date data_Nasc;
 	private String email;
 	private String cpf;
