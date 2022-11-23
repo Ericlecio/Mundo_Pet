@@ -75,6 +75,6 @@ public class EnderecoController {
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-		return new ModelAndView("redirect:/lista/animais");
+		return new ModelAndView("redirect:/lista/enderecos");
 	}
 }

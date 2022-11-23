@@ -43,6 +43,7 @@
 							<td class="col-2" th:text="${endereco.cidade}">Cidade</td>
 							<td class="col-2" th:text="${endereco.numero}">Numero</td>
 							<td class="col-2" th:text="${endereco.uf}">UF</td>
+
 							<td class="col-1">
 								<a>
 									<i class="fa-solid fa-circle-info" style="color:rgb(128, 255, 255);"></i></a>
@@ -52,30 +53,33 @@
 									<i class="fa-solid fa-file-pen" style="color:rgb(0, 128, 0);"></i></a>
 							</td>
 							<td class="col-1">
-								<a role="button" data-bs-toggle="modal" data-bs-target="#deleteEndereco" href="">
+								<a role="button" data-bs-toggle="modal"
+									th:data-bs-target="${'#deleteEndereco' + endereco.IdEndereco}" href="">
 									<i class="fa-regular fa-trash-can" style="color:rgb(255, 0, 0);"></i></a>
+								<form th:action="@{/endereco/{IdEndereco}/delete(IdEndereco = ${endereco.IdEndereco})}" method="post">
 
-								<div class="modal fade" id="deleteEndereco" tabindex="-1"
-									aria-labelledby="exampleModalLabel" aria-hidden="true">
-									<div class="modal-dialog">
-										<div class="modal-content">
-											<div class="modal-header">
-												<h1 class="modal-title fs-5" id="exdeleteEndereco">Deletar endereço
-												</h1>
-												<button type="button" class="btn-close" data-bs-dismiss="modal"
-													aria-label="Close"></button>
-											</div>
-											<div class="modal-body">
-												Deseja realmente deletar este endereço ?
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-secondary"
-													data-bs-dismiss="modal">Fechar</button>
-												<button type="button" class="btn btn-primary">Deletar</button>
+									<div class="modal fade" th:id="${'deleteEndereco' + endereco.IdEndereco}" tabindex="-1"
+										aria-labelledby="exampleModalLabel" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h1 class="modal-title fs-5" id="exdeleteEndereco">Deletar usuario
+													</h1>
+													<button type="button" class="btn-close" data-bs-dismiss="modal"
+														aria-label="Close"></button>
+												</div>
+												<div class="modal-body">
+													Deseja realmente deletar este endereço ?<span th:text="${endereco.IdEndereco}"></span>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-secondary"
+														data-bs-dismiss="modal">Fechar</button>
+													<button type="submit" class="btn btn-danger">Deletar</button>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
+								</form>
 							</td>
 						</tr>
 					</tbody>
