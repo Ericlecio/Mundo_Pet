@@ -1,17 +1,15 @@
-@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
 
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
-	font-family: "arial";
+	  font-family: "Poppins" , sans-serif;
+
 }
 
 body {
 	background-color:  #013cc8;
-	display: flex;
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
@@ -20,59 +18,63 @@ body {
 div#parallelogram {
 	background: #ffffff;
 	width: 1000px;
-	height: 550px;
+	height: 530px;
 	max-width: 70vw;
 	border-radius: 10px;
 	box-shadow: 5px 5px 15px;
 	transform: skew(6deg, 3deg);
 	position: absolute;
    	z-index: -1;
+   	margin-left:190px;
+   	margin-top: 30px;
 }
 
-section {
+.cadastro section {
 	display: flex;
 	background: #fff;
 	padding: 30px 5px;
 	border-radius: 10px;
 	box-shadow: 5px 5px 15px;
 	max-width: 60vw;
+	margin-left:270px;
+
 }
 
-section h1 {
+.cadastro section h1 {
 	padding: 40px 10px;
 	text-align: center;
     color: #013cc8;
 }
 
-fieldset{
+.cadastro fieldset{
 	border:none;
 }
 
-fieldset:nth-child(2) {
+.cadastro fieldset:nth-child(2) {
 	display: flex;
 }
 
-fieldset:nth-child(2) {
+.cadastro fieldset:nth-child(2) {
 	display: flex;
 	padding-top: 20px;
 }
 
-fieldset:nth-child(3) {
+.cadastro fieldset:nth-child(3) {
 	display: flex;
 	width: 100%;
 	margin-top: 20px;
 	padding: 0px 10px;
 }
 
-fieldset:last-child {
+.cadastro fieldset:last-child {
 	
 }
 
-.container {
+.cadastro .container {
 	position: relative;
 }
 
-.container input {
+.cadastro .container input {
 	margin: 10px 10px;
 	width: calc(100% - 20px);
 	height: 70px;
@@ -85,7 +87,7 @@ fieldset:last-child {
 	padding: 14px 10px 0 10px;
 }
 
-.container label {
+.cadastro .container label {
 	text-transform: uppercase;
 	font-size: 14px;
 	font-weight: 700;
@@ -99,8 +101,8 @@ fieldset:last-child {
 	transition: 0.5s;
 }
 
-.container input:focus ~ label,
-.container input:valid ~ label {
+.cadastro .container input:focus ~ label,
+.cadastro .container input:valid ~ label {
 	left: 20px;
 	top: -10px;
 	color:   #013cc8;
@@ -130,7 +132,7 @@ fieldset:last-child {
 	color:  #1881FC;
 }
 
-button {
+.cadastro button {
 	margin: 40px 0;
 	margin-left: 110px;
 	width: calc(50% - 10px);
@@ -145,11 +147,11 @@ button {
 
 }
 
-button:hover {
+.cadastro button:hover {
 	opacity: 0.85;
 }
 
-form a {
+.cadastro form a {
 	text-decoration: none;
 	font-size: 16px;
 	color: #555;
@@ -160,11 +162,11 @@ form a {
 	display: block;
 }
 
-form a:hover {
+.cadastro form a:hover {
 	color: #111;
 }
 
-section img {
+.cadastro section img {
 	width: 240px;
 	height: 250px;
 	margin: auto 40px;

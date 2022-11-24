@@ -22,8 +22,9 @@ body {
   width: 45%;
   max-width: 100%;
   overflow: hidden;
-  height: 620px;
+  height: 550px;
   z-index: 1;
+  margin-top:20px;
 }
 
 .cadastro .header {
