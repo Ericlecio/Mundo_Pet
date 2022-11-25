@@ -5,7 +5,7 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="/css/cadastroVeterinario.css">
+	<link rel="stylesheet" href="/css/editarVeterinario.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -17,10 +17,11 @@
 </head>
 
 <body>
+	<div class="cadastro">
 	<div class="container">
 		<div class="header">
-			<h2>Editar<br> Veterinário</h2>
-			<img src="../img/Logo Azul.png" alt="">
+			<img src="/../img/Logo Azul.png" alt="">
+			<h2>Editar Veterinário</h2>
 		</div>
 
 		<form action="@{/lista/veterinarios/{idveterinario}(idveterinario = ${idveterinario})}" method="POST" th:object="${veterinario}" enctype="multipart/form-data" id="form" class="form">
@@ -53,7 +54,7 @@
 
 		</form>
 	</div>
-
+	</div>
 </body>
 
 </html>

@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins" , sans-serif;
+
+}
+
+body {
+  background-image: url(../img/Wallpaperveterinario.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  background-position: center;
+  align-items: center;
+}
+
+.cadastro .container {
+  background-color: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 45%;
+  max-width: 100%;
+  overflow: hidden;
+  height: 720px;
+  z-index: 1;
+  margin-left: 28%;
+}
+
+.cadastro .header {
+  margin-left: 260px;
+  margin-top: 20px;
+  color: #1881FC;
+}
+.cadastro .header h2{
+	font-size: 27px;
+}
+
+.cadastro img{
+	width:90px;
+	height:60px;
+}
+.cadastro .container .form {
+  padding: 10px;
+}
+
+.cadastro .container .form-control {
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.cadastro .container .form-control label {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: #1881FC;
+}
+
+.cadastro .container .form-control input {
+  border: 2px solid #f0f0f0;
+  display: block;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 96%;
+  height: 35px;
+  padding: 10px;
+  border: solid #1881FC;
+  border-width: 2px;
+  
+}
+
+.cadastro .container .form-control i {
+  position: absolute;
+  top: 45px;
+  right: 10px;
+  visibility: hidden;
+}
+
+ .cadastro .container .form-control small {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+/* Botão entrar */
+.cadastro .container .form button {
+  background-color: #1881FC;
+  border: 2px solid #1881FC;
+  color: #fff;
+  font-size: 16px;
+  width: 30%;
+  border-radius: 8px;
+  padding: 10px;
+  margin-left: 190px;
+  cursor: pointer;
+}
+
+@keyframes anima {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.cadastro button:hover {
+  animation-name: anima;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.cadastro p {
+  font-size: 14px;
+  text-align: center;
+  color: black;
+}
+
+a {
+  color: #1881FC;
+}
