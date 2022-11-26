@@ -1,6 +1,6 @@
 let contador = 1;
 
-setInterval(function() {
+setInterval(function () {
 	document.getElementById('slide' + contador).checked = true;
 	contador++;
 
