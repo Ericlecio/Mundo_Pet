@@ -3,7 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins" , sans-serif;
+  font-family: "Poppins", sans-serif;
 
 }
 
@@ -24,25 +24,27 @@ body {
   overflow: hidden;
   height: 620px;
   z-index: 1;
-  	box-shadow: 5px 5px 15px;
+  box-shadow: 5px 5px 15px;
 
 }
 
 .cadastro .header {
-margin-left: 180px;
+  margin-left: 180px;
   margin-top: 15px;
   display: flex;
   color: #1881FC;
 }
-.cadastro .header h2{
-	font-size: 27px;
-	text-align: center;
+
+.cadastro .header h2 {
+  font-size: 27px;
+  text-align: center;
 }
 
-.cadastro img{
-	width:90px;
-	height:60px;
+.cadastro img {
+  width: 90px;
+  height: 60px;
 }
+
 .cadastro .container .form {
   padding: 10px;
 }
@@ -78,7 +80,7 @@ margin-left: 180px;
   visibility: hidden;
 }
 
- .cadastro .container .form-control small {
+.cadastro .container .form-control small {
   position: absolute;
   bottom: 0;
   left: 0;

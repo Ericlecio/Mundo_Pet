@@ -1,44 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins" , sans-serif;
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Poppins", sans-serif;
 }
+
 /*------------lista---------------*/
 
-h2{
+h2 {
 	text-align: center;
-	color:rgb(41, 41, 41);
+	color: rgb(41, 41, 41);
 }
 
-.table tr{
-	color:rgb(255, 255, 255);
+.table tr {
+	color: rgb(255, 255, 255);
 }
-.table{
+
+.table {
 	text-align: center;
 }
 
-.novo{
+.novo {
 	background-color: #013cc8;
-	position:relative;
-	width:10%;
+	position: relative;
+	width: 10%;
 	border-radius: 5px;
-	padding:10px;
-	left:45%;
-	text-align:center;
+	padding: 10px;
+	left: 45%;
+	text-align: center;
 }
-.novo a{
-	  text-decoration: none;
-	  color:aliceblue;
+
+.novo a {
+	text-decoration: none;
+	color: aliceblue;
 }
 
 
 
 /*------------MODAL---------------*/
-.modal .modal-title{
-	color:rgb(30, 30, 30)
-}
-.modal-body{
-	color:rgb(30, 30, 30);
+.modal .modal-title {
+	color: rgb(30, 30, 30)
 }
 
+.modal-body {
+	color: rgb(30, 30, 30);
+}

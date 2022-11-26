@@ -29,21 +29,21 @@ body {
   height: 420px;
   overflow: hidden;
   position: block;
-  margin:25px;
+  margin: 25px;
   border: solid rgb(255, 255, 255);
   border-width: 3px;
-  
+
 }
 
 .container2 {
-  background-color:	0;
+  background-color: 0;
   border-radius: 10px;
   box-shadow: 10px 2px 5px rgba(0, 0, 0, 0.3);
   width: 550px;
   height: 500px;
   overflow: hidden;
   position: block;
-  margin:25px;
+  margin: 25px;
   border: solid rgb(255, 255, 255);
   border-width: 3px;
 }
@@ -66,10 +66,10 @@ body {
 }
 
 
-img{
-	widht:50px;
-	height:70px;
-	padding:5px;
+img {
+  widht: 50px;
+  height: 70px;
+  padding: 5px;
 }
 
 .form {
@@ -126,7 +126,7 @@ img{
 
 /* Botão entrar */
 .form button {
-  background-color:  #013cc8;
+  background-color: #013cc8;
   border: 2px solid rgb(192, 192, 192);
   color: #fff;
   font-size: 16px;
