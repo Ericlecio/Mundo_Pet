@@ -25,51 +25,50 @@
 
 
 	<div id="parallelogram"></div>
-	
+
 	<div class="cadastro">
-	<section>
-		<form action="/lista/consultas" method="POST" th:object="${Consulta}" enctype="multipart/form-data" id="form"
-				class="form"
-				>
-			<h1>Cadastrar Consulta <br> Mundo pet</h1>
-			<div class="fieldset">
-				<div class="container">
-					<input type="text" id="nome" required name="nome" autofocus>
-					<label>Nome da Consulta</label>
+		<section>
+			<form action="/lista/consultas" method="POST" th:object="${Consulta}" enctype="multipart/form-data"
+				id="form" class="form">
+				<h1>Cadastrar Consulta <br> Mundo pet</h1>
+				<div class="fieldset">
+					<div class="container">
+						<input type="text" id="nome" required name="nome" autofocus>
+						<label>Nome da Consulta</label>
+					</div>
+
+					<div class="container">
+						<input type="date" id="data" required name="data">
+						<label>Data da Consulta</label>
+					</div>
+
+					<div class="container">
+						<input type="time" id="horario" required name="horario">
+						<label>Horario</label>
+					</div>
 				</div>
 
-				<div class="container">
-					<input type="date" id="data" required name="data">
-					<label>Data da Consulta</label>
+				<div class="fieldset">
+					<div class="container">
+						<input type="text" id="veterinario" required name="veterinario">
+						<label>Veterinario</label>
+					</div>
+					<div class="container">
+						<input type="text" id="dono" required name="dono">
+						<label>Dono</label>
+					</div>
+
+					<div class="container">
+						<input type="text" id="animal" required name="animal">
+						<label>Animal</label>
+					</div>
 				</div>
 
-				<div class="container">
-					<input type="time" id="horario" required name="horario">
-					<label>Horario</label>
-				</div>
-			</div>
+				<button name="submit">Agendar Consulta</button>
 
-			<div class="fieldset">
-				<div class="container">
-					<input type="text" id="veterinario" required name="veterinario">
-					<label>Veterinario</label>
-				</div>
-				<div class="container">
-					<input type="text" id="dono" required name="dono">
-					<label>Dono</label>
-				</div>
+			</form>
 
-				<div class="container">
-					<input type="text" id="animal" required name="animal">
-					<label>Animal</label>
-				</div>
-			</div>
-
-			<button name="submit">Agendar Consulta</button>
-
-		</form>
-
-	</section>
+		</section>
 	</div>
 
 </body>

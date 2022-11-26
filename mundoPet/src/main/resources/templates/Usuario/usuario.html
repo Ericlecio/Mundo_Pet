@@ -51,25 +51,28 @@
 								<a th:href="@{/usuario/{idUsuario}/edit(idUsuario = ${usuario.idusuario})}">
 									<i class="fa-solid fa-file-pen" style="color:rgb(0, 128, 0);"></i></a>
 							</td>
-							
-							
+
+
 							<td class="col-1">
 								<a role="button" data-bs-toggle="modal"
 									th:data-bs-target="${'#deleteUsuario' + usuario.idusuario}" href="">
 									<i class="fa-regular fa-trash-can" style="color:rgb(255, 0, 0);"></i></a>
-								<form
-									th:action="@{/usuario/{idUsuario}/delete(idUsuario = ${usuario.idusuario})}"method="post">
+								<form th:action="@{/usuario/{idUsuario}/delete(idUsuario = ${usuario.idusuario})}"
+									method="post">
 
 									<div class="modal fade" th:id="${'deleteUsuario' + usuario.idusuario}" tabindex="-1"
 										aria-labelledby="exampleModalLabel" aria-hidden="true">
 										<div class="modal-dialog">
 											<div class="modal-content">
 												<div class="modal-header">
-													<h1 class="modal-title fs-5" id="exdeleteUsuario">Deletar usuario</h1>
-													<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+													<h1 class="modal-title fs-5" id="exdeleteUsuario">Deletar usuario
+													</h1>
+													<button type="button" class="btn-close" data-bs-dismiss="modal"
+														aria-label="Close"></button>
 												</div>
 												<div class="modal-body">
-													Deseja realmente deletar este usuario ?<span th:text="${usuario.idusuario}"></span>
+													Deseja realmente deletar este usuario ?<span
+														th:text="${usuario.idusuario}"></span>
 												</div>
 												<div class="modal-footer">
 													<button type="button" class="btn btn-secondary"

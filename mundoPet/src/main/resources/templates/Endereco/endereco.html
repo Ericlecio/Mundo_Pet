@@ -56,10 +56,11 @@
 								<a role="button" data-bs-toggle="modal"
 									th:data-bs-target="${'#deleteEndereco' + endereco.IdEndereco}" href="">
 									<i class="fa-regular fa-trash-can" style="color:rgb(255, 0, 0);"></i></a>
-								<form th:action="@{/endereco/{IdEndereco}/delete(IdEndereco = ${endereco.IdEndereco})}" method="post">
+								<form th:action="@{/endereco/{IdEndereco}/delete(IdEndereco = ${endereco.IdEndereco})}"
+									method="post">
 
-									<div class="modal fade" th:id="${'deleteEndereco' + endereco.IdEndereco}" tabindex="-1"
-										aria-labelledby="exampleModalLabel" aria-hidden="true">
+									<div class="modal fade" th:id="${'deleteEndereco' + endereco.IdEndereco}"
+										tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 										<div class="modal-dialog">
 											<div class="modal-content">
 												<div class="modal-header">
@@ -69,7 +70,8 @@
 														aria-label="Close"></button>
 												</div>
 												<div class="modal-body">
-													Deseja realmente deletar este endereço ?<span th:text="${endereco.IdEndereco}"></span>
+													Deseja realmente deletar este endereço ?<span
+														th:text="${endereco.IdEndereco}"></span>
 												</div>
 												<div class="modal-footer">
 													<button type="button" class="btn btn-secondary"

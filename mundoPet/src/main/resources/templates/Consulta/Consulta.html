@@ -40,7 +40,8 @@
 						<tr th:each="consulta : ${consultas}">
 							<th class="col-1" scope="row" th:text="${consulta.getIdconsulta}">ID</th>
 							<td class="col-2" th:text="${consulta.nome}">Nome</td>
-							<td class="col-2" th:text="${#dates.format(consulta.data_Consulta,'dd-MM-yyyy')}">Data da consulta</td>
+							<td class="col-2" th:text="${#dates.format(consulta.data_Consulta,'dd-MM-yyyy')}">Data da
+								consulta</td>
 							<td class="col-2" th:text="${consulta.horario}">Horario</td>
 							<td class="col-2" th:text="${consulta.veterinario.nome}">Veterinario</td>
 							<td class="col-2" th:text="${consulta.usuario.nome}">Dono</td>
