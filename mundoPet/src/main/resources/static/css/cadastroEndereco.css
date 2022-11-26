@@ -12,87 +12,87 @@ body {
 	min-height: 100vh;
 }
 
-		.cadastro .box {
-			color: white;
-			position: absolute;
-			left: 30%;
-			background-color: rgba(0, 0, 0, 0.7);
-			padding: 15px;
-			border-radius: 10px;
-			width: 40%;
-			margin-top: 5px;
-			box-shadow: 5px 5px 15px rgb(0, 0, 255);
+.cadastro .box {
+	color: white;
+	position: absolute;
+	left: 30%;
+	background-color: rgba(0, 0, 0, 0.7);
+	padding: 15px;
+	border-radius: 10px;
+	width: 40%;
+	margin-top: 5px;
+	box-shadow: 5px 5px 15px rgb(0, 0, 255);
 
 
-			
-		}
 
-		.cadastro .box fieldset {
-			border: 3px solid #013cc8;
-			padding:5px;
-		}
+}
 
-		.cadastro .box legend {
-			border: 1px solid #013cc8;
-			padding: 5px;
-			text-align: center;
-			background-color:#013cc8;
-			border-radius: 8px;
-			margin-bottom: 20px;
-		}
+.cadastro .box fieldset {
+	border: 3px solid #013cc8;
+	padding: 5px;
+}
 
-		.cadastro .box .inputBox {
-			position: relative;
-			padding:5px;
-		}
+.cadastro .box legend {
+	border: 1px solid #013cc8;
+	padding: 5px;
+	text-align: center;
+	background-color: #013cc8;
+	border-radius: 8px;
+	margin-bottom: 20px;
+}
 
-		.cadastro .box .inputUser {
-			background: none;
-			border: none;
-			border-bottom: 1px solid white;
-			outline: none;
-			color: white;
-			font-size: 15px;
-			width: 100%;
-			letter-spacing: 2px;
-		}
+.cadastro .box .inputBox {
+	position: relative;
+	padding: 5px;
+}
 
-		.cadastro .box .labelInput {
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			pointer-events: none;
-			transition: .5s;
-		}
+.cadastro .box .inputUser {
+	background: none;
+	border: none;
+	border-bottom: 1px solid white;
+	outline: none;
+	color: white;
+	font-size: 15px;
+	width: 100%;
+	letter-spacing: 2px;
+}
 
-		.cadastro .box .inputUser:focus~.labelInput,
-		.cadastro .box .inputUser:valid~.labelInput {
-			top: -20px;
-			font-size: 12px;
-			color: dodgerblue;
-		}
+.cadastro .box .labelInput {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	pointer-events: none;
+	transition: .5s;
+}
 
-		.cadastro .box #uf{
-			width:80%;
-			height:40px;
-			border-radius:5px;
-			cursor: pointer;
-			margin-left:48px;
-		}
+.cadastro .box .inputUser:focus~.labelInput,
+.cadastro .box .inputUser:valid~.labelInput {
+	top: -20px;
+	font-size: 12px;
+	color: dodgerblue;
+}
 
-		.cadastro .box .submit {
-			background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255));
-			width: 50%;
-			border: none;
-			padding: 15px;
-			color: #013cc8;
-			font-size: 15px;
-			cursor: pointer;
-			border-radius: 7px;
-			margin-left:23%;
-		}
+.cadastro .box #uf {
+	width: 80%;
+	height: 40px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-left: 48px;
+}
 
-		.cadastro .box .submit:hover {
-			background-image: linear-gradient(to right, rgb(0, 80, 172), rgb(0, 128, 255));
-			color:#fff;
-		}
+.cadastro .box .submit {
+	background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255));
+	width: 50%;
+	border: none;
+	padding: 15px;
+	color: #013cc8;
+	font-size: 15px;
+	cursor: pointer;
+	border-radius: 7px;
+	margin-left: 23%;
+}
+
+.cadastro .box .submit:hover {
+	background-image: linear-gradient(to right, rgb(0, 80, 172), rgb(0, 128, 255));
+	color: #fff;
+}
