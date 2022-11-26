@@ -9,15 +9,14 @@
 }
 
 body {
-	background-color:  #013cc8;
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
 }
 
 div#parallelogram {
-	background: #ffffff;
-	width: 1000px;
+	background:   #013cc8;
+	width: 1000px;	
 	height: 530px;
 	max-width: 70vw;
 	border-radius: 10px;
@@ -37,13 +36,15 @@ div#parallelogram {
 	box-shadow: 5px 5px 15px;
 	max-width: 60vw;
 	margin-left:270px;
+	margin-top: 65px;
+	max-height: 550px;
 
 }
 
 .cadastro section h1 {
-	padding: 40px 10px;
+	padding: 20px 10px;
 	text-align: center;
-    color: #013cc8;
+    color:  #013cc8;
 }
 
 .cadastro fieldset{
@@ -74,7 +75,7 @@ div#parallelogram {
 	position: relative;
 }
 
-.cadastro .container input {
+.cadastro section .container input {
 	margin: 10px 10px;
 	width: calc(100% - 20px);
 	height: 70px;
@@ -85,6 +86,7 @@ div#parallelogram {
 	font-size: 18px;
 	font-weight: 700;
 	padding: 14px 10px 0 10px;
+
 }
 
 .cadastro .container label {
@@ -95,7 +97,7 @@ div#parallelogram {
 	position: absolute;
 	line-height: 70px;
 	top: 10px;
-	left: 20px;
+	left: 30px;
 	user-select: none;
 	pointer-events: none;
 	transition: 0.5s;
@@ -103,9 +105,9 @@ div#parallelogram {
 
 .cadastro .container input:focus ~ label,
 .cadastro .container input:valid ~ label {
-	left: 20px;
+	left: 30px;
 	top: -10px;
-	color:   #013cc8;
+	color: #013cc8;
 }
 
 #check {
@@ -119,6 +121,7 @@ div#parallelogram {
 	width: 25px;
 	height: 25px;
 	margin: auto 0;
+	
 }
 
 #check label {
@@ -129,17 +132,17 @@ div#parallelogram {
 
 #check input:checked ~ label,
 #check input:valid ~ label {
-	color:  #1881FC;
+	color:  #013cc8;
 }
 
 .cadastro button {
-	margin: 40px 0;
+	margin: 20px 0;
 	margin-left: 110px;
 	width: calc(50% - 10px);
-	height: 70px;
-	background-color: #013cc8;
+	height: 50px;
+	background-color:  #013cc8;
 	color: #fff;
-	font-size: 20px;
+	font-size: 18px;
 	border:none;
 	border-radius: 10px;
 	cursor: pointer;

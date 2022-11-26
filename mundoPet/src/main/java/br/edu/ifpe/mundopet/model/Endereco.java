@@ -7,6 +7,17 @@ public class Endereco {
 	private String cidade;
 	private int numero;
 	private String uf;
+	
+	private Usuario usuario;
+
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 
 	public int getIdEndereco() {
 		return idenderenco;

@@ -16,15 +16,16 @@ import br.edu.ifpe.mundopet.model.Endereco;
 public class EnderecoDao {
 	public void AdicionarEndereco(Endereco endereco) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
-		String sql = "INSERT INTO `Endereco`" + "(`bairro`, `rua`, `cidade`,`numero`, `uf`)"
+		String sql = "INSERT INTO `Endereco`" + "(`idusuario`,`bairro`, `rua`, `cidade`,`numero`, `uf`)"
 				+ "VALUES(?, ?, ?, ?, ?)";
 		PreparedStatement stmt = connection.prepareStatement(sql);
-
-		stmt.setString(1, endereco.getBairro());
-		stmt.setString(2, endereco.getRua());
-		stmt.setString(3, endereco.getCidade());
-		stmt.setInt(4, endereco.getNumero());
-		stmt.setString(5, endereco.getUf());
+		
+		stmt.setInt(1, endereco.getUsuario().getIdusuario());
+		stmt.setString(2, endereco.getBairro());
+		stmt.setString(3, endereco.getRua());
+		stmt.setString(4, endereco.getCidade());
+		stmt.setInt(5, endereco.getNumero());
+		stmt.setString(6, endereco.getUf());
 
 		stmt.execute();
 		stmt.close();

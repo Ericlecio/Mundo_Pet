@@ -5,20 +5,17 @@
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
 	font-family: "Ubuntu", sans-serif;
 }
 
 body {
-	background-color:  #013cc8;
-	display: flex;
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
 }
 
 div#parallelogram {
-	background: #ffffff;
+	background: #013cc8;
 	width: 1000px;
 	height: 550px;
 	max-width: 70vw;
@@ -27,34 +24,39 @@ div#parallelogram {
 	transform: skew(10deg, 3deg);
 	position: absolute;
    	z-index: -1;
+   	margin-left:190px;
+   	margin-top: 30px;
 }
 
-section {
+.cadastro section {
 	background: #fff;
 	border-radius: 10px;
 	box-shadow: 5px 5px 15px  #013cc8 ;
 	max-width: 60%;
 	border: solid 1px  #013cc8;
+	margin-left:270px;
+	margin-top: 15px;
+
 }
 
-section h1 {
+.cadastro section h1 {
 	padding: 30px 10px;
 	text-align: center;
     color:  #013cc8;
 }
 
-.fieldset{
+.cadastro .fieldset{
 	border:none;
 	display: flex;
 	padding: 10px 10px;
 }
 
 
-.container {
+.cadastro .container {
 	position: relative;
 }
 
-.container input {
+.cadastro .container input {
 	width: 240px;
 	height: 70px;
 	border: solid 1px  #1881FC;
@@ -67,7 +69,7 @@ section h1 {
 	margin-top:25px;
 }
 
-.container label {
+.cadastro .container label {
 	text-transform: uppercase;
 	font-size: 14px;
 	font-weight: 700;
@@ -81,8 +83,8 @@ section h1 {
 	transition: 0.5s;
 }
 
-.container input:focus ~ label,
-.container input:valid ~ label {
+.cadastro .container input:focus ~ label,
+.cadastro .container input:valid ~ label {
 	left: 20px;
 	top: -1px;
 	color:  #1881FC;
@@ -112,7 +114,7 @@ section h1 {
 	color:  #1881FC;
 }
 
-button {
+.cadastro button {
 	margin: 40px 0;
 	margin-left: 25%;
 	width: calc(50% - 10px);
@@ -127,7 +129,7 @@ button {
 
 }
 
-button:hover {
+.cadastro button:hover {
 	opacity: 0.85;
 }
 

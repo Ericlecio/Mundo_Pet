@@ -20,11 +20,13 @@
 </head>
 
 <body>
+	<nav th:replace="~{/html/menu :: menu}"></nav>
+
 	<div class="cadastro">
 		<div class="container">
 			<div class="header">
-				<h2>Editar informação<br>Cliente</h2>
-				<img src="../img/Logo azul.png" alt="">
+				<h2>Alterar dados <br>cliente<br></h2>
+				<img src="/img/Logo azul.png" alt="">
 			</div>
 
 			<form th:action="@{/lista/usuarios/{idusuario}(idusuario = ${idusuario})}" method="POST"

@@ -24,17 +24,20 @@ body {
   overflow: hidden;
   height: 550px;
   z-index: 1;
-  margin-top:20px;
+  margin-top:10px;
+  	box-shadow: 5px 5px 15px;
+
 }
 
 .cadastro .header {
-margin-left: 170px;
-  margin-top: 20px;
+margin-left: 155px;
+  margin-top: 15px;
   display: flex;
   color: #1881FC;
 }
 .cadastro .header h2{
 	font-size: 27px;
+	text-align:center;
 }
 
 .cadastro img{
