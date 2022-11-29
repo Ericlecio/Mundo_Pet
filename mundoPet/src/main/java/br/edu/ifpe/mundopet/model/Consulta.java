@@ -8,18 +8,32 @@ public class Consulta {
 	private Date data_Consulta;
 	private String horario;
 
-	private Usuario usuario;
-	private Veterinario veterinario;
-	private Animal animal;
+	private Usuario usuario = new Usuario();
+	private Veterinario veterinario = new Veterinario();
+	private Animal animal = new Animal();
 
-	public Consulta(int idconsulta, String nome, Date data_Consulta, String horario) {
+	
+	
+	public Consulta(int idconsulta, String nome, Date data_Consulta, String horario, Usuario usuario,
+			Veterinario veterinario, Animal animal) {
 		super();
 		this.idconsulta = idconsulta;
 		this.nome = nome;
 		this.data_Consulta = data_Consulta;
 		this.horario = horario;
-		
+		this.usuario = usuario;
+		this.veterinario = veterinario;
+		this.animal = animal;
 	}
+	
+//	public Consulta(int idconsulta, String nome, Date data_Consulta, String horario) {
+//		super();
+//		this.idconsulta = idconsulta;
+//		this.nome = nome;
+//		this.data_Consulta = data_Consulta;
+//		this.horario = horario;
+//		
+//	}
 	public int getIdconsulta() {
 		return idconsulta;
 	}

@@ -30,6 +30,7 @@ public class LoginController {
 	@Autowired
 	UsuarioDao usuariodao;
 
+    
 	@GetMapping("/login")
 	public ModelAndView Login() {
 		ModelAndView mv = new ModelAndView("usuario/Login");
@@ -37,7 +38,7 @@ public class LoginController {
 	}
 
 	@PostMapping("/login")
-	public ModelAndView validateUsuario(@Validated Usuario usuario, BindingResult bindingResults) {
+	public ModelAndView validateUsuario(@Validated Usuario usuario, BindingResult bindingResults, HttpSession sessao) {
 		if (bindingResults.hasErrors()) {
 			ModelAndView mv = new ModelAndView("usuario/Cadastro");
 			mv.addObject("Usuario", usuario);
@@ -50,10 +51,14 @@ public class LoginController {
 			usuario.setSenha(util.MD5(senha));
 
 			Usuario vUsuario = usuariodao.consultarUsuariosEmailSenha(usuario);
-			
-			if( vUsuario.getCpf() !=null) {
+			vUsuario.setNome("Leoanrdo");
+			//if( vUsuario.getCpf() !=null) {
+				//if(sessao.isNew()) {
+				   sessao.setAttribute("usuario", vUsuario);	
+				//}
+				
 				return new ModelAndView("redirect:/menu");	
-			}
+			//}
 			
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block

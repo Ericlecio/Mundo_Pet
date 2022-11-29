@@ -97,7 +97,9 @@
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="../lista/enderecos">Lista de Endereço</a></li>
 						<li><a class="dropdown-item" href="../Endereco/cadastroEndereco">Cadastro de endereço</a></li>
-
+                        <span><% String str = request.getSession().getAttribute(usuario.nome);
+                             out.println(str);	
+                          %</span>
 					</ul>
 				</li>
 		</div>
