@@ -24,7 +24,7 @@ div#parallelogram {
 	transform: skew(10deg, 3deg);
 	position: absolute;
 	z-index: -1;
-	margin-left: 190px;
+	margin-left: 21%;
 	margin-top: 30px;
 }
 
@@ -34,7 +34,7 @@ div#parallelogram {
 	box-shadow: 5px 5px 15px #013cc8;
 	max-width: 60%;
 	border: solid 1px #013cc8;
-	margin-left: 270px;
+	margin-left: 21%;
 	margin-top: 15px;
 
 }
