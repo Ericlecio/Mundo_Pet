@@ -19,14 +19,17 @@ import br.edu.ifpe.mundopet.model.Veterinario;
 public class ConsultaDao {
 	public void AdicionarConsulta(Consulta consulta) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
-		String sql = "INSERT INTO `Consulta`" + "(`idconsulta`, `nome`, `data_consulta`, `horario`)"
-				+ "VALUES(?, ?, ?, ?)";
+		String sql = "INSERT INTO `Consulta`" + "(`idconsulta`,`idusuario`,`idanimal`,`idveterinario`, `nome`, `data_consulta`, `horario`)"
+				+ "VALUES(?, ?, ?, ?, ?, ?, ?)";
 		PreparedStatement stmt = connection.prepareStatement(sql);
-
+		
 		stmt.setInt(1, consulta.getIdconsulta());
-		stmt.setString(3, consulta.getNome());
-		stmt.setDate(2, new Date(consulta.getData_Consulta().getTime()));
-		stmt.setInt(5, consulta.getHorario());
+		stmt.setInt(2, consulta.getUsuario().getIdusuario());
+		stmt.setInt(3, consulta.getAnimal().getIdAnimal());
+		stmt.setInt(4, consulta.getVeterinario().getIdveterinario());
+		stmt.setString(5, consulta.getNome());
+		stmt.setDate(6, new Date(consulta.getData_Consulta().getTime()));
+		stmt.setInt(7, consulta.getHorario());
 
 		stmt.execute();
 		stmt.close();
