@@ -14,20 +14,6 @@ body {
 	min-height: 100vh;
 }
 
-div#parallelogram {
-	background: #013cc8;
-	width: 1000px;
-	height: 550px;
-	max-width: 70vw;
-	border-radius: 10px;
-	box-shadow: 5px 5px 15px;
-	transform: skew(10deg, 3deg);
-	position: absolute;
-	z-index: -1;
-	margin-left: 21%;
-	margin-top: 30px;
-}
-
 .cadastro section {
 	background: #fff;
 	border-radius: 10px;
