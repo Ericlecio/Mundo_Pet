@@ -32,7 +32,7 @@
 				<img src="/../img/Logo Azul.png" alt="">
 			</div>
 
-			<form action="@{/lista/veterinarios/{idveterinario}(idveterinario = ${idveterinario})}" method="POST"
+			<form th:action="@{/lista/veterinarios/{idveterinario}(idveterinario = ${idveterinario})}" method="POST"
 				th:object="${veterinario}" enctype="multipart/form-data" id="form" class="form">
 				<div class="form-control">
 					<label for="username">Nome Completo</label>
