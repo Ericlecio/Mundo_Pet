@@ -29,7 +29,7 @@ public class ConsultaDao {
 		stmt.setInt(4, consulta.getVeterinario().getIdveterinario());
 		stmt.setString(5, consulta.getNome());
 		stmt.setDate(6, new Date(consulta.getData_Consulta().getTime()));
-		stmt.setInt(7, consulta.getHorario());
+		stmt.setString(7, consulta.getHorario());
 
 		stmt.execute();
 		stmt.close();
@@ -59,7 +59,7 @@ public class ConsultaDao {
 			veterinario.setNome(resultSet.getString(4));
 			consulta.setNome(resultSet.getString(5));
 			consulta.setData_Consulta(new java.util.Date(resultSet.getDate(6).getTime()));
-			consulta.setHorario(resultSet.getInt(7));
+			consulta.setHorario(resultSet.getString(7));
 			
 			consulta.setAnimal(animal);
 			consulta.setUsuario(usuario);

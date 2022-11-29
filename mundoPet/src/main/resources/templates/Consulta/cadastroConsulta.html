@@ -17,6 +17,7 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 	<link rel="stylesheet" href="../css/cadastroConsulta.css">
+	<script src="../js/cadastroConsulta.js"></script>
 	<title>Cadastro Consultas</title>
 </head>
 
@@ -38,12 +39,14 @@
 					</div>
 
 					<div class="container">
-						<input type="date" id="data" required name="data_Consulta">
+						<input type="text" id="dataConsulta" placeholder="Digite sua data da consulta"
+						name="data_Consulta" />
 						<label>Data da Consulta</label>
 					</div>
 
 					<div class="container">
-						<input type="time" id="horario" required name="horario">
+						<input type="text" id="horario" placeholder="Horario"
+						name="horario" />
 						<label>Horario</label>
 					</div>
 				</div>

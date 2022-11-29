@@ -6,13 +6,13 @@ public class Consulta {
 	private int idconsulta;
 	private String nome;
 	private Date data_Consulta;
-	private int horario;
+	private String horario;
 
 	private Usuario usuario;
 	private Veterinario veterinario;
 	private Animal animal;
 
-	public Consulta(int idconsulta, String nome, Date data_Consulta, int horario) {
+	public Consulta(int idconsulta, String nome, Date data_Consulta, String horario) {
 		super();
 		this.idconsulta = idconsulta;
 		this.nome = nome;
@@ -38,10 +38,10 @@ public class Consulta {
 	public void setData_Consulta(Date data_Consulta) {
 		this.data_Consulta = data_Consulta;
 	}
-	public int getHorario() {
+	public String getHorario() {
 		return horario;
 	}
-	public void setHorario(int horario) {
+	public void setHorario(String horario) {
 		this.horario = horario;
 	}
 	public Usuario getUsuario() {
