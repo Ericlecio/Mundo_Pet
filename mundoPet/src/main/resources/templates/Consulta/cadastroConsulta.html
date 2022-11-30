@@ -29,33 +29,65 @@
 			<form action="/lista/consultas" method="POST" th:object="${Consulta}" enctype="multipart/form-data"
 				id="form" class="form">
 				<h1>Cadastrar Consulta <br> Mundo pet</h1>
+
+
 				<div class="fieldset">
+
 					<div class="container">
-						<input type="text" id="nome" required name="nome" autofocus>
-						<label>Nome da Consulta</label>
+						<select class="input" id="nome" name="nome">
+							<option value=""><label>Selecione o Serviço</label></option>
+							<option value="Banho">Banho</option>
+							<option value="Tosa">Tosa</option>
+							<option value="Banho e tosa">Banho e tosa</option>
+							<option value="Hotelzinho">Hotelzinho</option>
+							<option value="Adestramento">Adestramento</option>
+							<option value="Vacinação Raiva">Vacinação RAIVA (Cachorro)</option>
+							<option value="Vacinação Leptospirose Canina">Vacinação LEPTOSPIROSE CANINA (Cachorro)
+							</option>
+							<option value="Vacinação Parvovirose">Vacinação PARVOVIROSE (Cachorro)</option>
+							<option value="Vacinação Coronavirose">Vacinação CORONAVIROSE (Cachorro)</option>
+							<option value="Vacinação Hepatite Infecciosa">Vacinação HEPATITE INFECCIOSA (Cachorro)
+							</option>
+							<option value="Vacinação Adenovirose Respiratória">Vacinação ADENOVIROSE RESPIRATÓRIA
+								(Cachorro)</option>
+							<option value="Vacinação Parainfluenza">Vacinação PARAINFLUENZA (Cachorro)</option>
+							<option value="Vacinação Giardíase">Vaciação GIARDÍASE (Cachorro)</option>
+							<option value="Vacinação Tosse dos Canis">Vacinação TOSSE DOS CANIS (Cachorro)</option>
+							<option value="Vacinação Panleucopenia ">Vacinação PANLEUCOPENIA (Gato)</option>
+							<option value="Vacinação Calicivirose ">Vacinação CALICIVIROSE (Gato)</option>
+							<option value="Vacinação Rinotraqueíte ">Vacinação RINOTRAQUEÍTE (Gato)</option>
+							<option value="Vacinação Clamidiose ">Vacinação CLAMIDIOSE (Gato)</option>
+							<option value="Vacinação Leucemia Felina ">Vacinação LEUCEMIA FELINA (Gato)</option>
+							<option value="Vacinação V3 felina tríplice ">Vacinação V3 FELINA TRÍPLICE (Gato)</option>
+							<option value="Vacinação V4 felina quádrupla">Vacinação V4 FELINA QUÁDRUPLA (Gato)</option>
+							<option value="Vacinação V5 felina quíntupla ">Vacinação V5 FELINA QUÍNTUPLA (Gato)</option>
+						</select>
 					</div>
 
 					<div class="container">
-						<input type="text" id="dataConsulta" placeholder="Digite sua data da consulta"
-						name="data_consulta" />
+						<input type="text" id="dataConsulta" required name="data_consulta" />
 						<label>Data da Consulta</label>
 					</div>
 
 					<div class="container">
-						<input type="text" id="horario" placeholder="Horario"
-						name="horario" />
+						<input type="text" id="horario" required name="horario" />
 						<label>Horario</label>
 					</div>
 				</div>
 
 				<div class="fieldset">
+					
+
 					<div class="container">
-						<input type="text" id="idveterinario" required name="consulta.veterinario.nome">
-						<label>Veterinario</label>
+						<select class="input" id="idveterinario" required name="consulta.veterinario.nome">
+							<option value=""><label>Selecione o Veterinario</label></option>
+							<option value="Banho">Banho</option>
+							<option value="Tosa">Tosa</option>
+						</select>
 					</div>
 					<div class="container">
 						<input type="text" id="idusuario" required name="consulta.usuario.idusuario">
-						<label>Dono</label>
+						<label>Usuario</label>
 					</div>
 
 					<div class="container">
