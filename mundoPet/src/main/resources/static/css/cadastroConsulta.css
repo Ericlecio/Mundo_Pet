@@ -22,6 +22,7 @@ body {
 	border: solid 1px #013cc8;
 	margin-left: 21%;
 	margin-top: 15px;
+	height:550px;
 
 }
 
@@ -132,6 +133,7 @@ body {
 	border-radius: 10px;
 	cursor: pointer;
 	transition: .3s linear;
+	margin-top: 130px;
 
 }
 

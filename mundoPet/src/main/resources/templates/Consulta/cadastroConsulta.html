@@ -30,11 +30,10 @@
 				id="form" class="form">
 				<h1>Cadastrar Consulta <br> Mundo pet</h1>
 
-
 				<div class="fieldset">
 
 					<div class="container">
-						<select class="input" id="nome" name="nome">
+						<select class="input" id="tipo" name="tipo">
 							<option value=""><label>Selecione o Serviço</label></option>
 							<option value="Banho">Banho</option>
 							<option value="Tosa">Tosa</option>
@@ -42,14 +41,11 @@
 							<option value="Hotelzinho">Hotelzinho</option>
 							<option value="Adestramento">Adestramento</option>
 							<option value="Vacinação Raiva">Vacinação RAIVA (Cachorro)</option>
-							<option value="Vacinação Leptospirose Canina">Vacinação LEPTOSPIROSE CANINA (Cachorro)
-							</option>
+							<option value="Vacinação Leptospirose Canina">Vacinação LEPTOSPIROSE CANINA (Cachorro)</option>
 							<option value="Vacinação Parvovirose">Vacinação PARVOVIROSE (Cachorro)</option>
 							<option value="Vacinação Coronavirose">Vacinação CORONAVIROSE (Cachorro)</option>
-							<option value="Vacinação Hepatite Infecciosa">Vacinação HEPATITE INFECCIOSA (Cachorro)
-							</option>
-							<option value="Vacinação Adenovirose Respiratória">Vacinação ADENOVIROSE RESPIRATÓRIA
-								(Cachorro)</option>
+							<option value="Vacinação Hepatite Infecciosa">Vacinação HEPATITE INFECCIOSA (Cachorro)</option>
+							<option value="Vacinação Adenovirose Respiratória">Vacinação ADENOVIROSE RESPIRATÓRIA (Cachorro)</option>
 							<option value="Vacinação Parainfluenza">Vacinação PARAINFLUENZA (Cachorro)</option>
 							<option value="Vacinação Giardíase">Vaciação GIARDÍASE (Cachorro)</option>
 							<option value="Vacinação Tosse dos Canis">Vacinação TOSSE DOS CANIS (Cachorro)</option>
@@ -76,8 +72,7 @@
 				</div>
 
 				<div class="fieldset">
-					
-
+				
 					<div class="container">
 						<select class="input" id="nomeVeterinario" name="nomeVeterinario">
 							<option value=""><label>Selecione o Veterinario</label></option>
@@ -87,15 +82,28 @@
 							<option value="Joao kleber">Joao kleber</option>
 							<option value="Maria clara">Maria clara</option>
 						</select>
-					</div>>
+					</div>
+					
 					<div class="container">
-						<input type="text" id="idusuario" required name="consulta.usuario.idusuario">
-						<label>Usuario</label>
+						<select class="input" id="nomeUsuario" name="nomeUsuario">
+							<option value=""><label>Selecione o seu usuario</label></option>
+							<option value="Vinícius Arruda">Vinícius Arruda</option>
+							<option value="Ericlecio Thiago">Ericlecio Thiago</option>
+							<option value="Jose Aldo">Jose Aldo</option>
+							<option value="Maria eduarda">Maria eduarda</option>
+							<option value="Ana Gabriela">Ana Gabriela</option>
+						</select>
 					</div>
 
 					<div class="container">
-						<input type="text" id="idanimal" required name="consulta.animal.nome">
-						<label>Animal</label>
+						<select class="input" id="nomeAnimal" name="nomeAnimal">
+							<option value=""><label>Selecione o seu Animal</label></option>
+							<option value="Thor">Thor</option>
+							<option value="Pipoca">Pipoca</option>
+							<option value="Rex">Rex</option>
+							<option value="Bolinha">Bolinha</option>
+							<option value="Fera">Fera</option>
+						</select>
 					</div>
 				</div>
 

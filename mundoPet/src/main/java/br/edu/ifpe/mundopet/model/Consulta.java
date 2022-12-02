@@ -4,47 +4,60 @@ import java.util.Date;
 
 public class Consulta {
 	private int idconsulta;
-	private String nome;
+	private String nomeUsuario;
+	private String nomeVeterinario;
+	private String nomeAnimal;
+	private String tipo;
 	private Date data_Consulta;
 	private String horario;
-
-	private Usuario usuario = new Usuario();
-	private Veterinario veterinario = new Veterinario();
-	private Animal animal = new Animal();
-
 	
-	
-	public Consulta(int idconsulta, String nome, Date data_Consulta, String horario, Usuario usuario,
-			Veterinario veterinario, Animal animal) {
+	public Consulta(int idconsulta, String nomeUsuario, String nomeVeterinario, String nomeAnimal, String tipo,
+			Date data_Consulta, String horario) {
 		super();
 		this.idconsulta = idconsulta;
-		this.nome = nome;
+		this.nomeUsuario = nomeUsuario;
+		this.nomeVeterinario = nomeVeterinario;
+		this.nomeAnimal = nomeAnimal;
+		this.tipo = tipo;
 		this.data_Consulta = data_Consulta;
 		this.horario = horario;
-		this.usuario = usuario;
-		this.veterinario = veterinario;
-		this.animal = animal;
 	}
 	
-//	public Consulta(int idconsulta, String nome, Date data_Consulta, String horario) {
-//		super();
-//		this.idconsulta = idconsulta;
-//		this.nome = nome;
-//		this.data_Consulta = data_Consulta;
-//		this.horario = horario;
-//		
-//	}
+	
+	public Consulta() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public int getIdconsulta() {
 		return idconsulta;
 	}
 	public void setIdconsulta(int idconsulta) {
 		this.idconsulta = idconsulta;
 	}
-	public String getNome() {
-		return nome;
+	public String getNomeUsuario() {
+		return nomeUsuario;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeUsuario(String nomeUsuario) {
+		this.nomeUsuario = nomeUsuario;
+	}
+	public String getNomeVeterinario() {
+		return nomeVeterinario;
+	}
+	public void setNomeVeterinario(String nomeVeterinario) {
+		this.nomeVeterinario = nomeVeterinario;
+	}
+	public String getNomeAnimal() {
+		return nomeAnimal;
+	}
+	public void setNomeAnimal(String nomeAnimal) {
+		this.nomeAnimal = nomeAnimal;
+	}
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 	public Date getData_Consulta() {
 		return data_Consulta;
@@ -58,26 +71,10 @@ public class Consulta {
 	public void setHorario(String horario) {
 		this.horario = horario;
 	}
-	public Usuario getUsuario() {
-		return usuario;
-	}
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
-	public Veterinario getVeterinario() {
-		return veterinario;
-	}
-	public void setVeterinario(Veterinario veterinario) {
-		this.veterinario = veterinario;
-	}
-	public Animal getAnimal() {
-		return animal;
-	}
-	public void setAnimal(Animal animal) {
-		this.animal = animal;
-	}
-	public Consulta() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
+	
+
+	
+	
+	
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -46,7 +47,7 @@ public class ConsultaController {
 			ModelAndView mv = new ModelAndView("Consulta/cadastroConsulta");
 			mv.addObject("Consulta", consulta);
 			return mv;
-		}
+		} 
 
 		try {
 			consultadao.AdicionarConsulta(consulta);
@@ -62,5 +63,18 @@ public class ConsultaController {
 	public ModelAndView cadastroConsulta() {
 		ModelAndView mv = new ModelAndView("Consulta/cadastroConsulta");
 		return mv;
+	}
+	
+	
+	@PostMapping("/consulta/{idconsulta}/delete")
+	public ModelAndView deleteConsulta(@PathVariable Long idconsulta) {
+		int codigo = (int) idconsulta.intValue();
+		try {
+			consultadao.DeletarConsulta(codigo);
+
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		return new ModelAndView("redirect:/lista/consultas");
 	}
 }

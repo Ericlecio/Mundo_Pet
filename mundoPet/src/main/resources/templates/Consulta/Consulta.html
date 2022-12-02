@@ -17,7 +17,7 @@
 <body style="background-color: #E7dFDD;">
 	<nav th:replace="~{/html/menu :: menu}"></nav>
 
-	<h2>Lista de Usuarios Mundo pet</h2>
+	<h2>Lista de Consultas Agendadas Mundo pet</h2>
 	<div class="container mt-4">
 		<div class="row">
 			<div class="col-12">
@@ -39,13 +39,13 @@
 					<tbody>
 						<tr th:each="consulta : ${consultas}">
 							<th class="col-1" scope="row" th:text="${consulta.getIdconsulta}">ID</th>
-							<td class="col-2" th:text="${consulta.nome}">Nome</td>
+							<td class="col-2" th:text="${consulta.tipo}">Tipo</td>
 							<td class="col-2" th:text="${#dates.format(consulta.data_Consulta,'dd-MM-yyyy')}">Data da
 								consulta</td>
 							<td class="col-2" th:text="${consulta.horario}">Horario</td>
-							<td class="col-2" th:text="${consulta.veterinario.nome}">Veterinario</td>
-							<td class="col-2" th:text="${consulta.usuario.nome}">Dono</td>
-							<td class="col-2" th:text="${consulta.animal.nome}">Animal</td>
+							<td class="col-2" th:text="${consulta.nomeVeterinario}">Veterinario</td>
+							<td class="col-2" th:text="${consulta.nomeUsuario}">Dono</td>
+							<td class="col-2" th:text="${consulta.nomeAnimal}">Animal</td>
 							<td class="col-1">
 								<a>
 									<i class="fa-solid fa-circle-info" style="color:rgb(128, 255, 255);"></i></a>

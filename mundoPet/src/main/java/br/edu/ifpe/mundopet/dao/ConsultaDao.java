@@ -19,17 +19,17 @@ import br.edu.ifpe.mundopet.model.Veterinario;
 public class ConsultaDao {
 	public void AdicionarConsulta(Consulta consulta) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
-		String sql = "INSERT INTO `Consulta`" + "(`idconsulta`,`idusuario`,`idanimal`,`idveterinario`, `nome`, `data_consulta`, `horario`)"
-				+ "VALUES(?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO `Consulta`"
+				+ "(`nomeUsuario,`nomeVeterinario`,`nomeAnimal`, `tipo`, `data_consulta`, `horario`)"
+				+ "VALUES(?, ?, ?, ?, ?, ?)";
 		PreparedStatement stmt = connection.prepareStatement(sql);
-		
-		stmt.setInt(1, consulta.getIdconsulta());
-		stmt.setInt(2, consulta.getUsuario().getIdusuario());
-		stmt.setInt(3, consulta.getAnimal().getIdAnimal());
-		stmt.setInt(4, consulta.getVeterinario().getIdveterinario());
-		stmt.setString(5, consulta.getNome());
-		stmt.setDate(6, new Date(consulta.getData_Consulta().getTime()));
-		stmt.setString(7, consulta.getHorario());
+
+		stmt.setString(1, consulta.getNomeUsuario());
+		stmt.setString(2, consulta.getNomeVeterinario());
+		stmt.setString(3, consulta.getNomeAnimal());
+		stmt.setString(4, consulta.getTipo());
+		stmt.setDate(5, new Date(consulta.getData_Consulta().getTime()));
+		stmt.setString(6, consulta.getHorario());
 
 		stmt.execute();
 		stmt.close();
@@ -38,7 +38,8 @@ public class ConsultaDao {
 
 	public List<Consulta> ConsultarConsultas() throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
-		String sql = "SELECT c.idconsulta, u.nome, a.nome, v.nome, c.nome, c.data_consulta, c.horario from consulta as c INNER JOIN usuario as u on c.idusuario = u.idusuario inner join veterinario as v on c.idveterinario = v.idveterinario inner join animal as a on c.idanimal = a.idanimal;";
+		String sql = "SELECT `idconsulta`,`nomeUsuario`,`nomeVeterinario`,`nomeAnimal`, `tipo`, `data_consulta`, `horario` FROM `consulta`";
+		;
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
 		ResultSet resultSet = stmt.executeQuery();
@@ -48,22 +49,15 @@ public class ConsultaDao {
 		while (resultSet.next()) {
 
 			Consulta consulta = new Consulta();
-			Usuario usuario = new Usuario();
-			Animal animal = new Animal();
-			Veterinario veterinario = new Veterinario();
-			
+
 			int idConsulta = resultSet.getInt("idconsulta");
 			consulta.setIdconsulta(idConsulta);
-			usuario.setNome(resultSet.getString(2));
-			animal.setNome(resultSet.getString(3));
-			veterinario.setNome(resultSet.getString(4));
-			consulta.setNome(resultSet.getString(5));
+			consulta.setNomeUsuario(resultSet.getString(2));
+			consulta.setNomeVeterinario(resultSet.getString(3));
+			consulta.setNomeAnimal(resultSet.getString(4));
+			consulta.setTipo(resultSet.getString(5));
 			consulta.setData_Consulta(new java.util.Date(resultSet.getDate(6).getTime()));
 			consulta.setHorario(resultSet.getString(7));
-			
-			consulta.setAnimal(animal);
-			consulta.setUsuario(usuario);
-			consulta.setVeterinario(veterinario);
 
 			listaTodasConsulta.add(consulta);
 		}
@@ -77,7 +71,7 @@ public class ConsultaDao {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "DELETE FROM `consulta` WHERE `idConsulta`=?";
 		PreparedStatement stmt = connection.prepareStatement(sql);
-		stmt.setInt(2, idconsulta);
+		stmt.setInt(1, idconsulta);
 
 		stmt.executeUpdate();
 		stmt.close();
