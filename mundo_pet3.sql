@@ -27,12 +27,13 @@ SET time_zone = "+00:00";
 CREATE DATABASE IF NOT EXISTS `mundo pet`;
 USE `mundo pet`;
 
-DROP TABLE IF EXISTS `consulta`;
 DROP TABLE IF EXISTS `animal`;
-DROP TABLE IF EXISTS `usuario`;
+DROP TABLE IF EXISTS `endereco`;
+DROP TABLE IF EXISTS `consulta`;
 DROP TABLE IF EXISTS `login`;
 DROP TABLE IF EXISTS `veterinario`;
-DROP TABLE IF EXISTS `endereco`;
+DROP TABLE IF EXISTS `usuario`;
+
 
 
 
@@ -121,7 +122,8 @@ CREATE TABLE `endereco` (
   `Cidade` varchar(50) NOT NULL,
   `Numero` int(11) NOT NULL,
   `UF` varchar(2) NOT NULL,
-  PRIMARY KEY (`idendereco`)
+  PRIMARY KEY (`idendereco`),
+  CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`idusuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
