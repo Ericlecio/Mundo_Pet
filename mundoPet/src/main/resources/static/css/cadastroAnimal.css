@@ -42,49 +42,59 @@ div#parallelogram {
 }
 
 .cadastro section h1 {
-	padding: 20px 10px;
-	text-align: center;
+	text-align: center;		
 	color: #013cc8;
 }
 
 .cadastro fieldset {
 	border: none;
-}
-
-.cadastro fieldset:nth-child(2) {
 	display: flex;
 }
 
-.cadastro fieldset:nth-child(2) {
+.cadastro fieldset {
 	display: flex;
-	padding-top: 20px;
+	margin:0px;
+	width:350px;
 }
 
-.cadastro fieldset:nth-child(3) {
-	display: flex;
-	width: 100%;
-	margin-top: 20px;
-	padding: 0px 10px;
-}
-
-.cadastro fieldset:last-child {}
 
 .cadastro .container {
 	position: relative;
+	padding:5px;
+
 }
 
-.cadastro section .container input {
-	margin: 10px 10px;
-	width: calc(100% - 20px);
+.cadastro .container input {
+	width: 140px;
 	height: 70px;
-	border: none;
+	border: solid 1px  #013cc8;
 	background-color: #ededed;
 	border-radius: 4px;
 	color: #333;
 	font-size: 18px;
 	font-weight: 700;
-	padding: 14px 10px 0 10px;
+	margin-top: 25px;
+	text-align: center;
 
+}
+
+
+.cadastro .container select{
+	width:240px;
+	height:70px;
+	margin-top: 26px;
+	border-color: #013cc8;
+	border-radius: 4px;
+	background-color: #ededed;
+	color: #333;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 700;
+	color: rgb(128, 128, 128);
+	position: absolute;
+	line-height: 70px;
+	user-select: none;
+	transition: 0.5s;
 }
 
 .cadastro .container label {
@@ -100,11 +110,15 @@ div#parallelogram {
 	pointer-events: none;
 	transition: 0.5s;
 }
+.cadastro .container select .label1{
+	color: #013cc8;
+	text-align: center;
+}
 
 .cadastro .container input:focus~label,
 .cadastro .container input:valid~label {
 	left: 30px;
-	top: -10px;
+	top: 10px;
 	color: #013cc8;
 }
 
@@ -133,10 +147,10 @@ div#parallelogram {
 	color: #013cc8;
 }
 
-.cadastro button {
+.cadastro  button {
 	margin: 20px 0;
-	margin-left: 110px;
-	width: calc(50% - 10px);
+	margin-left:10px;
+	width: calc(100% - 10px);
 	height: 50px;
 	background-color: #013cc8;
 	color: #fff;
@@ -145,6 +159,7 @@ div#parallelogram {
 	border-radius: 10px;
 	cursor: pointer;
 	transition: .3s linear;
+	margin-top: 40px;
 
 }
 
@@ -170,49 +185,6 @@ div#parallelogram {
 .cadastro section img {
 	width: 240px;
 	height: 250px;
-	margin: auto 40px;
+	margin: auto 20%;
 	border-radius: 10px;
-}
-
-@media only screen and (max-width: 1080px) {
-	div#parallelogram {
-		height: 690px;
-	}
-
-	section img {
-		display: none;
-	}
-}
-
-@media only screen and (max-width: 510px) {
-	div#parallelogram {
-		display: none;
-	}
-
-	section {
-		min-width: 95vw;
-	}
-
-	form {
-		width: 100%;
-	}
-
-	fieldset:nth-child(2),
-	fieldset:nth-child(4),
-	fieldset:nth-child(5) {
-		flex-direction: column;
-	}
-
-	fieldset:nth-child(4) {
-		padding: 0px;
-	}
-
-	div#check {
-		width: 100%;
-	}
-
-	button {
-		width: 100%;
-		margin-left: 0;
-	}
 }

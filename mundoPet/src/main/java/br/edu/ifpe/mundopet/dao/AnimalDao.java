@@ -16,14 +16,15 @@ import br.edu.ifpe.mundopet.model.Usuario;
 public class AnimalDao {
 	public void AdicionarAnimal(Animal animal) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
-		String sql = "INSERT INTO `Animal`" + "(`idusuario`, `nome`, `raca`, `idade`,`sexo`)" + "VALUES(?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO `Animal`" + "(`nome`, `raca`, `idade`,`sexo`,`usuario`)" + "VALUES(?, ?, ?, ?, ?)";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
-		stmt.setInt(1, animal.getUsuario().getIdusuario());
-		stmt.setString(2, animal.getNome());
-		stmt.setString(3, animal.getRaca());
-		stmt.setInt(4, animal.getIdade());
-		stmt.setString(5, animal.getSexo());
+		stmt.setString(1, animal.getNome());
+		stmt.setString(2, animal.getRaca());
+		stmt.setInt(3, animal.getIdade());
+		stmt.setString(4, animal.getSexo());
+		stmt.setInt(5, animal.getIdusuario());
+		
 
 		stmt.execute();
 		stmt.close();

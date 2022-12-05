@@ -17,6 +17,9 @@
 	<script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+	<link rel="apple-touch-icon" sizes="192x192" href="../img/icon/Frame1.png">
+	<link rel="icon" type="image/png" sizes="380x380" href="../img/icon/Frame1.png">
+	<link rel="icon" type="image/png" sizes="380x380" href="../img/icon/Frame1.png">
 	<title>Cadastro Pet</title>
 </head>
 
@@ -39,8 +42,36 @@
 					</div>
 
 					<div class="container">
-						<input type="text" id="raca" required name="raça">
-						<label>Raça</label>
+						<select class="input" id="raça" name="raça">
+							<option value=""><label>Selecione a Raça </label></option>
+							<option class="label1" value="Não informado"><label>Cachorro(Não listado)</label></option>
+							<option value="Vira-lata">Vira-lata</option>
+							<option value="Shih tzu">Shih tzu</option>
+							<option value="Yorkshire">Yorkshire</option>
+							<option value="Poodle">Poodle</option>
+							<option value="Lhasa apso">Lhasa apso</option>
+							<option value="Buldogue francês">Buldogue francês</option>
+							<option value="Golden retriever">Golden retriever</option>
+							<option value="Labrador">Labrador</option>
+							<option value="Maltês">Maltês </option>
+							<option value="Pinscher">Pinscher</option>
+							<option value="Rottweiler">Rottweiler</option>
+							<option value="Pug">Pug</option>
+							<option value="Pastor Alemão">Pastor Alemão</option>
+							<option value="Pitbull">Pitbull</option>
+							
+						<option class="label1" value="Não informado"><label>Gato(Não listado)</label></option>
+							<option value="Gato-Maine Coon">Maine Coon</option>
+							<option value="Gato-Persa">Persa</option>
+							<option value="Gato-Siamês">Siamês</option>
+							<option value="Gato-Angorá">Angorá</option>
+							<option value="Gato-Sphynx">Sphynx</option>
+							<option value="Gato-Ragdoll">Ragdoll</option>
+							<option value="Gato-Ashera">Ashera</option>
+							<option value="Gato-American Shorthair">American Shorthair</option>
+							<option value="Exótico">Exótico</option>
+							<option value="SRD">SRD</option>
+						</select>
 					</div>
 
 				</fieldset>
@@ -52,18 +83,29 @@
 					</div>
 
 					<div class="container">
-						<input type="text" id="sexo" required name="sexo">
-						<label>Sexo</label>
+						<select class="input" id="sexo" name="sexo">
+							<option value=""><label>Selecione o sexo </label></option>
+							<option value="M">Macho</option>
+							<option value="F">Fêmea</option>
+						</select>
 					</div>
+
+				</fieldset>
+				
+				<fieldset>
 
 					<div class="container">
 						<input type="text" id="idusuario" required name="idusuario">
 						<label>Seu Id</label>
 					</div>
+					
+					<button name="submit">Cadastrar animal</button>
+
 				</fieldset>
-				<button name="submit">Cadastrar animal</button>
+				
+				
 			</form>
-			<img src="https://www.kindpng.com/picc/m/266-2665762_hd-cachorro-png-imagens-de-cachorros-em-png.png"
+			<img src="https://img.olhardigital.com.br/wp-content/uploads/2022/05/gatos.jpg"
 				alt="User">
 		</section>
 	</div>

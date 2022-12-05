@@ -1,15 +1,44 @@
 package br.edu.ifpe.mundopet.model;
 
-public class Endereco {
+import java.util.Date;
+
+public class Endereco extends Usuario{
 	private int idenderenco;
 	private String bairro;
 	private String rua;
 	private String cidade;
 	private int numero;
 	private String uf;
+	private int idusuario;
 	
 	private Usuario usuario;
 
+	
+	public Endereco(int idusuario, String nome, Date data_Nasc, String email, String cpf, String senha, int idenderenco,
+			String bairro, String rua, String cidade, int numero, String uf, Usuario usuario) {
+		super(idusuario, nome, data_Nasc, email, cpf, senha);
+		this.idenderenco = idenderenco;
+		this.bairro = bairro;
+		this.rua = rua;
+		this.cidade = cidade;
+		this.numero = numero;
+		this.uf = uf;
+		this.usuario = usuario;
+	}
+
+	public Endereco() {
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	
+	public int getIdusuario() {
+		return usuario.getIdusuario();
+	}
+
+	public void setIdusuario(int idusuario) {
+		this.idusuario = idusuario;
+	}
 
 	public Usuario getUsuario() {
 		return usuario;

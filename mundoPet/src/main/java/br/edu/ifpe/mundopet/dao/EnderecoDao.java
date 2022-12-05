@@ -20,10 +20,10 @@ public class EnderecoDao {
 				+ "VALUES(?, ?, ?, ?, ?)";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 		
-		stmt.setInt(1, endereco.getUsuario().getIdusuario());
+		stmt.setInt(1, endereco.getIdusuario());
 		stmt.setString(2, endereco.getBairro());
 		stmt.setString(3, endereco.getRua());
-		stmt.setString(4, endereco.getCidade());
+		stmt.setString(4, endereco.getCidade());	
 		stmt.setInt(5, endereco.getNumero());
 		stmt.setString(6, endereco.getUf());
 

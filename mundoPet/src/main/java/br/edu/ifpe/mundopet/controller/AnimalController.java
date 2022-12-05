@@ -14,8 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.edu.ifpe.mundopet.dao.AnimalDao;
 import br.edu.ifpe.mundopet.model.Animal;
-import br.edu.ifpe.mundopet.model.Usuario;
-import br.edu.ifpe.mundopet.model.Veterinario;
+
 
 @Controller
 public class AnimalController {
@@ -46,14 +45,11 @@ public class AnimalController {
 	public ModelAndView createAnimal(@Validated Animal animal, BindingResult bindingResults) {
 		if (bindingResults.hasErrors()) {
 			ModelAndView mv = new ModelAndView("Animal/cadastroAnimal");
-			mv.addObject("animal", animal);
+			mv.addObject("Animal", animal);
 			return mv;
 		}
 		try {
-			// mock
-			Usuario usuario = new Usuario();
-			usuario.setNome("fulano");
-			animal.setUsuario(usuario);
+
 			animaldao.AdicionarAnimal(animal);
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();

@@ -1,6 +1,6 @@
 package br.edu.ifpe.mundopet.model;
 
-public class Animal {
+public class Animal extends Usuario {
 	private int idanimal;
 	private String nome;
 	private String raca;
