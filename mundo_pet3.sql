@@ -55,7 +55,7 @@ INSERT INTO `usuario` (`idusuario`, `nome`, `data_Nasc`, `email`, `CPF`, `senha`
 (1, 'Vinícius Arruda', '2002-04-25', 'vinicius@gmail.com', '123.456.671-54', 'arruda123'),
 (2, 'Ericlecio Thiago', '2019-03-02', 'ericlecio@gmail.com', '123.454.378-57', 'ericlecio123'),
 (3, 'Jose Aldo', '1982-10-05', 'josealdo@gmail.com', '123.675.475-84', 'aldo123'),
-(4, 'maria eduarda', '2001-11-11', 'mariaeduarda@gmail.com', '121.678.999-09', 'maria123'),
+(4, ' Maria eduarda', '2001-11-11', 'mariaeduarda@gmail.com', '121.678.999-09', 'maria123'),
 (5, 'Ana Gabriela', '1999-08-02', 'anagabriela@gmail.com', '123.675.485-84', 'ana123');
 
 
@@ -105,8 +105,8 @@ INSERT INTO `veterinario` (`idveterinario`, `nome`, `data_Nasc`, `email`, `CPF`,
 (1, 'luiz arnaldo', '1998-01-21', 'luizarnaldo@gmail.com', '112.132.313-21', 12345678, '26ba6f14cce701b9b14e935702e3195c'),
 (2, 'Ana lucia', '1981-01-12', 'analucia@gmail.com', '232.122.442-13', 21890340, 'dd8f27ad538d421c15cf7fb568a5856c'),
 (3, 'Joao Miguel', '2000-01-23', 'JoaoMiguel@gmail.com', '513.213.213-21', 23332178, '5bc748daa0afd1ed71133b44258ac52d'),
-(4, 'joao kleber', '2001-06-22', 'Joaokleber@gmail.com', '111.113.414-88', 11132178, '5bc748324233287ddsfdsfds7f87652d'),
-(5, 'maria clara', '2004-01-12', 'mariaclara@gmail.com', '219.000.093-26', 97869178, '5bc748daa0afd1ed71133b442543243b');
+(4, 'Joao kleber', '2001-06-22', 'Joaokleber@gmail.com', '111.113.414-88', 11132178, '5bc748324233287ddsfdsfds7f87652d'),
+(5, 'Maria clara', '2004-01-12', 'mariaclara@gmail.com', '219.000.093-26', 97869178, '5bc748daa0afd1ed71133b442543243b');
 
 
 
@@ -131,7 +131,7 @@ CREATE TABLE `endereco` (
 --
 
 INSERT INTO `endereco` (`idendereco`, `idusuario`, `Bairro`, `Rua`, `Cidade`, `Numero`, `UF`) VALUES
-(1, 1, 'newton carneiro', 'rua quinze', 'Palmares', 222, 'PE'),
+(1, 1, 'Newton carneiro', 'rua quinze', 'Palmares', 222, 'PE'),
 (2, 2, 'Cohab 1', 'rua dom pedro I', 'Palmares', 330, 'PE'),
 (3, 3, 'Quilombo 1', 'rua 87', 'Palmares', 37, 'PE'),
 (4, 4, 'Nova Palmares', 'rua 12', 'Palmares', 229, 'PE'),
@@ -178,7 +178,7 @@ CREATE TABLE `consulta` (
   `idconsulta` int(11) NOT NULL AUTO_INCREMENT,
   `nomeVeterinario` varchar(100) NOT NULL,
   `nomeUsuario` varchar(100) NOT NULL,
-  `nomeAnimal` int(100) NOT NULL,
+  `nomeAnimal` varchar(100) NOT NULL,
   `tipo` varchar(100) NOT NULL,
   `data_consulta` date NOT NULL,
   `horario` varchar(5) NOT NULL,
@@ -190,7 +190,7 @@ CREATE TABLE `consulta` (
 --
 
 INSERT INTO `consulta` (`idconsulta`, `nomeVeterinario`, `nomeUsuario`, `nomeAnimal`,`tipo`, `data_consulta`, `horario`) VALUES
-(1,'Ana lucia', 'Vinícius Arruda','Thor', 'Vacinação Raiva', '2023-01-05', '13:00');
+(1,'Ana lucia', 'Vinícius Arruda', 'Thor', 'Vacinação Raiva', '2023-01-05', '13:00');
 
 -- --------------------------------------------------------
 
