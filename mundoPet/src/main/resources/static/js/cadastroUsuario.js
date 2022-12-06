@@ -6,3 +6,9 @@ $(document).ready(function() {
 	var $cpf = $("#cpf");
 	$cpf.mask('000.000.000-00');
 })
+$("#nome").on("input", function(){
+  var regexp = /[^a-zA-Z]/g;
+  if(this.value.match(regexp)){
+    $(this).val(this.value.replace(regexp,''));
+  }
+})

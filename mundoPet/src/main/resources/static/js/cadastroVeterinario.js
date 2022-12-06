@@ -12,3 +12,10 @@ $(document).ready(function () {
 	var $crmv = $("#crmv");
 	$crmv.mask('000000000');
 })
+
+$("#nome").on("input", function(){
+  var regexp = /[^a-zA-Z]/g;
+  if(this.value.match(regexp)){
+    $(this).val(this.value.replace(regexp,''));
+  }
+})
