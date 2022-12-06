@@ -20,7 +20,7 @@ public class ConsultaDao {
 	public void AdicionarConsulta(Consulta consulta) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "INSERT INTO `Consulta`"
-				+ "(`nomeUsuario,`nomeVeterinario`,`nomeAnimal`, `tipo`, `data_consulta`, `horario`)"
+				+ "(`nomeUsuario`,`nomeVeterinario`,`nomeAnimal`, `tipo`, `data_consulta`, `horario`)"
 				+ "VALUES(?, ?, ?, ?, ?, ?)";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 

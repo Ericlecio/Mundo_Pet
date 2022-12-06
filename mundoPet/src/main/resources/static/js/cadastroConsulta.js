@@ -1,6 +1,6 @@
 
 $(document).ready(function () {
-	$('#dataConsulta').mask('00/00/0000')
+	$('#data_consulta').mask('00/00/0000')
 })
 
 $(document).ready(function () {
