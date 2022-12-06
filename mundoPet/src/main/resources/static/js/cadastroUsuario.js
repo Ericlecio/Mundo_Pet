@@ -12,3 +12,9 @@ $("#nome").on("input", function(){
     $(this).val(this.value.replace(regexp,''));
   }
 })
+
+$(document).ready(function() {
+  $(document).on('keypress', '#password', function(e){
+     return !(e.keyCode == 32);
+  });
+});

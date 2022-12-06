@@ -43,12 +43,12 @@
 
 				<div class="form-control">
 					<label for="email">Email</label>
-					<input type="email" id="email" placeholder="Digite seu email.." name="email" maxlength="99" required/>
+					<input type="email" onkeyup="this.value = this.value.toLowerCase();" id="email" placeholder="Digite seu email.." name="email" maxlength="99" required/>
 				</div>
 
 				<div class="form-control">
 					<label for="CPF">CPF</label>
-					<input type="CPF" id="cpf" minlength="11" maxlength="11" placeholder="Digite seu CPF..." name="cpf" required/>
+					<input type="CPF" id="cpf" minlength="14" maxlength="14" placeholder="Digite seu CPF..." name="cpf" required/>
 				</div>
 
 				<div class="form-control">
