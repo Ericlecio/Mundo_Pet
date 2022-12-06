@@ -47,9 +47,62 @@
 							<td class="col-2" th:text="${usuario.cpf}">CPF</td>
 
 							<td class="col-1">
-								<a th:href="@{/usuarios/{idUsuario}(idUsuario = ${usuario.idusuario})}">
+								<a role="button" data-bs-toggle="modal"
+									th:data-bs-target="${'#detalhe' + usuario.idusuario}" href="">
 									<i class="fa-solid fa-circle-info" style="color:rgb(128, 255, 255);"></i></a>
+								<form th:action="@{/usuario/{idUsuario}/delete(idUsuario = ${usuario.idusuario})}"
+									method="post">
+
+									<div class="modal fade" id="modal1" th:id="${'detalhe' + usuario.idusuario}" tabindex="-1"
+										aria-labelledby="exampleModalLabel" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+											
+												<div class="modal-header">
+													<h1 class="modal-title fs-5" id="exdeleteUsuario">Mais detalhes
+														<span th:text="${usuario.idusuario}"></span> </h1>
+													<button type="button" class="btn-close" data-bs-dismiss="modal"
+														aria-label="Close"></button>
+												</div>
+												
+												<div class="modal-body">
+													ID: <span th:text="${usuario.idusuario}"></span><br>
+													Nome: <span th:text="${usuario.nome}"></span><br>
+													Data de Nascimento: <span th:text="${#dates.format(usuario.data_Nasc,'dd-MM-yyyy')}"></span><br>
+													Email: <span th:text="${usuario.email}"></span><br>
+													CPF: <span th:text="${usuario.cpf}"></span><br>
+												</div>
+												
+												<div class="modal-body">
+																<p>Endereço</p>
+													Bairro: <span th:text="${usuario.idusuario}"></span><br>
+													Rua: <span th:text="${usuario.nome}"></span><br>
+													Cidade: <span th:text="${#dates.format(usuario.data_Nasc,'dd-MM-yyyy')}"></span><br>
+													N: <span th:text="${usuario.email}"></span><br>
+													UF: <span th:text="${usuario.cpf}"></span><br>
+												</div>
+												
+												<div class="modal-body">
+																<p>Animal</p>
+													Nome do animal: <span th:text="${usuario.idusuario}"></span><br>
+													Idade: <span th:text="${usuario.nome}"></span><br>
+													Raça: <span th:text="${#dates.format(usuario.data_Nasc,'dd-MM-yyyy')}"></span><br>
+													Sexo: <span th:text="${usuario.email}"></span><br>
+												</div>
+												
+												<div class="modal-footer">
+													<button type="button" class="btn btn-secondary"
+														data-bs-dismiss="modal">Fechar</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
 							</td>
+
+
+
+
 							<td class="col-1">
 								<a th:href="@{/usuario/{idUsuario}/edit(idUsuario = ${usuario.idusuario})}">
 									<i class="fa-solid fa-file-pen" style="color:rgb(0, 128, 0);"></i></a>
