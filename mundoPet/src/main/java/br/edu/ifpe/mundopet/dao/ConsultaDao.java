@@ -78,4 +78,48 @@ public class ConsultaDao {
 		connection.close();
 
 	}
+
+	public Consulta consultarConsultaPorId(Long id) throws ClassNotFoundException, SQLException {
+		Connection connection = ConexaoMySQL.getConexaoMySQL();
+		String sql = "SELECT `idconsulta`,`nomeUsuario`,`nomeVeterinario`,`nomeAnimal`, `tipo`, `data_consulta`, `horario` FROM `consulta` where idconsulta= ?";
+		PreparedStatement stmt = connection.prepareStatement(sql);
+		stmt.setLong(1, id);
+		ResultSet resultSet = stmt.executeQuery();
+
+		Consulta consulta = new Consulta();
+		
+		if (resultSet.next()) {
+
+		int idConsulta = resultSet.getInt("idconsulta");
+		consulta.setIdconsulta(idConsulta);
+		consulta.setNomeUsuario(resultSet.getString(2));
+		consulta.setNomeVeterinario(resultSet.getString(3));
+		consulta.setNomeAnimal(resultSet.getString(4));
+		consulta.setTipo(resultSet.getString(5));
+		consulta.setData_Consulta(new java.util.Date(resultSet.getDate(6).getTime()));
+		consulta.setHorario(resultSet.getString(7));
+
+		}
+		stmt.close();
+		connection.close();
+
+		return consulta;
+	}
+	public void AtualizarConsulta(Consulta consulta) throws ClassNotFoundException, SQLException {
+		Connection connection = ConexaoMySQL.getConexaoMySQL();
+		String sql = "UPDATE `consulta` set `nomeUsuario` = ?, `nomeVeterinario`= ?, `nomeAnimal` = ?, `tipo` = ?, `data_consulta = ?`, `horario = ?` where `idconsulta`= ? ";
+
+		PreparedStatement stmt = connection.prepareStatement(sql);
+
+		stmt.setString(1, consulta.getNomeUsuario());
+		stmt.setString(2, consulta.getNomeVeterinario());
+		stmt.setString(3, consulta.getNomeAnimal());
+		stmt.setString(4, consulta.getTipo());
+		stmt.setDate(5, new Date(consulta.getData_Consulta().getTime()));
+		stmt.setString(6, consulta.getHorario());
+
+		stmt.executeUpdate();
+		stmt.close();
+		connection.close();
+	}
 }

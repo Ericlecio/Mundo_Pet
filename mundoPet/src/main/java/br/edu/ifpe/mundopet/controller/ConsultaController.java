@@ -64,8 +64,8 @@ public class ConsultaController {
 		ModelAndView mv = new ModelAndView("Consulta/cadastroConsulta");
 		return mv;
 	}
-	
-	
+
+
 	@PostMapping("/consulta/{idconsulta}/delete")
 	public ModelAndView deleteConsulta(@PathVariable Long idconsulta) {
 		int codigo = (int) idconsulta.intValue();
@@ -77,4 +77,42 @@ public class ConsultaController {
 		}
 		return new ModelAndView("redirect:/lista/consultas");
 	}
+	@GetMapping("/consulta/{idconsulta}/edit")
+	public ModelAndView edit(@PathVariable Long idconsulta, Consulta consulta1) {
+		ModelAndView mv = new ModelAndView("Consulta/editarConsulta");
+		int codigo = (int) idconsulta.intValue();
+		try {
+			consulta1 = consultadao.consultarConsultaPorId(idconsulta);
+			if (consulta1 != null) {
+				mv.addObject("consulta", consulta1);
+				return mv;
+			} else {
+				return new ModelAndView("redirect:/lista/usuarios");
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return mv;
+	}
+
+	@PostMapping("/lista/consultas/{idconsulta}")
+	public ModelAndView update(@PathVariable Long idconsulta, @Validated Consulta consulta, BindingResult bindingResults) {
+		if (bindingResults.hasErrors()) {
+			ModelAndView mv = new ModelAndView("usuario/editarUsuario");
+			mv.addObject("consulta", consulta);
+			return mv;
+		} else {
+			int codigo = (int) idconsulta.intValue();
+
+			try {
+				consulta.setIdconsulta(codigo);
+				consultadao.AtualizarConsulta(consulta);
+			} catch (ClassNotFoundException | SQLException e) {
+				e.printStackTrace();
+			}
+			return new ModelAndView("redirect:/lista/consultas");
+		}
+	}
+
 }
