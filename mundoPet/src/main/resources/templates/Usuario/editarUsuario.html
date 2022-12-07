@@ -5,28 +5,20 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="/css/editarUsuario.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-		crossorigin="anonymous"></script>
-	<script src="https://kit.fontawesome.com/cdc6c5b4dc.js" crossorigin="anonymous"></script>
-	<script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
-	<script src="/js/cadastroUsuario.js"></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-	<link rel="apple-touch-icon" sizes="192x192" href="../img/icon/Frame1.png">
-	<link rel="icon" type="image/png" sizes="380x380" href="../img/icon/Frame1.png">
-	<link rel="icon" type="image/png" sizes="380x380" href="../img/icon/Frame1.png">
+	<link rel="apple-touch-icon" sizes="192x192" href="/img/icon/Frame1.png">
+	<link rel="icon" type="image/png" sizes="380x380" href="/img/icon/Frame1.png">
+	<link rel="icon" type="image/png" sizes="380x380" href="/img/icon/Frame1.png">
+	<link rel="stylesheet" href="/css/editarUsuario.css">
 	<title>Editar informação usuario</title>
 </head>
 
 <body>
-	<nav th:replace="~{/html/menu :: menu}"></nav>
+	<nav th:replace="~{Html/menu :: menu}"></nav>
 
 	<div class="cadastro">
 		<div class="container">
@@ -39,20 +31,20 @@
 				th:object="${usuario}" enctype="multipart/form-data" id="form" class="form">
 				<div class="form-control">
 					<label for="username">Nome Completo</label>
-					<input type="text" id="nome" placeholder="Digite seu nome Completo" name="nome" maxlength="99" required
-						th:field="*{nome}" />
+					<input type="text" id="nome" placeholder="Digite seu nome Completo" name="nome" maxlength="99"
+						required th:field="*{nome}" />
 				</div>
 
 				<div class="form-control">
 					<label for="email">Email</label>
-					<input type="email" id="email" onkeyup="this.value = this.value.toLowerCase();" placeholder="Digite seu email.." name="email" maxlength="99" required 
-						th:field="*{email}" />
+					<input type="email" id="email" onkeyup="this.value = this.value.toLowerCase();"
+						placeholder="Digite seu email.." name="email" maxlength="99" required th:field="*{email}" />
 				</div>
 
 				<div class="form-control">
 					<label for="cpf">CPF</label>
-					<input type="text" id="cpf" minlength="14" maxlength="14" placeholder="Digite seu CPF..." name="cpf" required
-						th:field="*{cpf}" />
+					<input type="text" id="cpf" minlength="14" maxlength="14" placeholder="Digite seu CPF..." name="cpf"
+						required th:field="*{cpf}" />
 				</div>
 
 				<div class="form-control">
@@ -64,6 +56,17 @@
 			</form>
 		</div>
 	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+		crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/cdc6c5b4dc.js" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
+	<script src="/js/cadastroUsuario.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+	<script src="/js/cadastroUsuario.js"></script>
+
 </body>
 
 </html>

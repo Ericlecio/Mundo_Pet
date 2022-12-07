@@ -16,6 +16,10 @@ body {
   align-items: center;
 }
 
+.cadastro{
+	margin-top: 5px;
+}
+
 .cadastro .container {
   background-color: #fafafa;
   border-radius: 10px;
@@ -24,7 +28,7 @@ body {
   margin: 0 auto;
   max-width: 100%;
   overflow: hidden;
-  height: 600px;
+  height: 590px;
   z-index: 1;
   box-shadow: 5px 5px 15px;
   justify-content: center;
