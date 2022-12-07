@@ -18,9 +18,13 @@
 	<script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 	<link rel="apple-touch-icon" sizes="192x192" href="../img/icon/Frame1.png">
 	<link rel="icon" type="image/png" sizes="380x380" href="../img/icon/Frame1.png">
 	<link rel="icon" type="image/png" sizes="380x380" href="../img/icon/Frame1.png">
+
+
 	<title>Cadastro Mundo Pet</title>
 </head>
 
@@ -57,7 +61,7 @@
 					<div class="dois">
 						<label for="DATA">Data de nascimento</label>
 						<input type="text" id="dataNascimento" placeholder="Digite sua data de nascimento"
-							name="data_Nasc" required />
+							name="data_Nasc" autocomplete="off" required />
 					</div>
 				</div>
 
@@ -65,8 +69,9 @@
 					<label for="password">Senha</label>
 					<input type="password" id="senha" placeholder="Digite sua senha..." name="senha" maxlength="99"
 						required />
-						
-						<button type="button" onclick="mostrarsenha()" style="width:100px; height:20px; cursor: pointer; padding:0; border: none;
+
+					<button type="button" onclick="mostrarsenha()"
+						style="width:100px; height:20px; cursor: pointer; padding:0; border: none;
 							  border-width: 0px; display: relative ;font-size:13px; border-radius: 3px; text-align:center; margin-left: 43%; margin-right:43%;">Mostrar senha</button>
 				</div>
 
