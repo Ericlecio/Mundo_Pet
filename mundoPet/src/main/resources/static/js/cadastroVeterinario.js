@@ -21,7 +21,16 @@ $("#nome").on("input", function(){
 })
 
 $(document).ready(function() {
-  $(document).on('keypress', '#password', function(e){
+  $(document).on('keypress', '#senha', function(e){
      return !(e.keyCode == 32);
   });
 });
+
+function mostrarsenha(){
+		var tipo = document.getElementById("senha");
+		if(tipo.type =="password"){
+			tipo.type = "text";
+		}else{
+			tipo.type = "password"
+		}
+	}

@@ -19,7 +19,6 @@ navbar {
 
 .navbar .container-fluid {
     color: aliceblue;
-    margin-left: 20%;
     justify-content: center;
     align-items: center;
 }
@@ -37,8 +36,7 @@ navbar {
 }
 
 .logo img {
-    margin-left: 30px;
-    margin-right: 10px;
+    margin-left: 20px;
     width: 70px;
     height: 40px;
 }

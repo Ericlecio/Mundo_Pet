@@ -38,27 +38,36 @@
 				class="form">
 				<div class="form-control">
 					<label for="username">Nome Completo</label>
-					<input type="text" id="nome" placeholder="Digite seu nome Completo" name="nome" maxlength="99" required/>
+					<input type="text" id="nome" placeholder="Digite seu nome Completo" name="nome" maxlength="99"
+						required />
 				</div>
 
 				<div class="form-control">
 					<label for="email">Email</label>
-					<input type="email" onkeyup="this.value = this.value.toLowerCase();" id="email" placeholder="Digite seu email.." name="email" maxlength="99" required/>
+					<input type="email" onkeyup="this.value = this.value.toLowerCase();" id="email"
+						placeholder="Digite seu email.." name="email" maxlength="99" required />
 				</div>
 
-				<div class="form-control">
-					<label for="CPF">CPF</label>
-					<input type="CPF" id="cpf" minlength="14" maxlength="14" placeholder="Digite seu CPF..." name="cpf" required/>
-				</div>
-
-				<div class="form-control">
-					<label for="DATA">Data de nascimento</label>
-					<input type="text" id="dataNascimento" placeholder="Digite sua data de nascimento" name="data_Nasc" required/>
+				<div class="form-control" style="display: flex; justify-content:center;">
+					<div class="dois">
+						<label for="CPF">CPF</label>
+						<input type="CPF" id="cpf" minlength="14" maxlength="14" placeholder="Digite seu CPF..."
+							name="cpf" required />
+					</div>
+					<div class="dois">
+						<label for="DATA">Data de nascimento</label>
+						<input type="text" id="dataNascimento" placeholder="Digite sua data de nascimento"
+							name="data_Nasc" required />
+					</div>
 				</div>
 
 				<div class="form-control">
 					<label for="password">Senha</label>
-					<input type="password" id="password" placeholder="Digite sua senha..." name="senha" maxlength="99" required/>
+					<input type="password" id="senha" placeholder="Digite sua senha..." name="senha" maxlength="99"
+						required />
+						
+						<button type="button" onclick="mostrarsenha()" style="width:100px; height:20px; cursor: pointer; padding:0; border: none;
+							  border-width: 0px; display: relative ;font-size:13px; border-radius: 3px; text-align:center; margin-left: 43%; margin-right:43%;">Mostrar senha</button>
 				</div>
 
 
@@ -67,7 +76,7 @@
 			<p>Já possui uma conta ? <a href="/login">Clique aqui</a></p>
 		</div>
 	</div>
-		<script src="../js/cadastroUsuario.js"></script>
+	<script src="../js/cadastroUsuario.js"></script>
 
 </body>
 

@@ -9,10 +9,10 @@
 
 body {
   background-image: url(../img/Wallpaperveterinario.jpg);
+	background-color:  #013cc8;
   background-repeat: no-repeat;
   background-size: cover;
   justify-content: center;
-  background-position: center;
   align-items: center;
 }
 
@@ -21,45 +21,61 @@ body {
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   width: 45%;
+  margin: 0 auto;
   max-width: 100%;
   overflow: hidden;
-  height: 720px;
+  height: 600px;
   z-index: 1;
   box-shadow: 5px 5px 15px;
-
+  justify-content: center;
+  position:relative;
 }
 
+
 .cadastro .header {
-  margin-left: 170px;
-  margin-top: 15px;
+  margin-top: 5px;
   display: flex;
   color: #1881FC;
+  justify-content: center;
+
 }
 
 .cadastro .header h2 {
   font-size: 27px;
   text-align: center;
+  justify-content: center;
+
 }
 
 .cadastro img {
+justify-content: center;
   width: 90px;
   height: 60px;
 }
 
 .cadastro .container .form {
   padding: 10px;
+    	justify-content: center;
+
 }
 
 .cadastro .container .form-control {
-  margin-bottom: 5px;
-  padding-bottom: 5px;
+  margin-bottom: 3px;
+  padding-bottom: 3px;
   position: relative;
+    	justify-content: center;
+
+}
+.cadastro .container .dois{
+	padding:15px;
 }
 
 .cadastro .container .form-control label {
   display: inline-block;
   margin-bottom: 5px;
   color: #1881FC;
+  justify-content: center;
+
 }
 
 .cadastro .container .form-control input {
@@ -72,22 +88,11 @@ body {
   padding: 10px;
   border: solid #1881FC;
   border-width: 2px;
+  justify-content:center;
+
 
 }
 
-.cadastro .container .form-control i {
-  position: absolute;
-  top: 45px;
-  right: 10px;
-  visibility: hidden;
-}
-
-.cadastro .container .form-control small {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  visibility: hidden;
-}
 
 /* Botão entrar */
 .cadastro .container .form button {
@@ -95,21 +100,12 @@ body {
   border: 2px solid #1881FC;
   color: #fff;
   font-size: 16px;
-  width: 30%;
+  width: 50%;
   border-radius: 8px;
   padding: 10px;
-  margin-left: 190px;
   cursor: pointer;
-}
-
-@keyframes anima {
-  0% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(1.05);
-  }
+	margin-left: 25%;	
+	margin-right: 25%;
 }
 
 .cadastro button:hover {
