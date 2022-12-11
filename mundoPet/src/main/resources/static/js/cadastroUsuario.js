@@ -27,7 +27,7 @@ $(function() {
 	$("#dataNascimento").datepicker({
 		changeMonth: true,
 		changeYear: true, 	
-		yearRange: "1950:2015",
+		yearRange: "1950:2022",
 		dateFormat:"dd/mm/yy",
 		showOtherMonths:true,
 		selectOherMonths:true,
