@@ -30,19 +30,19 @@
 
 	<div class="cadastro">
 		<section>
-			<form action="/lista/animais" method="POST" th:object="${Animal}" enctype="multipart/form-data" id="form"
+			<form action="/lista/animais" method="POST" th:object="${animal}" enctype="multipart/form-data" id="form"
 				class="form">
 
 				<h1>Cadastre seu pet</h1>
 
-				<fieldset>
+				<div>
 					<div class="container">
-						<input type="text" id="nome" required name="name" autofocus>
+						<input type="text" id="nome" required name="nome" autofocus>
 						<label>Nome</label>
 					</div>
 
 					<div class="container">
-						<select class="input" id="raça" name="raça">
+						<select class="input" id="raca" name="raca">
 							<option value=""><label>Selecione a Raça </label></option>
 							<option class="label1" value="Não informado"><label>Cachorro(Não listado)</label></option>
 							<option value="Vira-lata">Vira-lata</option>
@@ -59,8 +59,8 @@
 							<option value="Pug">Pug</option>
 							<option value="Pastor Alemão">Pastor Alemão</option>
 							<option value="Pitbull">Pitbull</option>
-							
-						<option class="label1" value="Não informado"><label>Gato(Não listado)</label></option>
+
+							<option class="label1" value="Não informado"><label>Gato(Não listado)</label></option>
 							<option value="Gato-Maine Coon">Maine Coon</option>
 							<option value="Gato-Persa">Persa</option>
 							<option value="Gato-Siamês">Siamês</option>
@@ -73,15 +73,27 @@
 							<option value="SRD">SRD</option>
 						</select>
 					</div>
+				</div>
 
-				</fieldset>
-
-				<fieldset>
+				<div>
 					<div class="container">
-						<input type="number" id="idade" required name="idade">
-						<label>Idade</label>
+						<select class="input" id="usuario.idusuario" required name="usuario.idusuario">
+							<option value=""><label>Selecione a idade </label></option>
+							<option value="1">1 ano </option>
+							<option value="2">2 anos</option>
+							<option value="3">3 anos</option>
+							<option value="4">4 anos</option>
+							<option value="5">5 anos</option>
+							<option value="6">6 anos</option>
+							<option value="7">7 anos</option>
+							<option value="8">8 anos</option>
+							<option value="9">9 anos</option>
+							<option value="10">10 anos</option>
+						</select>
 					</div>
+				</div>
 
+				<div>
 					<div class="container">
 						<select class="input" id="sexo" name="sexo">
 							<option value=""><label>Selecione o sexo </label></option>
@@ -90,23 +102,16 @@
 						</select>
 					</div>
 
-				</fieldset>
-				
-				<fieldset>
-
 					<div class="container">
-						<input type="text" id="idusuario" required name="idusuario">
+						<input type="text" id="usuario.idusuario" required name="usuario.idusuario">
 						<label>Seu Id</label>
 					</div>
-					
-					<button name="submit">Cadastrar animal</button>
+				</div>
 
-				</fieldset>
-				
-				
+				<div>
+					<button name="submit">Cadastrar animal</button>
+				</div>
 			</form>
-			<img src="https://img.olhardigital.com.br/wp-content/uploads/2022/05/gatos.jpg"
-				alt="User">
 		</section>
 	</div>
 </body>

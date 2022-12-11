@@ -16,7 +16,7 @@ body {
 
 div#parallelogram {
 	background: #013cc8;
-	width: 1000px;
+	width: 50%;
 	height: 530px;
 	max-width: 70vw;
 	border-radius: 10px;
@@ -24,48 +24,51 @@ div#parallelogram {
 	transform: skew(6deg, 3deg);
 	position: absolute;
 	z-index: -1;
-	margin-left: 190px;
-	margin-top: 30px;
+	margin-top: 20px;
+	justify-content: center;
+	margin-left:25%;
+	margin-right:25%;
+
 }
 
 .cadastro section {
-	display: flex;
 	background: #fff;
-	padding: 30px 5px;
+	padding: 20px 5px;
 	border-radius: 10px;
 	box-shadow: 5px 5px 15px;
 	max-width: 60vw;
-	margin-left: 270px;
-	margin-top: 65px;
+	margin-top: 30px;
 	max-height: 550px;
-
+	align-items: center;
+	justify-content: center;
+	position:relative;
+	margin-left:20%;
+	margin-right:20%;
 }
 
 .cadastro section h1 {
 	text-align: center;		
 	color: #013cc8;
+	align-items: center;
+	justify-content: center;
 }
 
-.cadastro fieldset {
+.cadastro div {
 	border: none;
 	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding:10px;
 }
-
-.cadastro fieldset {
-	display: flex;
-	margin:0px;
-	width:350px;
-}
-
 
 .cadastro .container {
 	position: relative;
-	padding:5px;
+	padding:2px;
 
 }
 
 .cadastro .container input {
-	width: 140px;
+	width: 300px;
 	height: 70px;
 	border: solid 1px  #013cc8;
 	background-color: #ededed;
@@ -73,16 +76,13 @@ div#parallelogram {
 	color: #333;
 	font-size: 18px;
 	font-weight: 700;
-	margin-top: 25px;
 	text-align: center;
-
 }
 
 
 .cadastro .container select{
-	width:240px;
+	width:300px;
 	height:70px;
-	margin-top: 26px;
 	border-color: #013cc8;
 	border-radius: 4px;
 	background-color: #ededed;
@@ -91,10 +91,10 @@ div#parallelogram {
 	font-size: 14px;
 	font-weight: 700;
 	color: rgb(128, 128, 128);
-	position: absolute;
 	line-height: 70px;
 	user-select: none;
 	transition: 0.5s;
+	align-items: center;
 }
 
 .cadastro .container label {
@@ -104,8 +104,7 @@ div#parallelogram {
 	color: #9d9d9d;
 	position: absolute;
 	line-height: 70px;
-	top: 10px;
-	left: 30px;
+	left: 70px;
 	user-select: none;
 	pointer-events: none;
 	transition: 0.5s;
@@ -117,8 +116,8 @@ div#parallelogram {
 
 .cadastro .container input:focus~label,
 .cadastro .container input:valid~label {
-	left: 30px;
-	top: 10px;
+	left: 50px;
+	top: -15px;
 	color: #013cc8;
 }
 
@@ -148,19 +147,17 @@ div#parallelogram {
 }
 
 .cadastro  button {
-	margin: 20px 0;
+	margin: 10px 0;
 	margin-left:10px;
-	width: calc(100% - 10px);
+	width: 200px;
 	height: 50px;
 	background-color: #013cc8;
 	color: #fff;
 	font-size: 18px;
-	border: none;
+	border: none;	
 	border-radius: 10px;
 	cursor: pointer;
 	transition: .3s linear;
-	margin-top: 40px;
-
 }
 
 .cadastro button:hover {
@@ -182,9 +179,3 @@ div#parallelogram {
 	color: #111;
 }
 
-.cadastro section img {
-	width: 240px;
-	height: 250px;
-	margin: auto 20%;
-	border-radius: 10px;
-}
