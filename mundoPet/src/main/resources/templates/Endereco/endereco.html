@@ -33,7 +33,7 @@
 							<th scope="col">Cidade</th>
 							<th scope="col">Numero</th>
 							<th scope="col">UF</th>
-							<th scope="col"></th>
+							<th scope="col">idusuario</th>
 							<th scope="col"></th>
 							<th scope="col"></th>
 						</tr>
@@ -46,15 +46,14 @@
 							<td class="col-2" th:text="${endereco.cidade}">Cidade</td>
 							<td class="col-2" th:text="${endereco.numero}">Numero</td>
 							<td class="col-2" th:text="${endereco.uf}">UF</td>
+							<td class="col-2" th:text="${endereco.getIdusuario}">idusuario</td>
 
-							<td class="col-1">
-								<a>
-									<i class="fa-solid fa-circle-info" style="color:rgb(128, 255, 255);"></i></a>
-							</td>
+
 							<td class="col-1">
 								<a>
 									<i class="fa-solid fa-file-pen" style="color:rgb(0, 128, 0);"></i></a>
 							</td>
+
 							<td class="col-1">
 								<a role="button" data-bs-toggle="modal"
 									th:data-bs-target="${'#deleteEndereco' + endereco.IdEndereco}" href="">

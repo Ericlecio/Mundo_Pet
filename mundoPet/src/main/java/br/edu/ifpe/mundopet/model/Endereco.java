@@ -10,13 +10,11 @@ public class Endereco extends Usuario{
 	private int numero;
 	private String uf;
 	private int idusuario;
-	
 	private Usuario usuario;
 
-	
-	public Endereco(int idusuario, String nome, Date data_Nasc, String email, String cpf, String senha, int idenderenco,
-			String bairro, String rua, String cidade, int numero, String uf, Usuario usuario) {
-		super(idusuario, nome, data_Nasc, email, cpf, senha);
+
+	public Endereco(int idenderenco, String bairro, String rua, String cidade, int numero, String uf, Usuario usuario) {
+		super();
 		this.idenderenco = idenderenco;
 		this.bairro = bairro;
 		this.rua = rua;
@@ -25,23 +23,30 @@ public class Endereco extends Usuario{
 		this.uf = uf;
 		this.usuario = usuario;
 	}
-
 	public Endereco() {
 		// TODO Auto-generated constructor stub
 	}
-
 	
+	
+	public int getIdenderenco() {
+		return idenderenco;
+	}
+	
+	public void setIdenderenco(int idenderenco) {
+		this.idenderenco = idenderenco;
+	}
 	
 	public int getIdusuario() {
 		return usuario.getIdusuario();
-	}
 
+	}
+	
 	public void setIdusuario(int idusuario) {
 		this.idusuario = idusuario;
 	}
-
-	public Usuario getUsuario() {
-		return usuario;
+	
+	public int getUsuario() {
+		return usuario.getIdusuario();
 	}
 
 	public void setUsuario(Usuario usuario) {

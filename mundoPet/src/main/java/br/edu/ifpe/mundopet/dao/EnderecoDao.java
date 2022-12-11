@@ -10,6 +10,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import br.edu.ifpe.mundopet.model.Endereco;
+import br.edu.ifpe.mundopet.model.Usuario;
 
 @Repository
 
@@ -17,7 +18,7 @@ public class EnderecoDao {
 	public void AdicionarEndereco(Endereco endereco) throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
 		String sql = "INSERT INTO `Endereco`" + "(`idusuario`,`bairro`, `rua`, `cidade`,`numero`, `uf`)"
-				+ "VALUES(?, ?, ?, ?, ?)";
+				+ "VALUES(?, ?, ?, ?, ?, ?)";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 		
 		stmt.setInt(1, endereco.getIdusuario());
@@ -34,7 +35,7 @@ public class EnderecoDao {
 
 	public List<Endereco> ConsultarTodosEnderecos() throws ClassNotFoundException, SQLException {
 		Connection connection = ConexaoMySQL.getConexaoMySQL();
-		String sql = "SELECT `idEndereco`, `bairro`, `rua`, `cidade`, `numero`, `uf` FROM `endereco`";
+		String sql = "SELECT `idEndereco`, `bairro`, `rua`, `cidade`, `numero`, `uf`, `idusuario` FROM `endereco`";
 		PreparedStatement stmt = connection.prepareStatement(sql);
 
 		ResultSet resultSet = stmt.executeQuery();
@@ -44,6 +45,7 @@ public class EnderecoDao {
 		while (resultSet.next()) {
 
 			Endereco endereco = new Endereco();
+			Usuario usuario = new Usuario();
 
 			endereco.setIdEndereco(resultSet.getInt(1));
 			endereco.setBairro(resultSet.getString(2));
@@ -51,6 +53,10 @@ public class EnderecoDao {
 			endereco.setCidade(resultSet.getString(4));
 			endereco.setNumero(resultSet.getInt(5));
 			endereco.setUf(resultSet.getString(6));
+			usuario.setIdusuario(resultSet.getInt(7));
+
+			endereco.setUsuario(usuario);
+
 
 			listaTodosEnderecos.add(endereco);
 		}

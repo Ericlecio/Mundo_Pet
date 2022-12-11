@@ -29,7 +29,7 @@
 	<div class="cadastro">
 
 		<div class="box">
-			<form action="/lista/enderecos" method="POST" th:object="${Endereco}" enctype="multipart/form-data"
+			<form action="/lista/enderecos" method="POST" th:object="${endereco}" enctype="multipart/form-data"
 				id="form" class="form">
 				<fieldset>
 					<legend>Cadastro de endereço <br>Mundo pet</legend>
@@ -55,7 +55,7 @@
 					</div>
 					<br>
 					<div class="inputBox">
-						<input type="number" name="usuario" id="usuario" class="inputUser" required>
+						<input type="number" name="endereco.usuario.idusuario" id="idusuario" class="inputUser" required>
 						<label for="numero" class="labelInput">Seu id</label>
 					</div>
 					<br>
