@@ -23,6 +23,9 @@ public class Endereco extends Usuario{
 		this.uf = uf;
 		this.usuario = usuario;
 	}
+	
+	
+	
 	public Endereco() {
 		// TODO Auto-generated constructor stub
 	}
@@ -45,8 +48,8 @@ public class Endereco extends Usuario{
 		this.idusuario = idusuario;
 	}
 	
-	public int getUsuario() {
-		return usuario.getIdusuario();
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
 	public void setUsuario(Usuario usuario) {
