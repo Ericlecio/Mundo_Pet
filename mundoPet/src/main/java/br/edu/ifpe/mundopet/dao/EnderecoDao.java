@@ -95,4 +95,28 @@ public class EnderecoDao {
 		connection.close();
 
 	}
+	public Endereco consultarEnderecoPorId(Long id ) throws ClassNotFoundException, SQLException {
+		Connection connection = ConexaoMySQL.getConexaoMySQL();
+		String sql = "SELECT `idendereco`, `bairro`, `rua`, `cidade`, `numero`, `uf` FROM `endereco` where idendereco= ?";
+		PreparedStatement stmt = connection.prepareStatement(sql);
+        stmt.setLong(1, id);
+        ResultSet resultSet = stmt.executeQuery();
+
+		Endereco endereco = new Endereco();
+
+		if (resultSet.next()) {
+
+			endereco.setIdEndereco(resultSet.getInt(1));
+			endereco.setBairro(resultSet.getString(2));
+			endereco.setRua(resultSet.getString(3));
+			endereco.setCidade(resultSet.getString(4));
+			endereco.setNumero(resultSet.getInt(5));
+			endereco.setUf(resultSet.getString(6));
+
+		}
+		stmt.close();
+		connection.close();
+
+		return endereco;
+}
 }

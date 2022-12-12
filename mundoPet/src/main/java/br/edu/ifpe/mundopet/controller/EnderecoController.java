@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import br.edu.ifpe.mundopet.dao.AnimalDao;
 import br.edu.ifpe.mundopet.dao.EnderecoDao;
 import br.edu.ifpe.mundopet.model.Endereco;
+import br.edu.ifpe.mundopet.model.Usuario;
 
 @Controller
 public class EnderecoController {
@@ -76,5 +77,42 @@ public class EnderecoController {
 			e.printStackTrace();
 		}
 		return new ModelAndView("redirect:/lista/enderecos");
+	}
+	@GetMapping("/endereco/{idendereco}/edit")
+	public ModelAndView edit(@PathVariable Long idendereco, Endereco endereco1) {
+		ModelAndView mv = new ModelAndView("Endereco/editarEndereco");
+		int codigo = (int) idendereco.intValue();
+		try {
+			endereco1 = enderecodao.consultarEnderecoPorId(idendereco);
+			if (endereco1 != null) {
+				mv.addObject("endereco", endereco1);
+				return mv;
+			} else {
+				return new ModelAndView("redirect:/lista/enderecos");
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return mv;
+	}
+
+	@PostMapping("/lista/enderecos/{idendereco}")
+	public ModelAndView update(@PathVariable Long idendereco, @Validated Endereco endereco, BindingResult bindingResults) {
+		if (bindingResults.hasErrors()) {
+			ModelAndView mv = new ModelAndView("endereco/editarEndereco");
+			mv.addObject("endereco", endereco);
+			return mv;
+		} else {
+			int codigo = (int) idendereco.intValue();
+
+			try {
+				endereco.setIdEndereco(codigo);
+				enderecodao.AtualizarEndereco(endereco);
+			} catch (ClassNotFoundException | SQLException e) {
+				e.printStackTrace();
+			}
+			return new ModelAndView("redirect:/lista/enderecos");
+		}
 	}
 }
