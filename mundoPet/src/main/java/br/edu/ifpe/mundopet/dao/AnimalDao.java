@@ -10,6 +10,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import br.edu.ifpe.mundopet.model.Animal;
+import br.edu.ifpe.mundopet.model.Endereco;
 import br.edu.ifpe.mundopet.model.Usuario;
 
 @Repository
@@ -91,4 +92,26 @@ public class AnimalDao {
 		connection.close();
 
 	}
+	public Animal consultarAnimalPorId(Long id ) throws ClassNotFoundException, SQLException {
+		Connection connection = ConexaoMySQL.getConexaoMySQL();
+		String sql = "SELECT `idanimal`, `nome`, `raca`, `idade`, `sexo` FROM `animal` where idanimal= ?";
+		PreparedStatement stmt = connection.prepareStatement(sql);
+        stmt.setLong(1, id);
+        ResultSet resultSet = stmt.executeQuery();
+
+		Animal animal = new Animal();
+
+		if (resultSet.next()) {
+
+			animal.setIdAnimal(resultSet.getInt(1));
+			animal.setNome(resultSet.getString(2));
+			animal.setRaca(resultSet.getString(3));
+			animal.setIdade(resultSet.getInt(4));
+			animal.setSexo(resultSet.getString(5));
+		}
+		stmt.close();
+		connection.close();
+
+		return animal;
+}
 }

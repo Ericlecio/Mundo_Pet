@@ -78,6 +78,7 @@ public class EnderecoController {
 		}
 		return new ModelAndView("redirect:/lista/enderecos");
 	}
+	
 	@GetMapping("/endereco/{idendereco}/edit")
 	public ModelAndView edit(@PathVariable Long idendereco, Endereco endereco1) {
 		ModelAndView mv = new ModelAndView("Endereco/editarEndereco");

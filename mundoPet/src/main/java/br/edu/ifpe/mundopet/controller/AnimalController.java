@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.edu.ifpe.mundopet.dao.AnimalDao;
 import br.edu.ifpe.mundopet.model.Animal;
+import br.edu.ifpe.mundopet.model.Endereco;
 
 
 @Controller
@@ -77,4 +78,41 @@ public class AnimalController {
 		return new ModelAndView("redirect:/lista/animais");
 	}
 
+	@GetMapping("/animal/{idanimal}/edit")
+	public ModelAndView edit(@PathVariable Long idanimal, Animal animal1) {
+		ModelAndView mv = new ModelAndView("Animal/editarAnimal");
+		int codigo = (int) idanimal.intValue();
+		try {
+			animal1 = animaldao.consultarAnimalPorId(idanimal);
+			if (animal1 != null) {
+				mv.addObject("animal", animal1);
+				return mv;
+			} else {
+				return new ModelAndView("redirect:/lista/animais");
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return mv;
+	}
+
+	@PostMapping("/lista/animais/{idanimal}")
+	public ModelAndView update(@PathVariable Long idanimal, @Validated Animal animal, BindingResult bindingResults) {
+		if (bindingResults.hasErrors()) {
+			ModelAndView mv = new ModelAndView("Animal/editarAnimal");
+			mv.addObject("animal", animal);
+			return mv;
+		} else {
+			int codigo = (int) idanimal.intValue();
+
+			try {
+				animal.setIdAnimal(codigo);
+				animaldao.AdicionarAnimal(animal);
+			} catch (ClassNotFoundException | SQLException e) {
+				e.printStackTrace();
+			}
+			return new ModelAndView("redirect:/lista/animais");
+		}
+	}
 }
