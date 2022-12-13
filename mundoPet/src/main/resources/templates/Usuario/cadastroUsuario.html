@@ -41,22 +41,22 @@
 			<form action="/lista/usuarios" method="POST" th:object="${Usuario}" enctype="multipart/form-data" id="form"
 				class="form">
 				<div class="form-control">
-					<label for="username">Nome Completo</label>
+					<label for="username">Nome e sobrenome</label>
 					<input type="text" id="nome" placeholder="Digite seu nome Completo" name="nome" maxlength="99"
-						required />
+						autocomplete="off" required />
 				</div>
 
 				<div class="form-control">
 					<label for="email">Email</label>
 					<input type="email" onkeyup="this.value = this.value.toLowerCase();" id="email"
-						placeholder="Digite seu email.." name="email" maxlength="99" required />
+						placeholder="Digite seu email.." name="email" maxlength="99" autocomplete="off" required />
 				</div>
 
 				<div class="form-control" style="display: flex; justify-content:center;">
 					<div class="dois">
 						<label for="CPF">CPF</label>
 						<input type="CPF" id="cpf" minlength="14" maxlength="14" placeholder="Digite seu CPF..."
-							name="cpf" required />
+							name="cpf" autocomplete="off" required />
 					</div>
 					<div class="dois">
 						<label for="DATA">Data de nascimento</label>
@@ -68,7 +68,7 @@
 				<div class="form-control">
 					<label for="password">Senha</label>
 					<input type="password" id="senha" placeholder="Digite sua senha..." name="senha" maxlength="99"
-						required />
+						required autocomplete="off" />
 
 					<button type="button" onclick="mostrarsenha()"
 						style="width:100px; height:20px; cursor: pointer; padding:0; border: none;

@@ -32,25 +32,25 @@
 				<div class="form-control">
 					<label for="username">Nome Completo</label>
 					<input type="text" id="nome" placeholder="Digite seu nome Completo" name="nome" maxlength="99"
-						required th:field="*{nome}" />
+						required th:field="*{nome}" autocomplete="off"/>
 				</div>
 
 				<div class="form-control">
 					<label for="email">Email</label>
 					<input type="email" id="email" onkeyup="this.value = this.value.toLowerCase();"
-						placeholder="Digite seu email.." name="email" maxlength="99" required th:field="*{email}" />
+						placeholder="Digite seu email.." name="email" maxlength="99" required th:field="*{email}" autocomplete="off" />
 				</div>
 
 				<div class="form-control">
 					<label for="cpf">CPF</label>
 					<input type="text" id="cpf" minlength="14" maxlength="14" placeholder="Digite seu CPF..." name="cpf"
-						required th:field="*{cpf}" />
+						required th:field="*{cpf}" autocomplete="off" />
 				</div>
 
 				<div class="form-control">
 					<label for="DATA">Data de nascimento</label>
 					<input type="text" id="dataNascimento" placeholder="Digite sua data de nascimento" name="data_Nasc"
-						th:field="*{data_Nasc}" />
+						th:field="*{data_Nasc}" autocomplete="off" />
 				</div>
 				<button class="btn btn-primary" type="submit">Confirmar alteração</button>
 			</form>
