@@ -9,6 +9,10 @@
 }
 
 body {
+    background-image: url(../img/Wallpaperanimal.jpg);
+  	background-color:  #013cc8;
+  	background-repeat: no-repeat;
+  	background-size: cover;
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
