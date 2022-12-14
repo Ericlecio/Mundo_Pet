@@ -12,7 +12,7 @@ $(function() {
 	$("#data_consulta").datepicker({
 		changeMonth: true,
 		changeYear: true, 	
-		yearRange: "1950:2022",
+		yearRange: "2023:2025",
 		dateFormat:"dd/mm/yy",
 		showOtherMonths:true,
 		selectOherMonths:true,

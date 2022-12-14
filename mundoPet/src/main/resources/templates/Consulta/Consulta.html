@@ -35,8 +35,6 @@
 							<th scope="col">Dono</th>
 							<th scope="col">Animal</th>
 							<th scope="col"></th>
-							<th scope="col"></th>
-							<th scope="col"></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -49,14 +47,7 @@
 							<td class="col-2" th:text="${consulta.nomeVeterinario}">Veterinario</td>
 							<td class="col-2" th:text="${consulta.nomeUsuario}">Dono</td>
 							<td class="col-2" th:text="${consulta.nomeAnimal}">Animal</td>
-							<td class="col-1">
-								<a>
-									<i class="fa-solid fa-circle-info" style="color:rgb(128, 255, 255);"></i></a>
-							</td>
-							<td class="col-1">
-								<a th:href="@{/consulta/{idconsulta}/edit(idconsulta = ${consulta.idconsulta})}">
-									<i class="fa-solid fa-file-pen" style="color:rgb(0, 128, 0);"></i></a>
-							</td>
+							
 							<td class="col-1">
 								<a role="button" data-bs-toggle="modal"
 									th:data-bs-target="${'#deleteConsulta' + consulta.idconsulta}" href="">

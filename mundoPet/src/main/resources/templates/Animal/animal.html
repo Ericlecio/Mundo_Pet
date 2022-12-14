@@ -35,7 +35,6 @@
 							<th scope="col">Sexo</th>
 							<th scope="col">Dono</th>
 							<th scope="col"></th>
-							<th scope="col"></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -47,11 +46,6 @@
 							<td class="2" th:text="${animal.sexo}">Sexo</td>
 							<td class="2" th:text="${animal.usuario.nome}">Dono</td>
 							
-							<td class="col-1">
-								<a>
-								<a th:href="@{/animal/{idAnimal}/edit(idAnimal = ${animal.idanimal})}">
-									<i class="fa-solid fa-file-pen" style="color:rgb(0, 128, 0);"></i></a>
-							</td>
 
 							<td class="col-1">
 								<a role="button" data-bs-toggle="modal"
