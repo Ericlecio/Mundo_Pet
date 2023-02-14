@@ -1,0 +1,92 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/listar.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+		crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/cdc6c5b4dc.js" crossorigin="anonymous"></script>
+	<link rel="apple-touch-icon" sizes="192x192" href="../img/icon/Frame1.png">
+	<link rel="icon" type="image/png" sizes="380x380" href="../img/icon/Frame1.png">
+	<link rel="icon" type="image/png" sizes="380x380" href="../img/icon/Frame1.png">
+	<title>Lista de Animais</title>
+</head>
+
+
+<body style="background-color: #E7dFDD;">
+	<nav th:replace="~{/html/menu :: menu}"></nav>
+
+	<h2>Lista de Animais Mundo pet</h2>
+	<div class="container mt-4">
+		<div class="row">
+			<div class="col-12">
+				<table class="table table-dark and table-striped and table-bordered">
+					<thead>
+						<tr>
+							<th scope="col">IdAnimal</th>
+							<th scope="col">Nome</th>
+							<th scope="col">Raça</th>
+							<th scope="col">Idade</th>
+							<th scope="col">Sexo</th>
+							<th scope="col">Dono</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="animal : ${animais}">
+							<th class="1" scope="row" th:text="${animal.getIdAnimal}">ID Animal</th>
+							<td class="2" th:text="${animal.nome}">Nome</td>
+							<td class="2" th:text="${animal.raca}">Raça</td>
+							<td class="2" th:text="${animal.idade}">Idade</td>
+							<td class="2" th:text="${animal.sexo}">Sexo</td>
+							<td class="2" th:text="${animal.usuario.nome}">Dono</td>
+							
+
+							<td class="col-1">
+								<a role="button" data-bs-toggle="modal"
+									th:data-bs-target="${'#deleteAnimal' + animal.getIdAnimal}" href="">
+									<i class="fa-regular fa-trash-can" style="color:rgb(255, 0, 0);"></i></a>
+								<form th:action="@{/animal/{getIdAnimal}/delete(getIdAnimal = ${animal.getIdAnimal})}"
+									method="post">
+
+									<div class="modal fade" th:id="${'deleteAnimal' + animal.getIdAnimal}" tabindex="-1"
+										aria-labelledby="exampleModalLabel" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h1 class="modal-title fs-5" id="exdeleteAnimal">Deletar Animal</h1>
+													<button type="button" class="btn-close" data-bs-dismiss="modal"
+														aria-label="Close"></button>
+												</div>
+												<div class="modal-body">
+													Deseja realmente deletar este Animal ?<span
+														th:text="${animal.getIdAnimal}"></span>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-secondary"
+														data-bs-dismiss="modal">Fechar</button>
+													<button type="submit" class="btn btn-danger">Deletar</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="novo">
+		<a href="../animal/cadastroAnimal">Inserir Animal</a>
+	</div>
+
+</body>
+
+</html>

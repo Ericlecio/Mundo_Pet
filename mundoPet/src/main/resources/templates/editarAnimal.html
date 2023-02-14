@@ -1,0 +1,114 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/cadastroAnimal.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+		crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/cdc6c5b4dc.js" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+	<link rel="apple-touch-icon" sizes="192x192" href="../img/icon/Frame1.png">
+	<link rel="icon" type="image/png" sizes="380x380" href="../img/icon/Frame1.png">
+	<link rel="icon" type="image/png" sizes="380x380" href="../img/icon/Frame1.png">
+	<title>Cadastro Pet</title>
+</head>
+
+<body>
+	<nav th:replace="~{/html/menu :: menu}"></nav>
+
+	<div id="parallelogram"></div>
+
+	<div class="cadastro">
+		<section>
+			<form th:action="@{/lista/animais/{idanimal}(idanimal = ${idanimal})}" method="POST" th:object="${animal}" enctype="multipart/form-data" id="form"
+				class="form">
+
+				<h1>Cadastre seu pet</h1>
+
+				<div>
+					<div class="container">
+						<input type="text" id="nome" required name="nome" autofocus maxlength="99" th:field="*{nome}" autocomplete="off">
+						<label>Nome</label>
+					</div>
+
+					<div class="container">
+						<select class="input" id="raca" name="raca" th:field="*{raca}">
+							<option value=""><label>Selecione a Raça </label></option>
+							<option class="label1" value="Não informado"><label>Cachorro(Não listado)</label></option>
+							<option value="Vira-lata">Vira-lata</option>
+							<option value="Shih tzu">Shih tzu</option>
+							<option value="Yorkshire">Yorkshire</option>
+							<option value="Poodle">Poodle</option>
+							<option value="Lhasa apso">Lhasa apso</option>
+							<option value="Buldogue francês">Buldogue francês</option>
+							<option value="Golden retriever">Golden retriever</option>
+							<option value="Labrador">Labrador</option>
+							<option value="Maltês">Maltês </option>
+							<option value="Pinscher">Pinscher</option>
+							<option value="Rottweiler">Rottweiler</option>
+							<option value="Pug">Pug</option>
+							<option value="Pastor Alemão">Pastor Alemão</option>
+							<option value="Pitbull">Pitbull</option>
+
+							<option class="label1" value="Não informado"><label>Gato(Não listado)</label></option>
+							<option value="Gato-Maine Coon">Maine Coon</option>
+							<option value="Gato-Persa">Persa</option>
+							<option value="Gato-Siamês">Siamês</option>
+							<option value="Gato-Angorá">Angorá</option>
+							<option value="Gato-Sphynx">Sphynx</option>
+							<option value="Gato-Ragdoll">Ragdoll</option>
+							<option value="Gato-Ashera">Ashera</option>
+							<option value="Gato-American Shorthair">American Shorthair</option>
+							<option value="Exótico">Exótico</option>
+							<option value="SRD">SRD</option>
+						</select>
+					</div>
+				</div>
+
+				<div>
+					<div class="container">
+						<select class="input" id="idade" required name="idade" th:field="*{idade}" >
+							<option value=""><label>Selecione a idade </label></option>
+							<option value="1">1 ano </option>
+							<option value="2">2 anos</option>
+							<option value="3">3 anos</option>
+							<option value="4">4 anos</option>
+							<option value="5">5 anos</option>
+							<option value="6">6 anos</option>
+							<option value="7">7 anos</option>
+							<option value="8">8 anos</option>
+							<option value="9">9 anos</option>
+							<option value="10">10 anos</option>
+						</select>
+					</div>
+				</div>
+
+				<div>
+					<div class="container">
+						<select class="input" id="sexo" name="sexo" th:field="*{sexo}">
+							<option value=""><label>Selecione o sexo </label></option>
+							<option value="M">Macho</option>
+							<option value="F">Fêmea</option>
+						</select>
+					</div>
+				</div>
+
+				<div>
+					<button name="submit">Cadastrar animal</button>
+				</div>
+			</form>
+		</section>
+	</div>
+</body>
+
+</html>
