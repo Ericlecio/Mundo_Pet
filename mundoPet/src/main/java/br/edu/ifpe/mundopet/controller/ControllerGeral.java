@@ -9,7 +9,7 @@ public class ControllerGeral {
 
 	@GetMapping("/MundoPet")
 	public ModelAndView pagina1() {
-		ModelAndView mv = new ModelAndView("Html/telaPrincipal");
+		ModelAndView mv = new ModelAndView("telaPrincipal");
 		return mv;
 	}
 
